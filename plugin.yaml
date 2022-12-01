@@ -1,6 +1,6 @@
 plugin:
-    name: 'axenso.sso::lang.plugin.name'
-    description: 'axenso.sso::lang.plugin.description'
+    name: 'axenso.october-sso::lang.plugin.name'
+    description: 'axenso.october-sso::lang.plugin.description'
     author: Axenso
     icon: oc-icon-user
     homepage: ''

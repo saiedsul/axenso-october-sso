@@ -59,7 +59,7 @@ class Changepassword extends ComponentBase
             $response = $sso->resetPassword($this->code,Input::get('password'),Input::get('password_confirmation'));
             if ($response->getStatusCode() == 404) {
                 return ['#errors'=> $this->renderPartial('Changepassword::errors',[
-                    'errorMsgs' => [trans('axenso.sso::lang.messages.reset_password.invalid_link')]
+                    'errorMsgs' => [trans('axenso.october-sso::lang.messages.reset_password.invalid_link')]
                     ])];
             }
             else if ($response->getStatusCode() == 201) {
@@ -67,7 +67,7 @@ class Changepassword extends ComponentBase
             }
             else {
                 return ['#errors'=> $this->renderPartial('Changepassword::errors',[
-                    'errorMsgs' => [trans('axenso.sso::lang.messages.generic')]
+                    'errorMsgs' => [trans('axenso.october-sso::lang.messages.generic')]
                     ])];
                }
         }
