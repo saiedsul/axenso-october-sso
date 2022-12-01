@@ -1,0 +1,14 @@
+{% if isLogged != 0 and isLogged != null %}
+{% set i = random(1005) %}
+
+<a id="pin-content-{{ __SELF__.itemid }}" style="cursor: pointer;" data-request="{{__SELF__}}::onAddItem"
+ data-request-data="itemid: '{{ __SELF__.itemid }}' , itemtype : '{{ __SELF__.itemtype }}'"  
+ data-request-success="update_component({{ i }})"  data-request-validate>
+    {% if  __SELF__.pinned == 1 %}
+    <i class="fa-solid fa-folder-bookmark solid" id="i-{{ i }}"></i>
+    {% else %} 
+    <i class="fa-light fa-folder-bookmark light" id="i-{{ i }}"></i>
+    {% endif %}
+</a>
+{% endif %}
+

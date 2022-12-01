@@ -1,0 +1,31 @@
+fields:
+    sso_client_id:
+        label: 'SSO CLIENT ID'
+        span: auto
+        required: 1
+        type: text
+    sso_client_secret:
+        label: 'SSO CLIENT SECRET'
+        span: auto
+        required: 1
+        type: text
+    sso_base_url:
+        label: 'SSO BASE URL'
+        span: auto
+        default: ''
+        required: 1
+        type: text
+        comment: 'https://sso.axensodev.com'
+    sso_app_name:
+        label: 'SSO APP NAME'
+        span: auto
+        type: text
+    privacy_text:
+        label: 'Privacy Policy Plain Text'
+        size: large
+        span: full
+        type: textarea
+    privacy_policy_url:
+        label: 'Privacy Policy Page URL'
+        span: auto
+        type: text

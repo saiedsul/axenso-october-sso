@@ -1,0 +1,20 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table axenso_sso_tokens'
+    - builder_table_create_axenso_sso_tokens.php
+1.0.4:
+    - 'Created table axenso_sso_users'
+    - builder_table_create_axenso_sso_users.php
+1.0.6:
+    - 'Created table axenso_sso_content_list'
+    - builder_table_create_axenso_sso_content_list.php
+1.0.9:
+    - 'Created table axenso_sso_prefrence_list'
+    - builder_table_create_axenso_sso_prefrence_list.php
+1.1.0:
+    - 'Created table axenso_sso_logs'
+    - builder_table_create_axenso_sso_logs.php
+1.1.1:
+    - 'Updated table axenso_sso_users'
+    - builder_table_update_axenso_sso_users.php

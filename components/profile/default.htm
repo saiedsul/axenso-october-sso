@@ -1,0 +1,46 @@
+<div id="maincontainer">
+
+    <form class="mx-auto profile" data-request="{{Profile}}::onProfileUpdate"  data-request-success="javascript:;" id="regForm" data-request-validate>
+        <div class="row">
+  <input class="form-control" type="hidden"  value="{{ sso_user.sso_id }}" name="sso_id">
+            <div class="col-6 mb-2"><input class="form-control" type="text" value="{{ sso_user.first_name }}"  name="first_name" placeholder="{{ 'Nome'|_ }}"></div>
+            <div class="col-6 mb-2"><input class="form-control" type="text" value="{{ sso_user.last_name }}" name="last_name" placeholder="{{ 'Cognome'|_ }}"></div>
+            <div class="col-md-12 mb-2">
+                <select required data-request="{{Profile}}::onProfSelect" class=" form-control"  name="profession" id="professions">
+                    <optgroup label="Ordine Professionale">
+                        <option value="">{{ 'Select professione'|_ }}</option>
+                    {% for profession in Profile.profissions %}
+                    <option value="{{ profession['name'] }}" {{ profession["selected"] }}>{{ profession['name'] }}</option>
+                    {%endfor%}
+                    </optgroup>
+                </select></div>
+            <div class="col-md-12 mb-2 " id="spcsdiv">
+                <select required class=" form-control " name="specialization" id="specializations" oninput="this.className = 'form-control'">
+                    <optgroup label="Specializzazione">
+                      {% for spec in __SELF__.pspecs %}
+                      <option value="{{ spec['name'] }}" {{ spec['selected'] }}>{{ spec['name'] }}</option>
+                      {%endfor%}
+                      </optgroup>
+                  </select>
+            </div>
+            <div class="col-md-12 mb-4"><input class="form-control" type="text" value="{{ sso_user.board_number }}" name="board_number" placeholder="Numero Iscrizione all'ordine"></div>
+            <div class="col-md-12"><button class="btn btn-primary btn-lg d-block w-100" type="submit"><strong>{{ 'Conferma dati'|_ }}</strong></button></div>
+
+             <div class="col-12 text-center" id="errors"></div>
+             <div class="col-12 text-center" id="response"></div>
+
+            <div class="col-md-12">
+              <p class="my-4 text-center"><a href="/privacy-policy" Target= "_blank">{{ 'Leggi l’informativa sulla privacy'|_ }}</a></p>
+              <div class="form-check  "><label class="form-check-label mb-2"><input class="form-check-input" checked type="checkbox" required>{{' Esprimo il mio consenso all’attività di autenticazione e registrazione centralizzata per accedere ai servizi digitali di axenso (XGate) *'|_}}</label></div>
+              <div class="form-check  "><label class="form-check-label mb-2 "><input class="form-check-input" checked type="checkbox" >{{ 'Esprimo il mio consenso all’invio da parte di axenso di comunicazioni aventi contenuto informativo, medico-scientifico o divulgativo utilizzando l’indirizzo di posta elettronica fornito in fase di registrazione'|_ }}</label></div>
+              <div class="form-check  "><label class="form-check-label "><input class="form-check-input" checked type="checkbox" >{{ 'Esprimo il mio consenso alla cessione dei miei dati personali a terzi operanti nei settori merceologici indicati nell’informativa per le finalità, nei limiti e secondo le modalità espressi nell’informativa medesima'|_ }}</label></div>
+            </div>
+        </div>
+    </form>
+    <div class="col-12 text-center" id="errors">
+
+    </div>
+    <div class="col-12 text-center" id="response">
+
+    </div>
+    </div>

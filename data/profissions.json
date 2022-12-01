@@ -1,0 +1,818 @@
+[
+    {
+       "id":1,
+       "name":"Medico chirurgo",
+       "code":1,
+       "specializations":[
+          {
+             "id":1,
+             "profession_id":1,
+             "name":"Allergologia ed immunologia clinica",
+             "code":1
+          },
+          {
+             "id":2,
+             "profession_id":1,
+             "name":"Angiologia",
+             "code":2
+          },
+          {
+             "id":3,
+             "profession_id":1,
+             "name":"Cardiologia",
+             "code":3
+          },
+          {
+             "id":4,
+             "profession_id":1,
+             "name":"Dermatologia e venereologia",
+             "code":4
+          },
+          {
+             "id":5,
+             "profession_id":1,
+             "name":"Ematologia",
+             "code":5
+          },
+          {
+             "id":6,
+             "profession_id":1,
+             "name":"Endocrinologia",
+             "code":6
+          },
+          {
+             "id":7,
+             "profession_id":1,
+             "name":"Gastroenterologia",
+             "code":7
+          },
+          {
+             "id":8,
+             "profession_id":1,
+             "name":"Genetica medica",
+             "code":8
+          },
+          {
+             "id":9,
+             "profession_id":1,
+             "name":"Geriatria",
+             "code":9
+          },
+          {
+             "id":10,
+             "profession_id":1,
+             "name":"Malattie metaboliche e diabetologia",
+             "code":10
+          },
+          {
+             "id":11,
+             "profession_id":1,
+             "name":"Malattie dell'apparato respiratorio",
+             "code":11
+          },
+          {
+             "id":12,
+             "profession_id":1,
+             "name":"Malattie infettive",
+             "code":12
+          },
+          {
+             "id":13,
+             "profession_id":1,
+             "name":"Medicina e chirurgia di accettazione e di urgenza",
+             "code":13
+          },
+          {
+             "id":14,
+             "profession_id":1,
+             "name":"Medicina fisica e riabilitazione",
+             "code":14
+          },
+          {
+             "id":15,
+             "profession_id":1,
+             "name":"Medicina interna",
+             "code":15
+          },
+          {
+             "id":16,
+             "profession_id":1,
+             "name":"Medicina termale",
+             "code":16
+          },
+          {
+             "id":17,
+             "profession_id":1,
+             "name":"Medicina aeronautica e spaziale",
+             "code":17
+          },
+          {
+             "id":18,
+             "profession_id":1,
+             "name":"Medicina dello sport",
+             "code":18
+          },
+          {
+             "id":19,
+             "profession_id":1,
+             "name":"Nefrologia",
+             "code":19
+          },
+          {
+             "id":20,
+             "profession_id":1,
+             "name":"Neonatologia",
+             "code":20
+          },
+          {
+             "id":21,
+             "profession_id":1,
+             "name":"Neurologia",
+             "code":21
+          },
+          {
+             "id":22,
+             "profession_id":1,
+             "name":"Neuropsichiatria infantile",
+             "code":22
+          },
+          {
+             "id":23,
+             "profession_id":1,
+             "name":"Oncologia",
+             "code":23
+          },
+          {
+             "id":24,
+             "profession_id":1,
+             "name":"Pediatria",
+             "code":24
+          },
+          {
+             "id":25,
+             "profession_id":1,
+             "name":"Psichiatria",
+             "code":25
+          },
+          {
+             "id":26,
+             "profession_id":1,
+             "name":"Radioterapia",
+             "code":26
+          },
+          {
+             "id":27,
+             "profession_id":1,
+             "name":"Reumatologia",
+             "code":27
+          },
+          {
+             "id":28,
+             "profession_id":1,
+             "name":"Cardiochirurgia",
+             "code":29
+          },
+          {
+             "id":29,
+             "profession_id":1,
+             "name":"Chirurgia generale",
+             "code":30
+          },
+          {
+             "id":30,
+             "profession_id":1,
+             "name":"Chirurgia maxillo-facciale",
+             "code":31
+          },
+          {
+             "id":31,
+             "profession_id":1,
+             "name":"Chirurgia pediatrica",
+             "code":32
+          },
+          {
+             "id":32,
+             "profession_id":1,
+             "name":"Chirurgia plastica e ricostruttiva",
+             "code":33
+          },
+          {
+             "id":33,
+             "profession_id":1,
+             "name":"Chirurgia toracica",
+             "code":34
+          },
+          {
+             "id":34,
+             "profession_id":1,
+             "name":"Chirurgia vascolare",
+             "code":35
+          },
+          {
+             "id":35,
+             "profession_id":1,
+             "name":"Ginecologia e ostetricia",
+             "code":36
+          },
+          {
+             "id":36,
+             "profession_id":1,
+             "name":"Neurochirurgia",
+             "code":37
+          },
+          {
+             "id":37,
+             "profession_id":1,
+             "name":"Oftalmologia",
+             "code":38
+          },
+          {
+             "id":38,
+             "profession_id":1,
+             "name":"Ortopedia e traumatologia",
+             "code":39
+          },
+          {
+             "id":39,
+             "profession_id":1,
+             "name":"Otorinolaringoiatria",
+             "code":40
+          },
+          {
+             "id":40,
+             "profession_id":1,
+             "name":"Urologia",
+             "code":41
+          },
+          {
+             "id":41,
+             "profession_id":1,
+             "name":"Anatomia patologica",
+             "code":42
+          },
+          {
+             "id":42,
+             "profession_id":1,
+             "name":"Anestesia e rianimazione",
+             "code":43
+          },
+          {
+             "id":43,
+             "profession_id":1,
+             "name":"Biochimica clinica",
+             "code":44
+          },
+          {
+             "id":44,
+             "profession_id":1,
+             "name":"Farmacologia e tossicologia clinica",
+             "code":45
+          },
+          {
+             "id":45,
+             "profession_id":1,
+             "name":"Laboratorio di genetica medica",
+             "code":46
+          },
+          {
+             "id":46,
+             "profession_id":1,
+             "name":"Medicina trasfusionale",
+             "code":47
+          },
+          {
+             "id":47,
+             "profession_id":1,
+             "name":"Medicina legale",
+             "code":48
+          },
+          {
+             "id":48,
+             "profession_id":1,
+             "name":"Medicina nucleare",
+             "code":49
+          },
+          {
+             "id":49,
+             "profession_id":1,
+             "name":"Microbiologia e virologia",
+             "code":50
+          },
+          {
+             "id":50,
+             "profession_id":1,
+             "name":"Neurofisiopatologia",
+             "code":51
+          },
+          {
+             "id":51,
+             "profession_id":1,
+             "name":"Neuroradiologia",
+             "code":52
+          },
+          {
+             "id":52,
+             "profession_id":1,
+             "name":"Patologia clinica (laboratorio di analisi chimico-cliniche e microbiologia)",
+             "code":53
+          },
+          {
+             "id":53,
+             "profession_id":1,
+             "name":"Radiodiagnostica",
+             "code":54
+          },
+          {
+             "id":54,
+             "profession_id":1,
+             "name":"Igiene, epidemiologia e sanit\u00e0 pubblica",
+             "code":55
+          },
+          {
+             "id":55,
+             "profession_id":1,
+             "name":"Igiene degli alimenti e della nutrizione",
+             "code":56
+          },
+          {
+             "id":56,
+             "profession_id":1,
+             "name":"Medicina del lavoro e sicurezza degli ambienti di lavoro",
+             "code":57
+          },
+          {
+             "id":57,
+             "profession_id":1,
+             "name":"Medicina generale (medici di famiglia)",
+             "code":58
+          },
+          {
+             "id":58,
+             "profession_id":1,
+             "name":"Continuit\u00e0 assistenziale",
+             "code":59
+          },
+          {
+             "id":59,
+             "profession_id":1,
+             "name":"Pediatria (pediatri di libera scelta)",
+             "code":60
+          },
+          {
+             "id":93,
+             "profession_id":1,
+             "name":"Scienza dell'alimentazione e dietetica",
+             "code":106
+          },
+          {
+             "id":94,
+             "profession_id":1,
+             "name":"Direzione medica di presidio ospedaliero",
+             "code":107
+          },
+          {
+             "id":95,
+             "profession_id":1,
+             "name":"Organizzazione dei servizi sanitari di base",
+             "code":108
+          },
+          {
+             "id":96,
+             "profession_id":1,
+             "name":"Audiologia e foniatria",
+             "code":111
+          },
+          {
+             "id":100,
+             "profession_id":1,
+             "name":"Privo di specializzazione",
+             "code":113
+          },
+          {
+             "id":101,
+             "profession_id":1,
+             "name":"Cure palliative",
+             "code":114
+          },
+          {
+             "id":102,
+             "profession_id":1,
+             "name":"Epidemiologia",
+             "code":115
+          },
+          {
+             "id":103,
+             "profession_id":1,
+             "name":"Medicina di comunit\u00e0",
+             "code":116
+          },
+          {
+             "id":104,
+             "profession_id":1,
+             "name":"Medicina subacquea e iperbarica",
+             "code":117
+          }
+       ]
+    },
+    {
+       "id":2,
+       "name":"Odontoiatra",
+       "code":2,
+       "specializations":[
+          {
+             "id":63,
+             "profession_id":2,
+             "name":"Odontoiatria",
+             "code":64
+          }
+       ]
+    },
+    {
+       "id":3,
+       "name":"Farmacista",
+       "code":3,
+       "specializations":[
+          {
+             "id":64,
+             "profession_id":3,
+             "name":"Farmacia ospedaliera",
+             "code":66
+          },
+          {
+             "id":65,
+             "profession_id":3,
+             "name":"Farmacia territoriale",
+             "code":67
+          }
+       ]
+    },
+    {
+       "id":4,
+       "name":"Veterinario",
+       "code":4,
+       "specializations":[
+          {
+             "id":60,
+             "profession_id":4,
+             "name":"Igiene degli allevamenti e delle produzioni zootecniche",
+             "code":61
+          },
+          {
+             "id":61,
+             "profession_id":4,
+             "name":"Igiene prod., trasf., commercial., conserv. E tras. Alimenti di origine animale e derivati",
+             "code":62
+          },
+          {
+             "id":62,
+             "profession_id":4,
+             "name":"Sanit\u00e0 animale",
+             "code":63
+          }
+       ]
+    },
+    {
+       "id":5,
+       "name":"Psicologo",
+       "code":5,
+       "specializations":[
+          {
+             "id":68,
+             "profession_id":5,
+             "name":"Psicoterapia",
+             "code":77
+          },
+          {
+             "id":69,
+             "profession_id":5,
+             "name":"Psicologia",
+             "code":78
+          }
+       ]
+    },
+    {
+       "id":6,
+       "name":"Biologo",
+       "code":6,
+       "specializations":[
+          {
+             "id":66,
+             "profession_id":6,
+             "name":"Biologo",
+             "code":68
+          }
+       ]
+    },
+    {
+       "id":7,
+       "name":"Chimico",
+       "code":7,
+       "specializations":[
+          {
+             "id":67,
+             "profession_id":7,
+             "name":"Chimica analitica",
+             "code":76
+          }
+       ]
+    },
+    {
+       "id":8,
+       "name":"Fisico",
+       "code":8,
+       "specializations":[
+          {
+             "id":70,
+             "profession_id":8,
+             "name":"Fisica sanitaria",
+             "code":79
+          }
+       ]
+    },
+    {
+       "id":9,
+       "name":"Assistente sanitario",
+       "code":9,
+       "specializations":[
+          {
+             "id":71,
+             "profession_id":9,
+             "name":"Assistente sanitario",
+             "code":80
+          }
+       ]
+    },
+    {
+       "id":10,
+       "name":"Dietista",
+       "code":10,
+       "specializations":[
+          {
+             "id":72,
+             "profession_id":10,
+             "name":"Dietista",
+             "code":81
+          }
+       ]
+    },
+    {
+       "id":11,
+       "name":"Educatore professionale",
+       "code":11,
+       "specializations":[
+          {
+             "id":74,
+             "profession_id":11,
+             "name":"Educatore professionale",
+             "code":83
+          }
+       ]
+    },
+    {
+       "id":12,
+       "name":"Fisioterapista",
+       "code":12,
+       "specializations":[
+          {
+             "id":73,
+             "profession_id":12,
+             "name":"Fisioterapista",
+             "code":82
+          }
+       ]
+    },
+    {
+       "id":13,
+       "name":"Igienista dentale",
+       "code":13,
+       "specializations":[
+          {
+             "id":75,
+             "profession_id":13,
+             "name":"Igienista dentale",
+             "code":84
+          }
+       ]
+    },
+    {
+       "id":14,
+       "name":"Infermiere",
+       "code":14,
+       "specializations":[
+          {
+             "id":76,
+             "profession_id":14,
+             "name":"Infermiere",
+             "code":85
+          }
+       ]
+    },
+    {
+       "id":15,
+       "name":"Infermiere pediatrico",
+       "code":15,
+       "specializations":[
+          {
+             "id":77,
+             "profession_id":15,
+             "name":"Infermiere pediatrico",
+             "code":86
+          }
+       ]
+    },
+    {
+       "id":16,
+       "name":"Logopedista",
+       "code":16,
+       "specializations":[
+          {
+             "id":78,
+             "profession_id":16,
+             "name":"Logopedista",
+             "code":87
+          }
+       ]
+    },
+    {
+       "id":17,
+       "name":"Ortottista\/assistente di oftalmologia",
+       "code":17,
+       "specializations":[
+          {
+             "id":79,
+             "profession_id":17,
+             "name":"Ortottista\/assistente di oftalmologia",
+             "code":88
+          }
+       ]
+    },
+    {
+       "id":18,
+       "name":"Ostetrica\/o",
+       "code":18,
+       "specializations":[
+          {
+             "id":80,
+             "profession_id":18,
+             "name":"Ostetrica\/o",
+             "code":89
+          }
+       ]
+    },
+    {
+       "id":19,
+       "name":"Podologo",
+       "code":19,
+       "specializations":[
+          {
+             "id":81,
+             "profession_id":19,
+             "name":"Podologo",
+             "code":90
+          }
+       ]
+    },
+    {
+       "id":20,
+       "name":"Tecnico audiometrista",
+       "code":20,
+       "specializations":[
+          {
+             "id":86,
+             "profession_id":20,
+             "name":"Tecnico audiometrista",
+             "code":95
+          }
+       ]
+    },
+    {
+       "id":21,
+       "name":"Tecnico audioprotesista",
+       "code":21,
+       "specializations":[
+          {
+             "id":87,
+             "profession_id":21,
+             "name":"Tecnico audioprotesista",
+             "code":96
+          }
+       ]
+    },
+    {
+       "id":22,
+       "name":"Tecnico della fisiopatologia cardiocircolatoria e perfusione cardiovascolare",
+       "code":22,
+       "specializations":[
+          {
+             "id":83,
+             "profession_id":22,
+             "name":"Tecnico della fisiopatologia cardiocircolatoria e perfusione cardiovascolare",
+             "code":92
+          }
+       ]
+    },
+    {
+       "id":23,
+       "name":"Tecnico della prevenzione nell'ambiente e nei luoghi di lavoro",
+       "code":23,
+       "specializations":[
+          {
+             "id":92,
+             "profession_id":23,
+             "name":"Tecnico della prevenzione nell'ambiente e nei luoghi di lavoro",
+             "code":105
+          }
+       ]
+    },
+    {
+       "id":24,
+       "name":"Tecnico della riabilitazione psichiatrica",
+       "code":24,
+       "specializations":[
+          {
+             "id":82,
+             "profession_id":24,
+             "name":"Tecnico della riabilitazione psichiatrica",
+             "code":91
+          }
+       ]
+    },
+    {
+       "id":25,
+       "name":"Tecnico di neurofisiopatologia",
+       "code":25,
+       "specializations":[
+          {
+             "id":88,
+             "profession_id":25,
+             "name":"Tecnico di neurofisiopatologia",
+             "code":98
+          }
+       ]
+    },
+    {
+       "id":26,
+       "name":"Tecnico ortopedico",
+       "code":26,
+       "specializations":[
+          {
+             "id":89,
+             "profession_id":26,
+             "name":"Tecnico ortopedico",
+             "code":99
+          }
+       ]
+    },
+    {
+       "id":27,
+       "name":"Tecnico sanitario di radiologia medica",
+       "code":27,
+       "specializations":[
+          {
+             "id":85,
+             "profession_id":27,
+             "name":"Tecnico sanitario di radiologia medica",
+             "code":94
+          }
+       ]
+    },
+    {
+       "id":28,
+       "name":"Tecnico sanitario laboratorio biomedico",
+       "code":28,
+       "specializations":[
+          {
+             "id":84,
+             "profession_id":28,
+             "name":"Tecnico sanitario laboratorio biomedico",
+             "code":93
+          }
+       ]
+    },
+    {
+       "id":29,
+       "name":"Terapista della neuro e psicomotricit\u00e0 dell'et\u00e0 evolutiva",
+       "code":29,
+       "specializations":[
+          {
+             "id":90,
+             "profession_id":29,
+             "name":"Terapista della neuro e psicomotricit\u00e0 dell'et\u00e0 evolutiva",
+             "code":101
+          }
+       ]
+    },
+    {
+       "id":30,
+       "name":"Terapista occupazionale",
+       "code":30,
+       "specializations":[
+          {
+             "id":91,
+             "profession_id":30,
+             "name":"Terapista occupazionale",
+             "code":101
+          }
+       ]
+    }
+ ]

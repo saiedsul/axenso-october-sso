@@ -1,0 +1,15 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+export:
+    title: Export users
+    modelClass: Axenso\Sso\Models\UserExport
+    list: $/axenso/sso/models/user/columns.yaml
+    filename: users.csv
+
+defaultFormatOptions:
+    delimiter: ';'
+    enclosure: '"'
+    escape: '\'
+    encoding: 'utf-8'
+

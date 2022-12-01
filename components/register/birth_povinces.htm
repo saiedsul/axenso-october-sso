@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-between align-items-center">
+    <div><span>Provincia di nascita</span><span class="asterisco">*</span></div>
+    {% partial 'sso/general/tooltip' msg= 'ok' %}
+</div>
+<div class="dropdown"  >
+    <select name="birth_province" data-request="{{__SELF__}}::onProvinceSelect" class=" form-select btn dropdown-toggle text-start" required>
+        <option value=""></option>
+        {% for key,province in provinces %}
+        <option value="{{  key }}">{{ province }}</option>
+    {%endfor%}
+    </select>
+</div>

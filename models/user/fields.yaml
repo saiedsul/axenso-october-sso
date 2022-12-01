@@ -1,0 +1,15 @@
+tabs:
+    fields:
+        enabled:
+            label: Enabled
+            span: auto
+            type: switch
+            tab: 'Tab 1'
+        boarded:
+            label: Boarded
+            'on': 'YES'
+            'off': 'NO'
+            span: auto
+            type: switch
+            comment: 'Disable to Prompt Welcome Boarding Screen on the next User login'
+            tab: 'Tab 1'
