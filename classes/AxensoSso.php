@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 use October\Rain\Exception\ApplicationException;
 
 
-class AxenSso {
+class AxensoSso {
 
     protected $grant_type;
     protected $client_secret;

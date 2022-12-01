@@ -2,11 +2,13 @@
 
 namespace Axen\Sso\Classes;
 
+use Axen\Sso\Classes\AxensoSso;
+
 
 class Helpers
 {
     public function getXgateConfig() {
-        $sso = new AxenSso();
+        $sso = new AxensoSso();
         $config = [];
         foreach ($sso->getGlobalConfig()->object() as $key=>$cfg) {
             $config[$key] = (array)$cfg;
@@ -15,7 +17,7 @@ class Helpers
     }
     public function getProfissions()
     {
-        $sso = new AxenSso();
+        $sso = new AxensoSso();
         $profs = [];
         foreach ($sso->getProfessions()->object() as $prof) {
             $profs[] = (array)$prof;
@@ -146,7 +148,7 @@ class Helpers
 
     public function getCities($province)
     {
-        $sso = new AxenSso();
+        $sso = new AxensoSso();
         $cities = [];
         foreach ($sso->getCities($province)->object() as $city) {
             $cities[] = (array)$city;
@@ -156,7 +158,7 @@ class Helpers
 
     public function getCountries()
     {
-        $sso = new AxenSso();
+        $sso = new AxensoSso();
         $countries = [];
         foreach ($sso->getCountries()->object() as $country) {
             $countries[] = (array)$country;
