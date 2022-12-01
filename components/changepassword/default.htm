@@ -1,0 +1,33 @@
+<section class="registration-form">
+    <form  data-request="{{__SELF__}}::onChange"  data-request-success="javascript:;" id="PasswordResetForm" data-request-validate>
+        <h1 class="mb-4">Modifica password </h1>
+        <div class="user-login" style="display: block;" >
+            <div class="row form-group justify-content-md-center">
+                <input class="form-control" value="{{ __SELF__.code }}" type="hidden" name="code" />
+              <div class=" col-md-6 col-sm-12 text-left ">
+                <div class="form-input">
+                  <label>Passowrd</label>
+                  <input class="form-control" type="password" name="password" />
+                </div>
+              </div>
+              <div class=" col-md-6 col-sm-12 text-left ">
+                <div class="form-input">
+                  <label>Conferma password</label>
+                  <input class="form-control" type="password" name="password_confirmation" />
+                </div>
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-12 text-center mt-4">
+                    <button type="submit" class="btn btn-primary">Modifica password<i class="fa fa-arrow-right"></i></button>
+                </div>
+              </div>
+
+          </div>
+
+    </div>
+    <div class="col-12 text-center" id="errors">
+
+    </div>
+        </form>
+</section>

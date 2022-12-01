@@ -1,0 +1,31 @@
+
+   <section class="registration-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <form data-request="{{__SELF__}}::onReset"  data-request-success="javascript:;" id="resetForm" data-request-validate>
+                    <h1 class="mb-4">{{ 'Recupera password'|_ }}</h1>
+                    <div class="user-login" style="display: block;" >
+                        <div class="row form-group justify-content-md-center">
+                          <div class="col-md-6 col-sm-12 text-left ">
+                            <div class="form-input">
+                              <label>Email</label>
+                              <input class="form-control" type="email" name="email" required />
+                            </div>
+                          </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn btn-primary">{{ 'Recupera password'|_ }} <i class="fa fa-arrow-right"></i></button>
+                            </div>
+                          </div>
+                      </div>
+                </div>
+                </form>
+                  <div id="errors">
+
+                 </div>
+            </div>
+        </div>
+    </div>
+</section>

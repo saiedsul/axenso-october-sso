@@ -1,0 +1,44 @@
+<div id="maincontainer">
+<form data-request="{{__SELF__}}::onRegister"  data-request-success="javascript:;" id="regForm" data-request-validate>
+    <div class="row">
+        <div class="col-6 mb-2"><input class="form-control" type="text" name="first_name" placeholder="{{ 'Nome'|_ }}"></div>
+        <div class="col-6 mb-2"><input class="form-control" type="text" name="last_name" placeholder="{{ 'Cognome'|_ }}"></div>
+        <div class="col-12 mb-2"><input class="form-control" type="email" value="{{ preset_email }}" name="email" placeholder="{{ 'Email'|_ }}"></div>
+        <div class="col-12 mb-2"><input class="form-control" type="email" value="{{ preset_email }}" name="email_confirmation" placeholder="{{ 'Conferma email'|_ }}"></div>
+        <div class="col-6 mb-2"><input class="form-control" type="password" name="password" placeholder="{{ 'Password'|_ }}"></div>
+        <div class="col-6 mb-2"><input class="form-control" type="password" name="password_confirmation" placeholder="{{ 'Conferma Password'|_ }}"></div>
+        <div class="col-md-12 mb-2">
+            <select required data-request="{{__SELF__}}::onProfSelect" class=" form-control"  name="profession" id="professions">
+                <optgroup label="Ordine Professionale">
+                    <option value="">{{ 'Select professione'|_ }}</option>
+                {% for profession in __SELF__.profissions %}
+                <option value="{{ profession['name'] }}">{{ profession['name'] }}</option>
+                {%endfor%}
+                </optgroup>
+            </select></div>
+        <div class="col-md-12 mb-2 " id="spcsdiv">
+
+        </div>
+        <div class="col-md-12 mb-4"><input class="form-control bg-blue-light" type="text" name="board_number" placeholder="Numero Iscrizione all'ordine"></div>
+        <div class="col-md-12"><button class="btn btn-primary btn-lg d-block w-100 btn-orange" type="submit"><strong>{{ 'Registrati'|_ }}</strong></button></div>
+        <div class="col-md-12 mt-3">
+            <p class=" small">{{ 'Leggi l’informativa sulla privacy'|_ }}</p>
+            <div class="form-check small ">
+                <label class="form-check-label mb-2 small txt-blue-light">
+                    <input class="form-check-input" type="checkbox" name="sso_privacy_consent"  checked required>{{' Esprimo il mio consenso all’attività di autenticazione e registrazione centralizzata per accedere ai servizi digitali di axenso (XGate) *'|_}}</label>
+                </div>
+            <div class="form-check small ">
+                <label class="form-check-label mb-2 small txt-blue-light">
+                    <input class="form-check-input" name="data_marketing_consent" type="checkbox" checked >{{ 'Esprimo il mio consenso all’invio da parte di axenso di comunicazioni aventi contenuto informativo, medico-scientifico o divulgativo utilizzando l’indirizzo di posta elettronica fornito in fase di registrazione'|_ }}</label>
+                </div>
+            <div class="form-check small ">
+                <label class="form-check-label small txt-blue-light">
+                    <input class="form-check-input" name="data_transfer_consent" type="checkbox" checked >{{ 'Esprimo il mio consenso alla cessione dei miei dati personali a terzi operanti nei settori merceologici indicati nell’informativa per le finalità, nei limiti e secondo le modalità espressi nell’informativa medesima'|_ }}</label>
+                </div>
+    </div>
+    </div>
+</form>
+<div class="col-12 text-center" id="errors">
+
+</div>
+</div>

@@ -1,0 +1,26 @@
+{
+    "name": "axenso/october-sso",
+    "type": "october-plugin",
+    "description": "Add SSO to Octobercms",
+    "keywords": ["axenso", "octobercms", "sso"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexey Bobkov",
+            "email": "saied.suliman@axenso.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0|^8.0",
+        "composer/installers": "~1.0",
+        "rainlab/builder-plugin": "^1.2",
+        "guzzlehttp/guzzle": "^7.5",
+        "rainlab/translate-plugin": "^2.1",
+        "robertogallea/laravel-codicefiscale": "^1.12",
+        "prismify/bootstrap-starter-kit-theme": "^1.0"
+    },
+    "require-dev": {
+      "phpunit/phpunit": "~4.0"
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,19 @@
+
+
+{% if sub_spcs is not empty %}
+    <div class="d-flex justify-content-between align-items-center">
+        <div><span>Specializzazione</span>
+            {% if sub_spcs is empty %}  {%else%} <span class="asterisco" >*</span> {%endif%}
+        </div>
+        {% partial 'sso/general/tooltip' msg= 'ok' %}
+    </div>
+    <div class="dropdown ">
+        <select class="form-select btn dropdown-toggle text-start" name="sub_specialization" id="sub_specialization" {% if sub_spcs is empty %} disabled required="false" {%else%} required {%endif%}>
+            <optgroup label="Specializzazione">
+                {% for sub in sub_spcs %}
+                <option value="{{ sub['name'] }}">{{ sub['name'] }}</option>
+                {%endfor%}
+        </optgroup>
+        </select>
+    </div>
+    {%endif%}

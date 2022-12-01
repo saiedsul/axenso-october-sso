@@ -1,0 +1,21 @@
+<section class="registration-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <form data-request="{{__SELF__}}::onLogin"  data-request-success="javascript:;" id="loginForm" data-request-validate>
+                    <div class="row">
+                        <div class="col-12 mb-2"><input class="form-control" type="email" name="email" placeholder="Email"></div>
+                        <div class="col mb-2"><input class="form-control" type="password" name="password" placeholder="Password"></div>
+                        <div class="col-md-12"><button class="btn btn-primary btn-lg d-block w-100 btn-orange" type="submit"><strong>Accedi</strong></button></div>
+                        <div class="col-md-12 mt-3">
+                            <p class="text-center "><a href="/recupera-password" >Recupera password</a></p>
+                        </div>
+                    </div>
+                  </form>
+                  <div id="errors">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

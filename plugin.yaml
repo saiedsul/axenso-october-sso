@@ -1,0 +1,20 @@
+plugin:
+    name: 'axenso.sso::lang.plugin.name'
+    description: 'axenso.sso::lang.plugin.description'
+    author: Axenso
+    icon: oc-icon-user
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Users
+        url: axenso/sso/user
+        icon: icon-life-ring
+        sideMenu:
+            shouser-menu-item:
+                label: 'List Users'
+                url: axenso/sso/user
+                icon: icon-sitemap
+            userlog:
+                label: 'User Log'
+                url: axenso/sso/userlog
+                icon: icon-clock-o

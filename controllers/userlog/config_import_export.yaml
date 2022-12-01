@@ -1,0 +1,16 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+export:
+    title: Export users log
+    modelClass: Axenso\Sso\Models\UserLogExport
+    list: $/axenso/sso/models/log/columns.yaml
+    form: $/axenso/sso/models/log/exportfields.yaml
+    filename: users_log.csv
+
+defaultFormatOptions:
+    delimiter: ';'
+    enclosure: '"'
+    escape: '\'
+    encoding: 'utf-8'
+

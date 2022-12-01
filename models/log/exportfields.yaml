@@ -1,0 +1,23 @@
+fields:
+    export_from:
+        label: From
+        type: datepicker
+        mode: datetime 
+    export_to:
+        label: TO
+        type: datepicker
+        mode: datetime 
+    action:
+        label: ACTION
+        type: balloon-selector
+        options:
+            LOGIN: LOGIN
+            REGISTER: REGISTER
+    profission:
+        label: Profission
+        type: dropdown
+    specs:
+        label: Specialization
+        type: dropdown
+        dependsOn:
+            - profission

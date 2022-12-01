@@ -1,0 +1,28 @@
+columns:
+    id:
+        label: ID
+        type: text
+    sso_id:
+        label: 'SSO ID'
+        type: text
+    first_name:
+        label: NAME
+        type: text
+    last_name:
+        label: 'LAST NAME'
+        type: text
+    email:
+        label: EMAIL
+        type: text
+    profession:
+        label: PROF
+        type: text
+    specialization:
+        label: SPEC
+        type: text
+    enabled:
+        label: Status
+        type: partial
+        searchable: true
+        sortable: true
+        path    : ~/plugins/axenso/sso/models/user/_active_column.htm

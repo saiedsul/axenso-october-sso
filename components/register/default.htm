@@ -1,0 +1,41 @@
+<section class="registration-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <form data-request="{{__SELF__}}::onRegister" data-request-success="javascript:;" id="regForm"
+                    data-request-validate>
+                    <div class="tab-registration">
+                        <div class="tab-navigation">
+                            {% if __SELF__.formtype == 'full' %}
+                            {% partial 'sso/forms/registre_full_steps/navigation' %}
+                            {% else %}
+                            {% partial 'sso/forms/registre_light_steps/navigation' %}
+                            {% endif %}
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" role="tabpanel" id="tab-1"
+                                aria-labelledby="first-tab">
+                                {% partial 'sso/forms/registre_full_steps/step_one' %}
+                            </div>
+                            {% if __SELF__.formtype == 'full' %}
+                            <div class="tab-pane fade" role="tabpanel" id="tab-2" aria-labelledby="second-tab">
+                                {% partial 'sso/forms/registre_full_steps/step_two' %}
+                            </div>
+                            {% endif %}
+                            <div class="tab-pane fade" role="tabpanel" id="tab-3" aria-labelledby="third-tab">
+                                {% partial 'sso/forms/registre_full_steps/step_three' %}
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div id="errors" class="mt-5">
+
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</section>

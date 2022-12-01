@@ -1,0 +1,23 @@
+columns:
+    id:
+        label: id
+        type: number
+    action_type:
+        label: Action
+        type: text
+    action_time:
+        label: When
+        type: text
+        sortable: true
+    user_name:
+        label: user_name
+        type: text
+        searchable: true
+    user_lastname:
+        label: user_lastname
+        type: text
+        searchable: true
+    email:
+        label: email
+        type: text
+        searchable: true
