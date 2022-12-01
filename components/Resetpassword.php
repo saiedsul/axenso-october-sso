@@ -1,8 +1,8 @@
-<?php namespace Axenso\Sso\Components;
+<?php namespace Axen\Sso\Components;
 
-use Axenso\Sso\Classes\Sso;
+use Axen\Sso\Classes\Sso;
 use Cms\Classes\ComponentBase;
-use Axenso\Sso\Classes\AxensoSso;
+use Axen\Sso\Classes\AxenSso;
 use October\Rain\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -36,7 +36,7 @@ class Resetpassword extends ComponentBase
             ])];
         }
          else {
-            $sso = new AxensoSso();
+            $sso = new AxenSso();
             $response = $sso->resetPasswordRequest(Input::get('email'));
             if ($response->getStatusCode() == 201) {
                 return Redirect::to('/recupera-password/success');

@@ -1,8 +1,8 @@
-<?php namespace Axenso\Sso\Components;
+<?php namespace Axen\Sso\Components;
 
-use Axenso\Sso\Classes\AxensoSso;
-use Axenso\Sso\Classes\Sso;
-use Axenso\Sso\Models\User;
+use Axen\Sso\Classes\AxenSso;
+use Axen\Sso\Classes\Sso;
+use Axen\Sso\Models\User;
 use Cms\Classes\ComponentBase;
 use October\Rain\Support\Facades\Input;
 use Illuminate\Support\Facades\Cookie;
@@ -51,7 +51,7 @@ class Consent extends ComponentBase
         }
 
 
-        $sso = new AxensoSso();
+        $sso = new AxenSso();
         $response= $sso->consent($user->sso_id);
         if ($response->getStatusCode() == 200) {
             $user->privacy_consent = 1;

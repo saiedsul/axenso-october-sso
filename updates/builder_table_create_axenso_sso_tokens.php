@@ -1,13 +1,13 @@
-<?php namespace Axenso\Sso\Updates;
+<?php namespace Axen\Sso\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateAxensoSsoTokens extends Migration
+class BuilderTableCreateAxenSsoTokens extends Migration
 {
     public function up()
     {
-        Schema::create('axenso_sso_tokens', function($table)
+        Schema::create('axen_sso_tokens', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
@@ -22,6 +22,6 @@ class BuilderTableCreateAxensoSsoTokens extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('axenso_sso_tokens');
+        Schema::dropIfExists('axen_sso_tokens');
     }
 }

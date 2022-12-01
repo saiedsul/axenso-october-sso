@@ -1,11 +1,11 @@
-<?php namespace Axenso\Sso\Components;
+<?php namespace Axen\Sso\Components;
 
-use Axenso\Sso\Models\User;
+use Axen\Sso\Models\User;
 use RainLab\Blog\Models\Post;
 use Cms\Classes\ComponentBase;
-use Axenso\Sso\Models\UserList;
+use Axen\Sso\Models\UserList;
 use Illuminate\Support\Facades\Log;
-use Axenso\Sso\Models\PreferenceList;
+use Axen\Sso\Models\PreferenceList;
 use Illuminate\Support\Facades\Cookie;
 use October\Rain\Support\Facades\Input;
 use GinoPane\BlogTaxonomy\Models\Series;

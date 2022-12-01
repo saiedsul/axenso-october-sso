@@ -1,6 +1,6 @@
-<?php namespace Axenso\Sso\Classes;
+<?php namespace Axen\Sso\Classes;
 
-use Axenso\Sso\Models\Token;
+use Axen\Sso\Models\Token;
 
 class Sso {
     protected $token;

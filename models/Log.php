@@ -1,7 +1,7 @@
-<?php namespace Axenso\Sso\Models;
+<?php namespace Axen\Sso\Models;
 
 use Model;
-use Axenso\Sso\Models\User;
+use Axen\Sso\Models\User;
 
 /**
  * Model
@@ -25,7 +25,7 @@ class Log extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'axenso_sso_logs';
+    public $table = 'axen_sso_logs';
 
     /**
      * @var array Validation rules

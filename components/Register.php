@@ -1,17 +1,17 @@
-<?php namespace Axenso\Sso\Components;
+<?php namespace Axen\Sso\Components;
 
 use PDO;
 use Carbon\Carbon;
-use Axenso\Sso\Classes\Sso;
-use Axenso\Sso\Models\User;
+use Axen\Sso\Classes\Sso;
+use Axen\Sso\Models\User;
 use Cms\Classes\ComponentBase;
-use Axenso\Sso\Classes\Helpers;
-use Axenso\Sso\Models\Settings;
-use Axenso\Sso\Classes\AxensoSso;
+use Axen\Sso\Classes\Helpers;
+use Axen\Sso\Models\Settings;
+use Axen\Sso\Classes\AxenSso;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
-use Axenso\Sso\Models\Log as Axensolog;
+use Axen\Sso\Models\Log as Axenlog;
 use October\Rain\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -120,7 +120,7 @@ class Register extends ComponentBase
                     'password' => Input::get('password'),
                     'password_confirmation' => Input::get('password_confirmation'),
             ];
-            $sso = new AxensoSso();
+            $sso = new AxenSso();
             $response = $sso->register($req_user['email'],$req_user['password'],$req_user['password_confirmation'],$req_user['profile']);
             $responseStatusCode = $response->getStatusCode();
             $responseObject = $response->object();
@@ -135,9 +135,9 @@ class Register extends ComponentBase
                     'profile' => $responseObject->profile,
                     'enabled' => $responseObject->active,
                 ]);
-                @Axensolog::create([
+                @Axenlog::create([
                     'email' => $dbUser->email,
-                    'action_type' => Axensolog::REG,
+                    'action_type' => Axenlog::REG,
                     'action_time' => Carbon::now()->format('Y-m-d H:i:s'),
                     'user_name' => $dbUser->profile['first_name'],
                     'user_lastname' => $dbUser->profile['last_name'],
@@ -148,7 +148,7 @@ class Register extends ComponentBase
             }
             else if ($responseStatusCode == 500) {
                 return ['#errors'=> $this->renderPartial('Register::errors',[
-                    'errorMsgs' => [[trans('axenso.october-sso::lang.messages.generic')]]
+                    'errorMsgs' => [[trans('axen.october-sso::lang.messages.generic')]]
                     ])];
             }
             else {

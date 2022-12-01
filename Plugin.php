@@ -1,6 +1,6 @@
-<?php namespace Axenso\Sso;
+<?php namespace Axen\Sso;
 
-use Axenso\Sso\Classes\AuthMiddleware;
+use Axen\Sso\Classes\AuthMiddleware;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
@@ -25,30 +25,30 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name' => 'Axenso SSO V2',
+            'name' => 'Axen SSO V2',
             'description' => 'Provides SSO functionality for users.',
-            'author' => 'Axenso S.R.L',
+            'author' => 'Axen S.R.L',
             'icon' => 'icon-leaf'
         ];
     }
     public function registerComponents()
     {
         return [
-            'Axenso\Sso\Components\Login' => 'Login',
-            'Axenso\Sso\Components\Register' => 'Register',
-            'Axenso\Sso\Components\Activate' => 'Activate',
-            'Axenso\Sso\Components\Protect' => 'Protect',
-            'Axenso\Sso\Components\Consent' => 'Consent',
-            'Axenso\Sso\Components\Logout' => 'Logout',
-            'Axenso\Sso\Components\Resetpassword' => 'Resetpassword',
-            'Axenso\Sso\Components\Changepassword' => 'Changepassword',
-            'Axenso\Sso\Components\Registerstatus' => 'Registerstatus',
-            'Axenso\Sso\Components\Profile' => 'Profile',
+            'Axen\Sso\Components\Login' => 'Login',
+            'Axen\Sso\Components\Register' => 'Register',
+            'Axen\Sso\Components\Activate' => 'Activate',
+            'Axen\Sso\Components\Protect' => 'Protect',
+            'Axen\Sso\Components\Consent' => 'Consent',
+            'Axen\Sso\Components\Logout' => 'Logout',
+            'Axen\Sso\Components\Resetpassword' => 'Resetpassword',
+            'Axen\Sso\Components\Changepassword' => 'Changepassword',
+            'Axen\Sso\Components\Registerstatus' => 'Registerstatus',
+            'Axen\Sso\Components\Profile' => 'Profile',
 
             // Pin blog item
-            'Axenso\Sso\Components\Addtocontentlist' => 'Addtocontentlist',
-            'Axenso\Sso\Components\Prefrencelist' => 'Prefrencelist',
-            'Axenso\Sso\Components\Preferedposts' => 'Preferedposts',
+            'Axen\Sso\Components\Addtocontentlist' => 'Addtocontentlist',
+            'Axen\Sso\Components\Prefrencelist' => 'Prefrencelist',
+            'Axen\Sso\Components\Preferedposts' => 'Preferedposts',
 
 
         ];
@@ -58,12 +58,12 @@ class Plugin extends PluginBase
     {
         return [
             'settings' => [
-                'label'       => 'Axenso SSO',
+                'label'       => 'Axen SSO',
                 'icon'        => 'icon-leaf',
-                'description' => 'Configure Axenso SSO.',
-                'class'       => 'Axenso\Sso\Models\Settings',
+                'description' => 'Configure Axen SSO.',
+                'class'       => 'Axen\Sso\Models\Settings',
                 'order'       => 600,
-               // 'permissions' => ['axenso.sendinblue.configure']
+               // 'permissions' => ['axen.sendinblue.configure']
             ]
         ];
     }

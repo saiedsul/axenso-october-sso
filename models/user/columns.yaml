@@ -25,4 +25,4 @@ columns:
         type: partial
         searchable: true
         sortable: true
-        path    : ~/plugins/axenso/sso/models/user/_active_column.htm
+        path    : ~/plugins/axen/sso/models/user/_active_column.htm

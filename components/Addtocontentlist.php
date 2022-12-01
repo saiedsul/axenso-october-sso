@@ -1,8 +1,8 @@
-<?php namespace Axenso\Sso\Components;
+<?php namespace Axen\Sso\Components;
 
 use AnandPatel\SeoExtension\Models\BlogPost;
-use Axenso\Sso\Models\User;
-use Axenso\Sso\Models\UserList;
+use Axen\Sso\Models\User;
+use Axen\Sso\Models\UserList;
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Cookie;

@@ -1,7 +1,7 @@
-<?php namespace Axenso\Sso\Components;
+<?php namespace Axen\Sso\Components;
 
-use Axenso\Sso\Classes\AxensoSso;
-use Axenso\Sso\Classes\Sso;
+use Axen\Sso\Classes\AxenSso;
+use Axen\Sso\Classes\Sso;
 use Cms\Classes\ComponentBase;
 use October\Rain\Support\Facades\Input;
 
@@ -22,7 +22,7 @@ class Activate extends ComponentBase
         if ($this->code == null) {
             return $this->renderPartial('@errors.htm');
         }
-        $sso = new AxensoSso();
+        $sso = new AxenSso();
         $response = $sso->verifyEmail($this->code);
         if ($response->getStatusCode() == 201) {
             return $this->renderPartial('@success.htm');

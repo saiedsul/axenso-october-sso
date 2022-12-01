@@ -1,13 +1,13 @@
-<?php namespace Axenso\Sso\Classes;
+<?php namespace Axen\Sso\Classes;
 
 use Carbon\Carbon;
-use Axenso\Sso\Models\Token;
-use Axenso\Sso\Models\Settings;
+use Axen\Sso\Models\Token;
+use Axen\Sso\Models\Settings;
 use Illuminate\Support\Facades\Http;
 use October\Rain\Exception\ApplicationException;
 
 
-class AxensoSso {
+class AxenSso {
 
     protected $grant_type;
     protected $client_secret;

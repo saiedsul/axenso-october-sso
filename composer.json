@@ -1,13 +1,13 @@
 {
-    "name": "axenso/october-sso",
+    "name": "axen/october-sso",
     "type": "october-plugin",
     "description": "Add SSO to Octobercms",
-    "keywords": ["axenso", "octobercms", "sso"],
+    "keywords": ["axen", "octobercms", "sso"],
     "license": "MIT",
     "authors": [
         {
             "name": "Alexey Bobkov",
-            "email": "saied.suliman@axenso.com"
+            "email": "saied.suliman@axen.com"
         }
     ],
     "require": {

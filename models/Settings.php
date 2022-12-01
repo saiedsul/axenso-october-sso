@@ -1,4 +1,4 @@
-<?php namespace Axenso\Sso\Models;
+<?php namespace Axen\Sso\Models;
 
 use October\Rain\Database\Model;
 
@@ -6,7 +6,7 @@ use October\Rain\Database\Model;
  * SSO settings model
  *
  * @package system
- * @author XX <october@axenso.com>
+ * @author XX <october@axen.com>
  *
  */
 class Settings extends Model
@@ -15,7 +15,7 @@ class Settings extends Model
 
     public $implement = ['System.Behaviors.SettingsModel'];
 
-    public $settingsCode = 'axenso_sso_settings';
+    public $settingsCode = 'axen_sso_settings';
 
     public $settingsFields = 'fields.yaml';
 

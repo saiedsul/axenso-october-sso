@@ -1,4 +1,4 @@
-<?php namespace Axenso\Sso\Controllers;
+<?php namespace Axen\Sso\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
@@ -16,6 +16,6 @@ class UserLog extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('axenso.october-sso', 'main-menu-item', 'side-menu-item');
+        BackendMenu::setContext('axen.october-sso', 'main-menu-item', 'side-menu-item');
     }
 }

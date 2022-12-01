@@ -1,9 +1,9 @@
-<?php namespace Axenso\Sso\Models;
+<?php namespace Axen\Sso\Models;
 
 use Model;
-use Axenso\Sso\Models\Log;
-use Axenso\PostRate\Models\Rating;
-use Axenso\Sso\Models\PreferenceList;
+use Axen\Sso\Models\Log;
+use Axen\PostRate\Models\Rating;
+use Axen\Sso\Models\PreferenceList;
 
 
 /**
@@ -17,7 +17,7 @@ class User extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'axenso_sso_users';
+    public $table = 'axen_sso_users';
 
     /**
      * @var array Validation rules
@@ -60,7 +60,7 @@ class User extends Model
         'profile' => 'json',
     ];
     public $hasMany = [
-        'items' => \Axenso\Sso\Models\UserList::class,
+        'items' => \Axen\Sso\Models\UserList::class,
         'logs' =>   [Log::class, 'key' => 'sso_id','otherKey' => 'sso_id']
 
      //   'ratings' => Rating::class,

@@ -1,5 +1,5 @@
-list: $/axenso/sso/models/log/columns.yaml
-modelClass: Axenso\Sso\Models\Log
+list: $/axen/sso/models/log/columns.yaml
+modelClass: Axen\Sso\Models\Log
 title: UserLog
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true

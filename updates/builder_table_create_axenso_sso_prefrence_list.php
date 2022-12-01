@@ -1,13 +1,13 @@
-<?php namespace Axenso\Sso\Updates;
+<?php namespace Axen\Sso\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateAxensoSsoPrefrenceList extends Migration
+class BuilderTableCreateAxenSsoPrefrenceList extends Migration
 {
     public function up()
     {
-        Schema::create('axenso_sso_prefrence_list', function($table)
+        Schema::create('axen_sso_prefrence_list', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
@@ -20,6 +20,6 @@ class BuilderTableCreateAxensoSsoPrefrenceList extends Migration
     
     public function down()
     {
-        Schema::dropIfExists('axenso_sso_prefrence_list');
+        Schema::dropIfExists('axen_sso_prefrence_list');
     }
 }

@@ -15,7 +15,7 @@ fields:
         default: ''
         required: 1
         type: text
-        comment: 'https://sso.axensodev.com'
+        comment: 'https://sso.axendev.com'
     sso_app_name:
         label: 'SSO APP NAME'
         span: auto

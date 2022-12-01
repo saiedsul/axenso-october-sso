@@ -1,13 +1,13 @@
-<?php namespace Axenso\Sso\Updates;
+<?php namespace Axen\Sso\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableCreateAxensoSsoLogs extends Migration
+class BuilderTableCreateAxenSsoLogs extends Migration
 {
     public function up()
     {
-        Schema::create('axenso_sso_logs', function($table)
+        Schema::create('axen_sso_logs', function($table)
         {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id')->unsigned();
@@ -24,6 +24,6 @@ class BuilderTableCreateAxensoSsoLogs extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('axenso_sso_logs');
+        Schema::dropIfExists('axen_sso_logs');
     }
 }

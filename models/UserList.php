@@ -1,4 +1,4 @@
-<?php namespace Axenso\Sso\Models;
+<?php namespace Axen\Sso\Models;
 
 use Model;
 use RainLab\Blog\Models\Post;
@@ -21,7 +21,7 @@ class UserList extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'axenso_sso_content_list';
+    public $table = 'axen_sso_content_list';
 
     /**
      * @var array Validation rules

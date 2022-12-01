@@ -1,11 +1,11 @@
-<?php namespace Axenso\Sso\Models;
+<?php namespace Axen\Sso\Models;
 
 
 use Backend\Models\ExportModel;
 
 class UserExport extends ExportModel
 {
-    public $table = 'axenso_sso_users';
+    public $table = 'axen_sso_users';
 
     public function exportData($columns, $sessionKey = null)
     {

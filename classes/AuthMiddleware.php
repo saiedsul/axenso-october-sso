@@ -1,4 +1,4 @@
-<?php namespace Axenso\Sso\Classes;
+<?php namespace Axen\Sso\Classes;
 
 use Closure;
 use Illuminate\Http\Request;

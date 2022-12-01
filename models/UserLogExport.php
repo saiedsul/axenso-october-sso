@@ -1,13 +1,13 @@
-<?php namespace Axenso\Sso\Models;
+<?php namespace Axen\Sso\Models;
 
 
-use Axenso\Sso\Models\Log;
+use Axen\Sso\Models\Log;
 use Backend\Models\ExportModel;
 use Illuminate\Support\Facades\Log as PSRLOG;
 
 class UserLogExport extends ExportModel
 {
-    public $table = 'axenso_sso_logs';
+    public $table = 'axen_sso_logs';
     protected $fillable = ['export_from','export_to','action','profission','specs'];
     public function exportData($columns, $sessionKey = null)
     {

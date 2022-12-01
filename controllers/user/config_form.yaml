@@ -1,10 +1,10 @@
 name: User
-form: $/axenso/sso/models/user/fields.yaml
-modelClass: Axenso\Sso\Models\User
-defaultRedirect: axenso/sso/user
+form: $/axen/sso/models/user/fields.yaml
+modelClass: Axen\Sso\Models\User
+defaultRedirect: axen/sso/user
 create:
-    redirect: 'axenso/sso/user/update/:id'
-    redirectClose: axenso/sso/user
+    redirect: 'axen/sso/user/update/:id'
+    redirectClose: axen/sso/user
 update:
-    redirect: axenso/sso/user
-    redirectClose: axenso/sso/user
+    redirect: axen/sso/user
+    redirectClose: axen/sso/user

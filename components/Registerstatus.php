@@ -1,6 +1,6 @@
-<?php namespace Axenso\Sso\Components;
+<?php namespace Axen\Sso\Components;
 
-use Axenso\Sso\Models\User;
+use Axen\Sso\Models\User;
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Redirect;

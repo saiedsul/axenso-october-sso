@@ -1,7 +1,7 @@
-<?php namespace Axenso\Sso\Components;
+<?php namespace Axen\Sso\Components;
 
-use Axenso\Sso\Classes\AxensoSso;
-use Axenso\Sso\Classes\Sso;
+use Axen\Sso\Classes\AxenSso;
+use Axen\Sso\Classes\Sso;
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Log;
 use October\Rain\Support\Facades\Input;
@@ -55,11 +55,11 @@ class Changepassword extends ComponentBase
         }
          else {
 
-            $sso = new AxensoSso();
+            $sso = new AxenSso();
             $response = $sso->resetPassword($this->code,Input::get('password'),Input::get('password_confirmation'));
             if ($response->getStatusCode() == 404) {
                 return ['#errors'=> $this->renderPartial('Changepassword::errors',[
-                    'errorMsgs' => [trans('axenso.october-sso::lang.messages.reset_password.invalid_link')]
+                    'errorMsgs' => [trans('axen.october-sso::lang.messages.reset_password.invalid_link')]
                     ])];
             }
             else if ($response->getStatusCode() == 201) {
@@ -67,7 +67,7 @@ class Changepassword extends ComponentBase
             }
             else {
                 return ['#errors'=> $this->renderPartial('Changepassword::errors',[
-                    'errorMsgs' => [trans('axenso.october-sso::lang.messages.generic')]
+                    'errorMsgs' => [trans('axen.october-sso::lang.messages.generic')]
                     ])];
                }
         }

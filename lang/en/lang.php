@@ -1,12 +1,12 @@
 <?php return [
     "plugin" => [
-        "name" => "Axenso SSO",
+        "name" => "Axen SSO",
         "description" => "Provides SSO functionality for users"
     ],
     "messages" => [
         "login" => [
-            "incorrect" => "Ops, le informazioni inserite non risultano corrette <br><br> La invitamo a riprovare oppure a contattarci all`indirizzo support@axenso.com",
-            "inactive" => "Il suo account non risulta essere attivo <br><br> La preghiamo di verificare nella sua casella di posta e di cliccare sul link che trova nell'email di conferma registrazione. <br> Per eventuali chiarimenti non esiti a contattarci all'indirizzo support@axenso.com",
+            "incorrect" => "Ops, le informazioni inserite non risultano corrette <br><br> La invitamo a riprovare oppure a contattarci all`indirizzo support@axen.com",
+            "inactive" => "Il suo account non risulta essere attivo <br><br> La preghiamo di verificare nella sua casella di posta e di cliccare sul link che trova nell'email di conferma registrazione. <br> Per eventuali chiarimenti non esiti a contattarci all'indirizzo support@axen.com",
             "underverification" => "Account in fase di verifica",
         ],
         "register" => [

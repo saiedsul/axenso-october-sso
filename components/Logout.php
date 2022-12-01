@@ -1,4 +1,4 @@
-<?php namespace Axenso\Sso\Components;
+<?php namespace Axen\Sso\Components;
 
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Cookie;

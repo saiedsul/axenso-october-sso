@@ -1,7 +1,7 @@
-<?php namespace Axenso\Sso\Components;
+<?php namespace Axen\Sso\Components;
 
-use Axenso\Sso\Classes\Sso;
-use Axenso\Sso\Models\User;
+use Axen\Sso\Classes\Sso;
+use Axen\Sso\Models\User;
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
@@ -106,13 +106,13 @@ class Profile extends ComponentBase
                 'board_number' => Input::get('board_number'),
             ];
             $messages = [
-                'first_name.required' => trans('axenso.october-sso::lang.messages.validation.required.name'),
-                'last_name.required' => trans('axenso.october-sso::lang.messages.validation.required.lastname'),
-                'password.required' => trans('axenso.october-sso::lang.messages.register.passwordrequired'),
-                'password.confirmed' => trans('axenso.october-sso::lang.messages.validation.confirmed.password'),
-                'profession.required' => trans('axenso.october-sso::lang.messages.validation.required.profession'),
-                'specialization.required' => trans('axenso.october-sso::lang.messages.validation.required.specialization'),
-                'board_number.required' => trans('axenso.october-sso::lang.messages.validation.required.board_number'),
+                'first_name.required' => trans('axen.october-sso::lang.messages.validation.required.name'),
+                'last_name.required' => trans('axen.october-sso::lang.messages.validation.required.lastname'),
+                'password.required' => trans('axen.october-sso::lang.messages.register.passwordrequired'),
+                'password.confirmed' => trans('axen.october-sso::lang.messages.validation.confirmed.password'),
+                'profession.required' => trans('axen.october-sso::lang.messages.validation.required.profession'),
+                'specialization.required' => trans('axen.october-sso::lang.messages.validation.required.specialization'),
+                'board_number.required' => trans('axen.october-sso::lang.messages.validation.required.board_number'),
                // 'subscribtion_province.required' => 'Provincia Iscrizione Ordine invalid',
             ];
             $validator = Validator::make(
@@ -150,7 +150,7 @@ class Profile extends ComponentBase
                 }
                else {
                 return ['#errors'=> $this->renderPartial('Profile::errors',[
-                    'errorMsgs' => [trans('axenso.october-sso::lang.messages.generic')]
+                    'errorMsgs' => [trans('axen.october-sso::lang.messages.generic')]
                     ])];
                }
 

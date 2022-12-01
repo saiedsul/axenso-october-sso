@@ -4,8 +4,8 @@
         $data = $dardy->activateUser($request->code,$url);
         */
 
-use Axenso\Sso\Classes\Sso;
-use Axenso\Sso\Classes\AxensoSso;
+use Axen\Sso\Classes\Sso;
+use Axen\Sso\Classes\AxenSso;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Cookie;
@@ -16,9 +16,9 @@ Route::group(['as'=>'sso'], function() {
 
 Route::get('/ssotest',function() {
 
-    $sso = new AxensoSso();
+    $sso = new AxenSso();
 
-    $response = $sso->login('saied.suliman@axenso.com','password');
+    $response = $sso->login('saied.suliman@axen.com','password');
     dd($response->object());
 
 

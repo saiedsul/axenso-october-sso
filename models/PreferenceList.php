@@ -1,7 +1,7 @@
-<?php namespace Axenso\Sso\Models;
+<?php namespace Axen\Sso\Models;
 
 use Model;
-use Axenso\Sso\Models\User;
+use Axen\Sso\Models\User;
 
 /**
  * Model
@@ -18,7 +18,7 @@ class PreferenceList extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'axenso_sso_prefrence_list';
+    public $table = 'axen_sso_prefrence_list';
     public $belongsTo = [
         'user' => [User::class, 'key' => 'user_id']
     ];

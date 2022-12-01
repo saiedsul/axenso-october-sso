@@ -1,5 +1,5 @@
-list: $/axenso/sso/models/user/columns.yaml
-modelClass: Axenso\Sso\Models\User
+list: $/axen/sso/models/user/columns.yaml
+modelClass: Axen\Sso\Models\User
 title: User
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
@@ -9,4 +9,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'axenso/sso/user/update/:id'
+recordUrl: 'axen/sso/user/update/:id'

@@ -1,20 +1,20 @@
 plugin:
-    name: 'axenso.october-sso::lang.plugin.name'
-    description: 'axenso.october-sso::lang.plugin.description'
-    author: Axenso
+    name: 'axen.october-sso::lang.plugin.name'
+    description: 'axen.october-sso::lang.plugin.description'
+    author: Axen
     icon: oc-icon-user
     homepage: ''
 navigation:
     main-menu-item:
         label: Users
-        url: axenso/sso/user
+        url: axen/sso/user
         icon: icon-life-ring
         sideMenu:
             shouser-menu-item:
                 label: 'List Users'
-                url: axenso/sso/user
+                url: axen/sso/user
                 icon: icon-sitemap
             userlog:
                 label: 'User Log'
-                url: axenso/sso/userlog
+                url: axen/sso/userlog
                 icon: icon-clock-o

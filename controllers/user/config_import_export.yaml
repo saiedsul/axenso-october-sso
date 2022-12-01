@@ -3,8 +3,8 @@
 # ===================================
 export:
     title: Export users
-    modelClass: Axenso\Sso\Models\UserExport
-    list: $/axenso/sso/models/user/columns.yaml
+    modelClass: Axen\Sso\Models\UserExport
+    list: $/axen/sso/models/user/columns.yaml
     filename: users.csv
 
 defaultFormatOptions:

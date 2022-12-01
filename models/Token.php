@@ -1,4 +1,4 @@
-<?php namespace Axenso\Sso\Models;
+<?php namespace Axen\Sso\Models;
 
 use Model;
 use Carbon\Carbon;
@@ -15,7 +15,7 @@ class Token extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'axenso_sso_tokens';
+    public $table = 'axen_sso_tokens';
 
     /**
      * @var array Validation rules

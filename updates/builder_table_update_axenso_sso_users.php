@@ -1,13 +1,13 @@
-<?php namespace Axenso\Sso\Updates;
+<?php namespace Axen\Sso\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class BuilderTableUpdateAxensoSsoUsers extends Migration
+class BuilderTableUpdateAxenSsoUsers extends Migration
 {
     public function up()
     {
-        Schema::table('axenso_sso_users', function($table)
+        Schema::table('axen_sso_users', function($table)
         {
             $table->jsonb('profile')->nullable();
         });
@@ -15,7 +15,7 @@ class BuilderTableUpdateAxensoSsoUsers extends Migration
     
     public function down()
     {
-        Schema::table('axenso_sso_users', function($table)
+        Schema::table('axen_sso_users', function($table)
         {
             $table->dropColumn('profile');
         });

@@ -3,9 +3,9 @@
 # ===================================
 export:
     title: Export users log
-    modelClass: Axenso\Sso\Models\UserLogExport
-    list: $/axenso/sso/models/log/columns.yaml
-    form: $/axenso/sso/models/log/exportfields.yaml
+    modelClass: Axen\Sso\Models\UserLogExport
+    list: $/axen/sso/models/log/columns.yaml
+    form: $/axen/sso/models/log/exportfields.yaml
     filename: users_log.csv
 
 defaultFormatOptions:

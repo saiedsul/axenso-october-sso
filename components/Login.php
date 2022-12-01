@@ -1,9 +1,9 @@
-<?php namespace Axenso\Sso\Components;
+<?php namespace Axen\Sso\Components;
 
-use Axenso\Sso\Classes\AxensoSso;
+use Axen\Sso\Classes\AxenSso;
 use Carbon\Carbon;
-use Axenso\Sso\Classes\Sso;
-use Axenso\Sso\Models\User;
+use Axen\Sso\Classes\Sso;
+use Axen\Sso\Models\User;
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Cookie;
 use October\Rain\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
-use Axenso\Sso\Models\Log as Axensolog;
+use Axen\Sso\Models\Log as Axenlog;
 class Login extends ComponentBase
 {
     public function componentDetails()
@@ -31,8 +31,8 @@ class Login extends ComponentBase
         $password = Input::get('password');
         $backURL = Input::get('backURL');
          $messages = [
-             'email.required' => trans('axenso.october-sso::lang.messages.validation.required.email'),
-             'password.required' => trans('axenso.october-sso::lang.messages.validation.required.password'),
+             'email.required' => trans('axen.october-sso::lang.messages.validation.required.email'),
+             'password.required' => trans('axen.october-sso::lang.messages.validation.required.password'),
              ];
         $validator = Validator::make(
          [
@@ -53,7 +53,7 @@ class Login extends ComponentBase
     }
          else {
              //   $dardy = new Sso();
-                $sso = new AxensoSso();
+                $sso = new AxenSso();
 
                 $response = $sso->login($email,$password);
 
@@ -83,9 +83,9 @@ class Login extends ComponentBase
                             'profile' => $sso_user->profile,
                         ]);
                     }
-                    $log = Axensolog::create([
+                    $log = Axenlog::create([
                         'email' => $sso_user->email,
-                        'action_type' => Axensolog::LOGIN,
+                        'action_type' => Axenlog::LOGIN,
                         'action_time' => Carbon::now()->format('Y-m-d H:i:s'),
                         'user_name' => $sso_user->profile->first_name,
                         'user_lastname' => $sso_user->profile->last_name,

@@ -1,10 +1,10 @@
-<?php namespace Axenso\Sso\Components;
+<?php namespace Axen\Sso\Components;
 
 use Lang;
 use Redirect;
 use BackendAuth;
 use Cms\Classes\Page;
-use Axenso\Sso\Models\User;
+use Axen\Sso\Models\User;
 use Cms\Classes\ComponentBase;
 use October\Rain\Database\Model;
 use October\Rain\Database\Collection;
