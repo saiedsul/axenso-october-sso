@@ -148,7 +148,7 @@ class Register extends ComponentBase
             }
             else if ($responseStatusCode == 500) {
                 return ['#errors'=> $this->renderPartial('Register::errors',[
-                    'errorMsgs' => [[trans('axen.october-sso::lang.messages.generic')]]
+                    'errorMsgs' => [[trans('axen.sso::lang.messages.generic')]]
                     ])];
             }
             else {

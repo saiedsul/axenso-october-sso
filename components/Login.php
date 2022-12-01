@@ -31,8 +31,8 @@ class Login extends ComponentBase
         $password = Input::get('password');
         $backURL = Input::get('backURL');
          $messages = [
-             'email.required' => trans('axen.october-sso::lang.messages.validation.required.email'),
-             'password.required' => trans('axen.october-sso::lang.messages.validation.required.password'),
+             'email.required' => trans('axen.sso::lang.messages.validation.required.email'),
+             'password.required' => trans('axen.sso::lang.messages.validation.required.password'),
              ];
         $validator = Validator::make(
          [

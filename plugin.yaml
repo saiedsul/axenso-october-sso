@@ -1,6 +1,6 @@
 plugin:
-    name: 'axen.october-sso::lang.plugin.name'
-    description: 'axen.october-sso::lang.plugin.description'
+    name: 'axen.sso::lang.plugin.name'
+    description: 'axen.sso::lang.plugin.description'
     author: Axen
     icon: oc-icon-user
     homepage: ''

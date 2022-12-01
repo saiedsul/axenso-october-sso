@@ -1,5 +1,5 @@
 {
-    "name": "axen/october-sso",
+    "name": "axen/sso",
     "type": "october-plugin",
     "description": "Add SSO to Octobercms",
     "keywords": ["axen", "octobercms", "sso"],

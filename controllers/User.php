@@ -17,6 +17,6 @@ class User extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('axen.october-sso', 'main-menu-item');
+        BackendMenu::setContext('axen.sso', 'main-menu-item');
     }
 }
