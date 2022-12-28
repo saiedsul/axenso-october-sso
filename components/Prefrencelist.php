@@ -26,13 +26,17 @@ class Prefrencelist extends ComponentBase
     }
     public function onRun()
     {
+        $this->addJs('/plugins/axen/sso/assets/js/sso.js',[
+            'type' => "text/javascript",
+        ]);
+        $this->addCss('/plugins/axen/sso/assets/css/sso.css');
         $cookie = Cookie::get('user_id');
         $this->user =  User::where('sso_id',$cookie)->first();
-       
+
     }
     function onRender() {
         $pref = [];
-        if ($this->user == null) {return false;} 
+        if ($this->user == null) {return false;}
         $prefs = PreferenceList::where( 'user_id' , $this->user->id)->first();
         if (!empty($prefs)) {
             $pref = $prefs->prefrences;
@@ -80,7 +84,7 @@ class Prefrencelist extends ComponentBase
             $user->sso_privacy_consent = 1;
             $user->save();
         }
-        
+
     }
 
     public function defineProperties()

@@ -1,7 +1,8 @@
 <?php namespace Axen\Sso\Components;
 
-use Axen\Sso\Classes\AxenSso;
 use Axen\Sso\Classes\Sso;
+use Axen\Sso\Classes\AxenSso;
+use Axen\Sso\Models\Settings;
 use Cms\Classes\ComponentBase;
 use Illuminate\Support\Facades\Log;
 use October\Rain\Support\Facades\Input;
@@ -11,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 class Changepassword extends ComponentBase
 {
     public $code;
-
+    public $logo;
 
     public function componentDetails()
     {
@@ -25,6 +26,12 @@ class Changepassword extends ComponentBase
 
     }
     public function onRun() {
+        $this->addJs('/plugins/axen/sso/assets/js/sso.js',[
+            'type' => "text/javascript",
+        ]);
+        $this->addCss('/plugins/axen/sso/assets/css/sso.css');
+        $settings = Settings::instance();
+        $this->logo = $settings->logo;
         if ($this->code == '' || $this->code == null) {
             return Redirect::to('/login');
         }
@@ -54,7 +61,6 @@ class Changepassword extends ComponentBase
             ])];
         }
          else {
-
             $sso = new AxenSso();
             $response = $sso->resetPassword($this->code,Input::get('password'),Input::get('password_confirmation'));
             if ($response->getStatusCode() == 404) {

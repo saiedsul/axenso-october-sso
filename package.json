@@ -1,0 +1,45 @@
+{
+  "name": "axe-sso-asst",
+  "version": "1.0.6",
+  "description": "",
+  "main": "sources/js/sso.js",
+  "scripts": {
+    "mix": "mix",
+    "mix:watch": "mix watch",
+    "mix:watch-poll": "mix watch -- --watch-options-poll=1000",
+    "mix:build": "mix --production"
+  },
+  "keywords": [
+    "october",
+    "octobercms",
+    "laravel",
+    "bootstrap"
+  ],
+  "author": {
+    "email": "hello@prismify.org",
+    "name": "Prismify Solutions",
+    "url": "https://prismify.org"
+  },
+  "maintainers": [
+    {
+      "name": "Sergey Sukhorukov",
+      "email": "sergey.sukhorukov@prismify.org",
+      "url": "https://prismify.org"
+    }
+  ],
+  "devDependencies": {
+    "laravel-mix": "^6.0.31",
+    "mini-css-extract-plugin": "^2.7.0",
+    "sass": "^1.42.1",
+    "sass-loader": "12.1.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.10.1",
+    "bootstrap": "5.2.2",
+    "jquery": "^3.6.3",
+    "jquery-validation": "^1.19.5"
+  },
+  "peerDependencies": {
+    "@popperjs/core": "^2.10.1"
+  }
+}

@@ -1,27 +1,38 @@
 <?php namespace Axen\Sso\Components;
 
-use Axen\Sso\Classes\AxenSso;
 use Carbon\Carbon;
 use Axen\Sso\Classes\Sso;
 use Axen\Sso\Models\User;
+use Axen\Sso\Classes\AxenSso;
+use Axen\Sso\Models\Settings;
 use Cms\Classes\ComponentBase;
+use Axen\Sso\Models\Log as Axenlog;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Cookie;
 use October\Rain\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
-use Axen\Sso\Models\Log as Axenlog;
+
 class Login extends ComponentBase
 {
+    public $logo;
     public function componentDetails()
     {
+
         return [
             'name'        => 'SSO Login Form',
             'description' => 'Adds login form to page'
         ];
     }
-
+    public function onRun() {
+        $this->addJs('/plugins/axen/sso/assets/js/sso.js',[
+            'type' => "text/javascript",
+        ]);
+        $this->addCss('/plugins/axen/sso/assets/css/sso.css');
+        $settings = Settings::instance();
+        $this->logo = $settings->logo;
+      }
     public function defineProperties()
     {
         return [];
@@ -42,7 +53,6 @@ class Login extends ComponentBase
          [
              'email' => 'required|email',
              'password' => 'required',
-
          ],$messages
      );
 
@@ -66,7 +76,6 @@ class Login extends ComponentBase
                         $dbUser->last_name = $sso_user->profile->last_name;
                         $dbUser->email = $sso_user->email;
                         $dbUser->password = Hash::make(Input::get('password'));
-                        $dbUser->privacy_consent = $hasConsent ? 1 : 0;
                         $dbUser->profile = $sso_user->profile;
                         $dbUser->enabled = $sso_user->active;
                         $dbUser->save();
@@ -78,7 +87,6 @@ class Login extends ComponentBase
                             'last_name' => $sso_user->profile->last_name,
                             'email' => $sso_user->email,
                             'password' => Hash::make(Input::get('password')),
-                            'privacy_consent' => $hasConsent ? 1 : 0,
                             'enabled'=> $sso_user->active,
                             'profile' => $sso_user->profile,
                         ]);
@@ -87,7 +95,7 @@ class Login extends ComponentBase
                         'email' => $sso_user->email,
                         'action_type' => Axenlog::LOGIN,
                         'action_time' => Carbon::now()->format('Y-m-d H:i:s'),
-                        'user_name' => $sso_user->profile->first_name,
+                        'user_name' => $sso_user->  ofile->first_name,
                         'user_lastname' => $sso_user->profile->last_name,
                         'sso_id' =>  $sso_user->id,
 
@@ -108,21 +116,32 @@ class Login extends ComponentBase
                 }
                 else {
                     if ($response->getStatusCode() == 404) {
-                        return ['#errors'=> $this->renderPartial('Login::errors/user-not-found')];
+                        return ['#errors'=> $this->renderPartial('Login::errors',[
+                            'errorMsgs' => [trans('axen.sso::lang.messages.login.email-not-found')]
+                            ])];
                     }
                     if ($response->getStatusCode() == 401) {
-                        return ['#errors'=> $this->renderPartial('Login::errors/login-incorrect')];
+
+                        return ['#errors'=> $this->renderPartial('Login::errors',[
+                            'errorMsgs' => [trans('axen.sso::lang.messages.login.incorrect-login')]
+                            ])];
                     }
                     else if ($response->getStatusCode() == 403) {
                         if ($response->object()->error == 'not-verified') {
-                            return ['#errors'=> $this->renderPartial('Login::errors/user-unverfied')];
+                            return ['#errors'=> $this->renderPartial('Login::errors',[
+                                'errorMsgs' => [trans('axen.sso::lang.messages.login.user-unverfied')]
+                                ])];
                         }
                         if ($response->object()->error == 'not-active') {
-                            return ['#errors'=> $this->renderPartial('Login::errors/user-inactive')];
+                            return ['#errors'=> $this->renderPartial('Login::errors',[
+                                'errorMsgs' => [trans('axen.sso::lang.messages.login.user-inactive')]
+                                ])];
                         }
                     }
                     else {
-                        return ['#errors'=> $this->renderPartial('Login::errors/generic')];
+                        return ['#errors'=> $this->renderPartial('Login::errors',[
+                            'errorMsgs' => [trans('axen.sso::lang.messages.generic')]
+                            ])];
                     }
                 }
 

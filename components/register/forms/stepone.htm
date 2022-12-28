@@ -1,0 +1,218 @@
+<div class="row gy-3 gy-md-4">
+    <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center align-content-center mb-4">
+
+            <div class="d-md-flex align-items-center"><a href="/"><img class="logo" src="{{ __SELF__.logo|media }}"></a>
+                <p class="lead my-2">{{ "Anagrafica"|_ }}</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <span>{{ "Titolo"|_ }}</span>
+                <span class="asterisco">*</span>
+            </div>
+
+        </div>
+        <div class="dropdown">
+            <select name="title" class=" form-select btn dropdown-toggle text-start">
+                <option value=""></option>
+                <option value="Dott.">{{ "Dott."|_ }}</option>
+                <option value="Dott.ssa">{{ "Dott.ssa"|_ }}</option>
+                <option value="Sig.">{{ "Sig."|_ }}</option>
+                <option value="Sig.ra">{{ "Sig.ra"|_ }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Nome"|_ }}</span><span class="asterisco">*</span></div>
+            {% partial __SELF__ ~ '::tooltip' msg='Inserire il nome completo, come da codice fiscale' %}
+        </div>
+        <input class="form-control text-capitalize" type="text" placeholder="" required name="first_name">
+
+    </div>
+    <div class="col-md-5">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Cognome"|_ }}</span><span class="asterisco">*</span></div>
+            {% partial __SELF__ ~ '::tooltip' msg='Inserire il cognome completo, come da codice fiscale' %}
+        </div><input class="form-control text-capitalize" type="text" placeholder=""  required name="last_name">
+    </div>
+    <div class="col-md-6">
+        <div class="d-flex justify-content-between align-items-center">
+            <span>{{ "Email"|_ }}</span>{% partial __SELF__ ~ '::tooltip' msg="Inserire un indirizzo email, evitando l\'utilizzo di PEC o email aziendali. Preferire indirizzi personali" %}
+        </div>
+        <input class="form-control " type="email" placeholder="Indirizzo email"  required name="email">
+        <div id="email_errors">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="d-flex justify-content-between align-items-center">
+            <span>{{ "Ripetere email"|_ }}</span>{% partial __SELF__ ~ '::tooltip' msg="Inserire nuovamente l'indirizzo email scelto per convalida" %}
+        </div><input class="form-control " type="email" placeholder="Ripetere indirizzo email"  required name="email_confirmation">
+    </div>
+    <div class="col-md-6">
+        <div class="d-flex justify-content-between align-items-center">
+            <span>{{ "Password"|_ }}</span>{% partial __SELF__ ~ '::tooltip' msg='Si consiglia di scegliere una password sicura che contenga almeno una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale' %}
+        </div><input class="form-control" type="password" placeholder="Password" required name="password">
+    </div>
+    <div class="col-md-6">
+        <div class="d-flex justify-content-between align-items-center">
+            <span>{{ "Ripetere password"|_ }}</span>{% partial __SELF__ ~ '::tooltip' msg='Inserire nuovamente la password scelta' %}
+        </div><input class="form-control" type="password" placeholder="Ripetere password" required name="password_confirmation">
+    </div>
+
+    <div class="col-md-8">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Professione"|_ }}</span><span class="asterisco">*</span></div>
+
+        </div>
+        <div class="dropdown" name="profession" required>
+
+            <select name="profession" class=" form-select btn dropdown-toggle text-start" data-request="{{__SELF__}}::onProfSelect">
+                <optgroup label="Ordine Professionale">
+                    <option value=""></option>
+                    {% for profession in __SELF__.profissions %}
+                    <option value="{{ profession['name'] }}">{{ profession['name'] }}</option>
+                    {%endfor%}
+                </optgroup>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Ospedale/Territorio"|_ }}</span><span class="asterisco">*</span></div>
+
+        </div>
+        <div class="dropdown">
+            <select class="btn dropdown-toggle text-start form-select" name="territory" required>
+                <option value="Ospedale">{{ "Ospedale"|_ }}</option>
+                <option value="Territorio">{{ "Territorio"|_ }}</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="col-md-6" id="spcsdiv_1">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Disciplina"|_ }}</span><span class="asterisco">*</span></div>
+        </div>
+        <div class="dropdown " >
+            <select class="form-select btn dropdown-toggle text-start" name="specialization" required >
+            </select>
+        </div>
+    </div>
+
+
+    <div class="col-md-6" id="sub_spcsdiv">
+
+    </div>
+
+    <div class="col-md-6" id="spcsdiv_2">
+
+    </div>
+
+
+    <div class="col-md-6" id="spcsdiv_3">
+
+    </div>
+
+
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Operatività"|_ }}</span><span class="asterisco">*</span></div>
+
+        </div>
+        <div class="dropdown">
+            <select class="form-select btn dropdown-toggle text-start" name="employment" required>
+                <option value="" ></option>
+                <option value="Libero professionista" >{{ "Libero professionista"|_ }}</option>
+                <option value="Dipendente">{{ "Dipendente"|_ }}</option>
+                <option value="Convenzionato">{{ "Convenzionato"|_ }}</option>
+                <option value="Privo di occupazione">{{ "Privo di occupazione"|_ }}</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Provincia attività lavorativa"|_ }}</span><span class="asterisco">*</span></div>
+            {% partial __SELF__ ~ '::tooltip' msg="Se ha selezionato \"privo di occupazione\" indicare l'ultima provincia nella quale si è lavorato" %}
+        </div>
+        <div class="dropdown">
+            <select class="form-select btn dropdown-toggle text-start" name="province_enployment"  data-request="{{__SELF__}}::onCitySelect" required>
+                <option value=""></option>
+                {% for key,province in __SELF__.provinces %}
+                    <option value="{{  key }}">{{ province }}</option>
+                {%endfor%}
+            </select>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Regione attività lavorativa"|_ }}</span><span class="asterisco">*</span></div>
+
+        </div>
+        <div class="" id="regionDiv">
+            <input class="form-control" name="regione_enployment" type="text" placeholder="Regione" readonly="">
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Ordine professionale"|_ }}</span><span class="asterisco">*</span></div>
+
+        </div>
+        <div class="dropdown"  >
+            <select class="btn form-select dropdown-toggle text-start" name="board_member" required>
+                <option value=""></option>
+                <option value="FNOMCEO">{{ "FNOMCEO"|_ }}</option>
+                <option value="FNOPI">{{ "FNOPI"|_ }}</option>
+                <option value="FOFI">{{ "FOFI"|_ }}</option>
+                <option value="Altro">{{ "Altro"|_ }}</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Provincia di iscrizione all ordine"|_ }}</span><span class="asterisco">*</span></div>
+        </div>
+        <div class="dropdown"  >
+            <select class="btn form-select dropdown-toggle text-start" name="province_board" required>
+                <option value=""></option>
+            {% for key,province in __SELF__.provinces %}
+                <option value="{{  key }}">{{ province }}</option>
+            {%endfor%}
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <span>Numero iscrizione Ordine</span>
+                <span class="asterisco">*</span>
+            </div>
+            {% partial __SELF__ ~ '::tooltip' msg="Indicare il numero d'iscrizione all'ordine professionale" %}
+        </div>
+        <input class="form-control" type="text" placeholder="Inserisci numero" required name="board_number">
+    </div>
+
+    <div class="col">
+        <div class="d-flex justify-content-end">
+           <a class="btn btn-secondary" data-request="{{ __SELF__ }}::onValidateEmail" data-request-validate data-request-success="goNext()" >{{ "Avanti"|_ }}</a>
+
+        </div>
+    </div>
+</div>
+
+

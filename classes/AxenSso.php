@@ -3,11 +3,12 @@
 use Carbon\Carbon;
 use Axen\Sso\Models\Token;
 use Axen\Sso\Models\Settings;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Http;
 use October\Rain\Exception\ApplicationException;
 
 
-class AxensoSso {
+class AxenSso {
 
     protected $grant_type;
     protected $client_secret;
@@ -23,11 +24,13 @@ class AxensoSso {
         if (!$settings->sso_client_id || !$settings->sso_client_secret || !$settings->sso_base_url || !$settings->sso_app_name ) {
             throw new ApplicationException('Please fill sso configurations');
         }
+
         $this->grant_type = 'client_credentials';
         $this->client_secret = $settings->sso_client_secret;
         $this->client_id = $settings->sso_client_id;
         $this->sso_base_url = $settings->sso_base_url;
         $this->token = $this->getToken();
+
     }
 
     public function login($email,$password) {
@@ -106,6 +109,19 @@ class AxensoSso {
                             ->post($this->sso_base_url.'/api/user/signup', $payload);
         return $response;
     }
+
+    public function lookUpEmail($email) {
+        $payload = [
+            'email' => $email,
+        ];
+        $response = Http::accept('application/json')
+                        ->withHeaders(['origin' => config('app.url')])
+                        ->withToken($this->token->token)
+                        ->post($this->sso_base_url.'/api/user/lookup-email',$payload);
+        return $response;
+    }
+
+
     public function getProfessions() {
         $response = Http::accept('application/json')
                             ->withHeaders(['origin' => config('app.url')])

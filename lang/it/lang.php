@@ -1,16 +1,18 @@
 <?php return [
     'plugin' => [
         'name' => 'Axen SSO',
-        'description' => 'Provides SSO functionality for users.',
+        'description' => 'Provides SSO functionality for users..',
     ],
     'messages' => [
-        'login' => [
-            'incorrect' => '<p class="mb-0"><strong>Ops, le informazioni inserite non risultano corrette </strong> </p><p class="mb-0">La invitiamo a riprovare oppure a contattarci all\'indirizzo <a href="mailto:support@axen.com">support@axen.com</a> </p>',
-            'inactive' => '<p class="mb-0">Il suo account non risulta essere attivo <p class="mb-0"> La preghiamo di verificare nella sua casella di posta e di cliccare sul link che trova nell\'email di conferma registrazione.</p><p class="mb-0"> Per eventuali chiarimenti non esiti a contattarci all\'indirizzo <a href="mailto:support@axen.com">support@axen.com</a></p>',
-            'underverification' => '<p class="mb-0">Account in fase di verifica </p>',
-        ],
         'resetpassword' => [
-            'incorrect' => '<p class="mb-0">Ops, l\'indirizzo indicato non è presente, ti invitiamo a <a href="/register">registrarti</a> come nuovo utente</p>',
+            'email-not-found' => 'Ops, l\'indirizzo indicato non è presente, ti invitiamo a <a href="/register">registrarti</a> come nuovo utente', //done
+            'email-required' => 'Il campo dell\'indirizzo email è obbligatorio',//done
+        ],
+        'login' => [
+            'email-not-found' => 'Ops, l\'indirizzo indicato non è presente, ti invitiamo a <a href="/register">registrarti</a> come nuovo utente', //done
+            'incorrect-login' => 'Ops, le informazioni inserite non risultano corrette <br><br> La invitiamo a riprovare oppure a contattarci all\'indirizzo <a href="mailto:support@axenso.com">support@axenso.com</a> ', //done
+            'user-inactive' => 'Il suo account non risulta essere attivo <br><br> La preghiamo di verificare nella sua casella di posta e di cliccare sul link che trova nell\'email di conferma registrazione.<br><br/> Per eventuali chiarimenti non esiti a contattarci all\'indirizzo <a href="mailto:support@axenso.com">support@axenso.com</a>',//done
+            'user-unverfied' => 'Account in fase di verifica',//dpne
         ],
         'register' => [
             'emailtaken' => '<p class="mb-0">L\'email inserita risulta già registrata</p><p class="mb-0">La preghiamo di effettuare il login con le sue credenziali oppure di recuperare la password </p>',
@@ -33,9 +35,8 @@
             ],
         ],
         'reset_password' => [
-            'invalid_link' => '<p class="mb-0">Il link non è più valido, ti preghiamo di <a style=\'color:#9f0247\' href=\'/recupera-password\'>provare di nuovo</a></p>',
-            'ok' => '<h1 class=\'msg\' >Password aggiornata con successo</h1><p><a href=\'/login\' class=\'btn btn-primary btn-lg d-block w-100 btn-orange\' >Vai al login</a></p>',
+            'invalid_link' => 'Il link non è più valido, ti preghiamo di <a href=\'/recupera-password\'>provare di nuovo</a></p>', // done
         ],
-        'generic' => '<p class="mb-0">ops, qualcosa è andato storto :( ti preghiamo di riprovare più tardi</p>',
+        'generic' => 'ops, qualcosa è andato storto :( ti preghiamo di riprovare più tardi',
     ],
 ];

@@ -1,31 +1,42 @@
-
-   <section class="registration-form">
+<section class="login-form" id="main_container">
+    <form data-request="{{__SELF__}}::onReset"  data-request-success="javascript:;" id="resetForm" data-request-validate>
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 mx-auto">
-                <form data-request="{{__SELF__}}::onReset"  data-request-success="javascript:;" id="resetForm" data-request-validate>
-                    <h1 class="mb-4">{{ 'Recupera password'|_ }}</h1>
-                    <div class="user-login" style="display: block;" >
-                        <div class="row form-group justify-content-md-center">
-                          <div class="col-md-6 col-sm-12 text-left ">
-                            <div class="form-input">
-                              <label>Email</label>
-                              <input class="form-control" type="email" name="email" required />
-                            </div>
-                          </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-12 text-center mt-4">
-                                <button type="submit" class="btn btn-primary">{{ 'Recupera password'|_ }} <i class="fa fa-arrow-right"></i></button>
-                            </div>
-                          </div>
-                      </div>
+        <div class="row gy-3 gy-md-4 col-md-6 mx-auto" data-aos="fade-up">
+            <div class="col-12">
+                <div class="text-center">
+                    <a href="/">
+                    <img src="{{ __SELF__.logo|media }}" width="90px">
+                    </a>
+                    <p class="lead my-4">{{ "Recupera password"|_ }}</p>
                 </div>
-                </form>
-                  <div id="errors">
+            </div>
+            <div class="col">
+                <p class="text-center">{{ "Inserisci il tuo indirizzo email e clicca il tasto "Invia". Riceverai una mail all' indirizzo specificato con le istruzioni per cambiare password."|_ }}</p>
+            </div>
+            <div class="col-md-12">
+                <div>
+                    <div class="d-flex justify-content-between align-items-center"><span>{{ "Inserisci indirizzo email"|_ }}</span>
+                    </div>
+                    <input class="form-control" type="email" name="email" required placeholder="{{ 'Ripetere indirizzo email'|_ }}"  />
+                </div>
+            </div>
+            <div class="col-md-12" id="errors">
 
-                 </div>
+            </div>
+            <div class="col">
+
+                <button type="submit" class="btn btn-primary w-100">Invia </button>
+            </div>
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between align-items-center">
+                    <a href="/register">{{ "Nuovo utente"|_ }}</a>
+                    <a href="/login">{{ "Accedi"|_ }}</a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="d-flex justify-content-center align-items-center"><a class="small" href="/">{{ "Torna alla Homepage"|_ }}<br></a></div>
             </div>
         </div>
     </div>
+    </form>
 </section>

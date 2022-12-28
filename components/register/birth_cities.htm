@@ -1,7 +1,7 @@
 
 <div class="d-flex justify-content-between align-items-center">
-    <div><span>Città di nascita</span><span class="asterisco">*</span></div>
-    {% partial 'sso/general/tooltip' msg= 'ok' %}
+    <div><span>{{ "Città di nascita"|_ }}</span><span class="asterisco">*</span></div>
+
 </div>
 <div class="dropdown" id="ciyByProvince">
     <select class=" form-select btn dropdown-toggle text-start" name="birth_city" required>

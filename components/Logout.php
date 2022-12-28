@@ -16,6 +16,10 @@ class Logout extends ComponentBase
 
     public function onRun()
     {
+        $this->addJs('/plugins/axen/sso/assets/js/sso.js',[
+            'type' => "text/javascript",
+        ]);
+        $this->addCss('/plugins/axen/sso/assets/css/sso.css');
         $cookie = Cookie::forever(
             'user_id',
             0

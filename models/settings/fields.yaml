@@ -29,3 +29,8 @@ fields:
         label: 'Privacy Policy Page URL'
         span: auto
         type: text
+    logo:
+        label: 'Site Logo'
+        span: auto
+        mode: file
+        type: mediafinder

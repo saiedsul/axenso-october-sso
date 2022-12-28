@@ -21,7 +21,12 @@ class Profile extends ComponentBase
             'description' => 'Render profile form'
         ];
     }
-
+    public function onRun(){
+        $this->addJs('/plugins/axen/sso/assets/js/sso.js',[
+            'type' => "text/javascript",
+        ]);
+        $this->addCss('/plugins/axen/sso/assets/css/sso.css');
+    }
     public function onRender() {
 
         $cookie = Cookie::get('user_id');

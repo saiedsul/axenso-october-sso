@@ -1,14 +1,26 @@
-<div id="maincontainer">
+<section class="login-form">
     <form  data-request="{{__SELF__}}::onConsent"  data-request-success="javascript:;" id="consentForm" data-request-validate>
-        <div class="row">
-            {% partial 'sso/templates/consent.htm' %}
+    <div class="container px-0">
+        <div class="row gy-3 gy-md-4 col-md-6 mx-auto" data-aos="fade-up">
+            <div class="col-12">
+                <div class="text-center"><a href="/"><img src="{{ __SELF__.logo|media }}" width="90px"></a>
+                    <p class="lead my-4 ">Privacy Policy</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div><span>{{ "Privacy policy Sito"|_ }}</span></div><a class="small" target="_blank" href="{{ __SELF__.privacy_policy_url }}">{{ "Leggi l'informativa"|_ }}</a>
+                </div>
+                <textarea class="form-control">{{ __SELF__.privacy_text }}</textarea>
+            </div>
+            <div class="col"><button class="btn btn-primary w-100"  type="submit"  >{{ "Prosegui"|_ }}</button></div>
+            <div class="col-md-12" id="errors">
+
+            </div>
+            <div class="col-md-12">
+                <div class="d-flex justify-content-center align-items-center"><span class="text-center text-md-start">{{ "Per informazioni"|_ }}&nbsp;<a href="mailto:{{ config('mail.from.address') }}"><span style="text-decoration: underline;">{{ "clicca qui"|_ }}</span></a>&nbsp;{{ "per contattare la redazione"|_ }}</span></div>
+            </div>
         </div>
-      </form>
-      <div class="row">
-        <div id="errors">
-
-        </div>
-      </div>
-</div>
-
-
+    </div>
+</form>
+</section>

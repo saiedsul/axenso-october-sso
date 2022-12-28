@@ -1,1 +1,15 @@
-{% partial 'sso/templates/resetpassword-success.htm' %}
+<div class="container">
+    <div class="row gy-3 gy-md-4 col-md-6 mx-auto" data-aos="fade-up">
+        <div class="col-12">
+            <div class="text-center">
+                <a href="/"><img src="{{ logo|media }}" width="90px"></a>
+                <p class="lead my-4 fw-bold">{{ "Mail inviata!"|_ }}</p>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <p class="text-center">{{ "Ti abbiamo inviato la mail con le istruzioni da seguire per procedere al cambio della password."|_ }} </p>
+            <p class="text-center fw-bold">{{ "Se non la trovi verifica la casella SPAM"|_ }}</p>
+        </div>
+        <div class="col"><a href="/" class="btn btn-primary w-100" type="button">{{ "Torna alla home"|_ }}</a></div>
+    </div>
+</div>

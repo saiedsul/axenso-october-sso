@@ -1,12 +1,12 @@
 
 <div class="d-flex justify-content-between align-items-center">
-    <div><span>Disciplina</span><span class="asterisco">*</span></div>
-    {% partial 'sso/general/tooltip' msg= 'ok' %}
+    <div><span>{{ "Disciplina"|_ }}</span><span class="asterisco">*</span></div>
+
 </div>
 <div class="dropdown " >
     <select class="form-select btn dropdown-toggle text-start"  data-request="{{__SELF__}}::onSpecSelect" data-request-data="spec: 1" name="specialization" id="specializations" oninput="this.className = 'btn dropdown-toggle text-start'" required>
         <optgroup label="Discipline">
-          {% for spec in specs_1 %}
+          {% for spec in specsOne %}
           <option value="{{ spec['name'] }}">{{ spec['name'] }}</option>
           {%endfor%}
           </optgroup>

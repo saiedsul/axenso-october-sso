@@ -1,14 +1,16 @@
 <?php namespace Axen\Sso\Components;
 
 use Axen\Sso\Classes\Sso;
-use Cms\Classes\ComponentBase;
 use Axen\Sso\Classes\AxenSso;
+use Axen\Sso\Models\Settings;
+use Cms\Classes\ComponentBase;
 use October\Rain\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 
 class Resetpassword extends ComponentBase
 {
+    public $logo;
     public function componentDetails()
     {
         return [
@@ -16,15 +18,23 @@ class Resetpassword extends ComponentBase
             'description' => 'Add form to request resetting password'
         ];
     }
-
+    public function onRun() {
+        $this->addJs('/plugins/axen/sso/assets/js/sso.js',[
+            'type' => "text/javascript",
+        ]);
+        $this->addCss('/plugins/axen/sso/assets/css/sso.css');
+        $settings = Settings::instance();
+        $this->logo = $settings->logo;
+      }
     public function defineProperties()
     {
         return [];
     }
 
     public function onReset() {
+        $settings = Settings::instance();
         $email = Input::get('email');
-        $messages = ['email.required' => 'Il campo Email è richiesto.'];
+        $messages = ['email.required' => trans('axen.sso::lang.messages.resetpassword.emailrequired')];
         $validator = Validator::make(
          ['email' => $email],
          ['email' => 'required|email',
@@ -39,16 +49,18 @@ class Resetpassword extends ComponentBase
             $sso = new AxenSso();
             $response = $sso->resetPasswordRequest(Input::get('email'));
             if ($response->getStatusCode() == 201) {
-                return Redirect::to('/recupera-password/success');
+                return ['#main_container'=> $this->renderPartial('Resetpassword::success',[
+                    'logo' => $settings->logo
+                    ])];
             }
             if ($response->getStatusCode() == 404) {
                return ['#errors'=> $this->renderPartial('Resetpassword::errors',[
-                    'errorMsgs' => ["Ops, l'indirizzo indicato non è presente, ti invitiamo a <a href='/register'>registrarti</a> come nuovo utente"]
+                    'errorMsgs' => [trans('axen.sso::lang.messages.resetpassword.email-not-found')]
                     ])];
             }
             else {
                 return ['#errors'=> $this->renderPartial('Resetpassword::errors',[
-                    'errorMsgs' => ['something went wrong, please try again later']
+                    'errorMsgs' => [trans('axen.sso::lang.messages.generic')]
                     ])];
             }
         }

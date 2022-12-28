@@ -1,0 +1,226 @@
+<div class="row gy-4">
+    <div class="col-12">
+        <div
+            class="d-flex justify-content-between align-items-center align-content-center mb-4">
+            <div class="d-md-flex align-items-center"><a href="/"><img class="logo" src="{{ __SELF__.logo|media }}"></a>
+                <p class="lead my-2">{{ "Dati personali"|_ }}</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Luogo di nascita"|_ }}</span><span class="asterisco">*</span></div>
+            {% partial __SELF__ ~ '::tooltip' msg= 'Se non nati in Italia, selezionare Estero' %}
+        </div>
+        <div class="dropdown">
+            <select data-request="{{__SELF__}}::onCountryCheck" class="form-select btn dropdown-toggle text-start" name="birth_in_italy">
+                <option class="dropdown-item" selected value="italy">Italia</option>
+                <option class="dropdown-item" value="EE">Estero</option>
+            </select>
+        </div>
+    </div>
+
+
+
+
+    <div class="col-md-8" id="countryDiv">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Nazionalità"|_ }}</span></div>
+            {% partial __SELF__ ~ '::tooltip' msg= 'Se non nati in italia, selezionare la nazione di nascita' %}
+        </div>
+        <div class="dropdown">
+            <select class="form-select btn dropdown-toggle text-start" name="place_of_birth" disabled>
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-6" id="birth_prov">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Provincia di nascita"|_ }}</span><span class="asterisco">*</span></div>
+
+        </div>
+        <div class="dropdown"  >
+            <select name="birth_province" data-request="{{__SELF__}}::onProvinceSelect" class=" form-select btn dropdown-toggle text-start" required>
+                <option value=""></option>
+                {% for key,province in __SELF__.provinces %}
+                <option value="{{  key }}">{{ province }}</option>
+            {%endfor%}
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-6"  id="birth_city">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Città di nascita"|_ }}</span><span class="asterisco">*</span></div>
+
+        </div>
+        <div class="dropdown" id="ciyByProvince">
+            <select class=" form-select btn dropdown-toggle text-start" name="birth_city" disabled>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="col-md-3">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <span>{{ "Data di nascita"|_ }}</span>
+                <span class="asterisco">*</span>
+            </div>
+            {% partial __SELF__ ~ '::tooltip' msg='Inserire la data di nascita con il formato gg/mm/aaaa, prestanto attenzione ad inserire l\'anno di nascita completo (es: 1980)' %}
+        </div>
+        <input class="form-control" type="date" name="date_of_birth" required>
+    </div>
+
+    <div class="col-md-3">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Gender"|_ }}</span><span class="asterisco">*</span></div>
+            {% partial __SELF__ ~ '::tooltip' msg= 'Selezionare il sesso, così come riportato nel codice fiscale' %}
+        </div>
+          <div class="dropdown" id="gender">
+            <select class=" form-select btn dropdown-toggle text-start" name="gender" required >
+                <option value=""></option>
+                <option value="F">{{ "Femmina"|_ }}</option>
+                <option value="M">{{ "Maschio"|_ }}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Codice fiscale"|_ }}</span><span class="asterisco">*</span></div>
+            {% partial __SELF__ ~ '::tooltip' msg= 'Inserire il codice fiscale, prestando attenzione che sia formato da 16 caratteri (9 lettere e 7 numeri)' %}
+        </div>
+        <input class="form-control text-uppercase" type="text"  placeholder="Inserisci codice fiscale" name="fiscal_code" required>
+        <div id="fiscal_errors">
+        </div>
+    </div>
+
+
+
+
+
+    <div class="col-md-3">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Tipo di indirizzo"|_ }}</span><span class="asterisco">*</span></div>
+
+        </div>
+        <div class="dropdown">
+            <select class="form-select btn dropdown-toggle text-start" name="address_type" required>
+                <option value=""></option>
+                <option value="Privato">{{ "Privato"|_ }}</option>
+                <option value="Lavorativo">{{ "Lavorativo"|_ }}</option>
+            </select>
+        </div>
+    </div>
+
+
+
+
+    <div class="col-md-7">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <span>{{ "Indirizzo"|_ }}</span>
+                <span class="asterisco">*</span>
+            </div>
+            {% partial __SELF__ ~ '::tooltip' msg= 'Inserire l\'indirizzo di residenza, domicilo o lavorativo, specificando se via/piazza/viale, ecc' %}
+        </div>
+        <input class="form-control text-capitalize" type="text" placeholder="Via, viale, piazza" name="address_line" required>
+    </div>
+
+
+
+
+    <div class="col-md-2">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <span>{{ "Civico"|_ }}</span>
+                <span class="asterisco">*</span>
+            </div>
+            {% partial __SELF__ ~ '::tooltip' msg= 'Inserire il numero civico' %}
+        </div>
+        <input class="form-control" type="text" placeholder="Numero" name="address_number" required>
+    </div>
+
+
+
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <span>{{ "CAP"|_ }}</span>
+                <span class="asterisco">*</span>
+            </div>
+            {% partial __SELF__ ~ '::tooltip' msg= 'Inserire il cap dell\'indirizzo indicato. Se non si è in possesso del cap di zona è possibile inserire anche quello della città (es: Milano 20100)' %}
+            </div>
+        <input class="form-control" type="text" placeholder="Inserisci CAP" name="zip_code" required>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="col-md-8">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Provincia"|_ }}</span></div>
+        </div>
+        <div class="dropdown">
+            <select data-request="{{__SELF__}}::onAddressProvinceSelect" class="form-select btn dropdown-toggle text-start" name="address_province" required>
+                <option value=""></option>
+                {% for key,province in __SELF__.provinces %}
+                <option value="{{  key }}">{{ province }}</option>
+                {%endfor%}
+            </select>
+        </div>
+
+    </div>
+
+    <div class="col-md-4" id="address_city">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Città"|_ }}</span></div>
+        </div>
+        <div class="dropdown">
+            <select class="form-select btn dropdown-toggle text-start" name="address_city" required disabled>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Regione"|_ }}</span></div>
+        </div>
+        <div id="AddressregionDiv">
+        <input class="form-control" name="address_regione" type="text" placeholder="Regione" disabled="">
+        </div>
+    </div>
+
+
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <span>{{ "Cellulare"|_ }}</span>
+                <span class="asterisco">*</span>
+            </div>
+            {% partial __SELF__ ~ '::tooltip' msg= 'Inserire un numero di cellulare valido. Il numero può essere privato o aziendale. Se fosse un numero estero si prega di specificare il prefisso.' %}
+        </div>
+        <input class="form-control" type="tel" placeholder="Cellulare" name="phone_number" required>
+    </div>
+
+
+
+
+        <div class="col-md-12 d-flex justify-content-between">
+            <div class=""><a class="btn btn-secondary btnPrevious" >{{ "Indietro"|_ }}</a></div>
+            <div class=""><a class="btn btn-secondary" data-request="{{ __SELF__ }}::onValidateFiscal" data-request-validate data-request-success="goNext()" >{{ "Avanti"|_ }}</a></div>
+        </div>
+</div>
+

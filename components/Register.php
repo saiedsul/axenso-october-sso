@@ -4,14 +4,14 @@ use PDO;
 use Carbon\Carbon;
 use Axen\Sso\Classes\Sso;
 use Axen\Sso\Models\User;
-use Cms\Classes\ComponentBase;
+use Axen\Sso\Classes\AxenSso;
 use Axen\Sso\Classes\Helpers;
 use Axen\Sso\Models\Settings;
-use Axen\Sso\Classes\AxenSso;
+use Cms\Classes\ComponentBase;
+use Axen\Sso\Models\Log as Axenlog;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
-use Axen\Sso\Models\Log as Axenlog;
 use October\Rain\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
@@ -19,13 +19,16 @@ use October\Rain\Exception\AjaxException;
 
 class Register extends ComponentBase
 {
+
     public $profissions;
     public $provinces;
     public $countries;
     public $xgateConfig;
     public $sitePrivacyPolicyText;
     public $sitePrivacyPolicyURL;
+    public $logo;
     public $formtype;
+
     public function componentDetails()
     {
         return [
@@ -34,9 +37,10 @@ class Register extends ComponentBase
         ];
     }
     public function onRun() {
-
-
-
+        $this->addJs('/plugins/axen/sso/assets/js/sso.js',[
+            'type' => "text/javascript",
+        ]);
+        $this->addCss('/plugins/axen/sso/assets/css/sso.css');
       $helper = new Helpers;
       $email = Input::get('email');
       $this->page['preset_email'] = $email;
@@ -46,8 +50,11 @@ class Register extends ComponentBase
       $settings = Settings::instance();
       $this->sitePrivacyPolicyText = $settings->privacy_text;
       $this->sitePrivacyPolicyURL = $settings->privacy_policy_url;
+      $this->logo = $settings->logo;
     }
     public function init(){
+
+
         if ($this->property('formtype') == null) {
             $this->formtype = 'full';
         }
@@ -55,7 +62,6 @@ class Register extends ComponentBase
             $this->formtype = $this->property('formtype');
 
         }
-
     }
     public function onSpecSelect() {
         $helper = new Helpers;
@@ -73,11 +79,9 @@ class Register extends ComponentBase
         }
       return [
         '#sub_spcsdiv' => $this->renderPartial('@sub_specs.htm',['sub_spcs' => $subspecs]),
-    ];
+        ];
     }
-
     public function onRegister() {
-
             $req_user = [
                     'profile' => [
                         'title' => input::get('title'),
@@ -130,7 +134,7 @@ class Register extends ComponentBase
                     'first_name' => Input::get('first_name'),
                     'last_name' => Input::get('last_name'),
                     'email' => Input::get('email'),
-                    'privacy_consent' => 1,
+                //    'privacy_consent' => 1,
                     'password' => Hash::make(Input::get('password')),
                     'profile' => $responseObject->profile,
                     'enabled' => $responseObject->active,
@@ -170,7 +174,7 @@ class Register extends ComponentBase
             'custom_fiscal' => Input::get('custom_fiscal'),
         ];
         if ($req_user['custom_fiscal'] == null) {
-        $rules = [];
+            $rules = [];
         if (Input::get('birth_in_italy') == 'EE') {
             $rules['fiscal_code'] = 'codice_fiscale:first_name=first_name,last_name=last_name,birthdate=date_of_birth,place=place_of_birth,gender=gender';
         }
@@ -182,16 +186,43 @@ class Register extends ComponentBase
         ];
         $validator = Validator::make($req_user,$rules,$messages);
         if ($validator->fails()) {
-        throw new AjaxException(['#fiscal_errors' => $this->renderPartial('@fiscal_errors.htm',[
-            'errorMsgs' => $validator->customMessages,
-            'currentValue' => Input::get('fiscal_code')
-        ])]);
+            throw new AjaxException(['#fiscal_errors' => $this->renderPartial('@fiscal_errors.htm',[
+                'errorMsgs' => $validator->customMessages,
+                'currentValue' => Input::get('fiscal_code')
+            ])]);
         }
         else {
             return true;
+            }
         }
-    }
          else return true;
+    }
+    public function onValidateEmail() {
+        $req_user = [
+            'email' => input::get('email'),
+        ];
+        $rules = [
+            'email' => 'required|email'
+        ];
+        $messages = [
+            'email' =>'Inserire un indirizzo email valido',
+        ];
+        $validator = Validator::make($req_user,$rules,$messages);
+        if ($validator->fails()) {
+            throw new AjaxException(['#email_errors' => $this->renderPartial('@email_errors.htm',[
+                'errorMsgs' => $validator->customMessages,
+                'currentValue' => Input::get('email')
+            ])]);
+        }
+        $sso = new AxenSso();
+        $response = $sso->lookUpEmail($req_user['email']);
+        $responseStatusCode = $response->getStatusCode();
+        if ($responseStatusCode != 200) {
+            throw new AjaxException(['#email_errors' => $this->renderPartial('@email_errors.htm',[
+                'errorMsgs' => ['Tutti i siti di Axenso sono gestiti da un sistema di registrazione centralizzata (SSO Axenso) che permette il login con le medesime credenziali. La mail indicata risulta essere già esistente su SSO Axenso. <a href="/login">Accedi</a> al sito come utente registrato inserendo le tue credenziali. Se non ricordi la password utilizza la funzionalità <a href="/recupera-password">recupera password</a>'],
+                'currentValue' => Input::get('email')
+            ])]);
+        }
     }
     public function onCitySelect() {
         $helper = new Helpers;
@@ -251,9 +282,9 @@ class Register extends ComponentBase
             }
         }
         return [
-            '#spcsdiv_1' => $this->renderPartial('@specs_1.htm',['specs_1' => $specs]),
-            '#spcsdiv_2' => $this->renderPartial('@specs_2.htm',['specs_2' => (sizeof($specs) > 1) ? $specs : []]),
-            '#spcsdiv_3' => $this->renderPartial('@specs_3.htm',['specs_3' => (sizeof($specs) > 2) ? $specs : []]),
+            '#spcsdiv_1' => $this->renderPartial('@specsOne.htm',['specsOne' => $specs]),
+            '#spcsdiv_2' => $this->renderPartial('@specsTwo.htm',['specsTwo' => (sizeof($specs) > 1) ? $specs : []]),
+            '#spcsdiv_3' => $this->renderPartial('@specsThree.htm',['specsThree' => (sizeof($specs) > 2) ? $specs : []]),
 
         ];
     }
