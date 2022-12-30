@@ -1,1 +1,15 @@
-{% partial 'sso/register-success.htm' %}
+    <div class="container p-5">
+        <div class="row gy-3 gy-md-4 col-md-6 mx-auto aos-init aos-animate" data-aos="fade-up">
+            <div class="col-12">
+                <div class="text-center"><a href="/"><img src="{{ logo|media }}" width="90px"></a>
+                    <p class="lead my-4 ">{{ "Iscrizione completata con successo!"|_ }}</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p class="text-center">Gentile&nbsp;{{ first_name }} {{ last_name }},</p>
+                <p class="text-center">{{ "Ancora un ultimo passo, dovresti aver ricevuto una mail di conferma del tuo account, segui le istruzioni per finalizzare la tua iscrizione"|_ }}</p>
+                <p class="text-center fw-bold">{{ "Se non la trovi cerca nella casella SPAM!"|_ }}</p>
+            </div>
+            <div class="col"><a href="/" class="btn btn-primary w-100" type="button">{{ "Vai alla home"|_ }}</a></div>
+        </div>
+    </div>

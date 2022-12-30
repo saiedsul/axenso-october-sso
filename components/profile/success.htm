@@ -1,1 +1,10 @@
-{% partial 'sso/profile-success.htm' %}
+    <div class="container p-5">
+        <div class="row gy-3 gy-md-4 col-md-6 mx-auto aos-init aos-animate" data-aos="fade-up">
+            <div class="col-12">
+                <div class="text-center"><a href="/"><img src="{{ logo|media }}" width="90px"></a>
+                    <p class="lead my-4 ">{{ "Aggiornamento del profilo completato con successo!"|_ }}</p>
+                </div>
+            </div>
+            <div class="col"><a href="/" class="btn btn-primary w-100" type="button">{{ "Vai alla home"|_ }}</a></div>
+        </div>
+    </div>

@@ -66,10 +66,10 @@ class Login extends ComponentBase
                 $sso = new AxenSso();
 
                 $response = $sso->login($email,$password);
-
                 if ($response->getStatusCode() == 200) {
                     $sso_user = $response->object()->user;
                     $hasConsent = $response->object()->has_consent;
+                    $must_update_profile = $response->object()->user->must_update_profile;
                     $dbUser = User::where('sso_id',$sso_user->id)->first();
                     if ($dbUser) {
                         $dbUser->first_name = $sso_user->profile->first_name;
@@ -89,30 +89,38 @@ class Login extends ComponentBase
                             'password' => Hash::make(Input::get('password')),
                             'enabled'=> $sso_user->active,
                             'profile' => $sso_user->profile,
+                            'privacy_consent' => $hasConsent,
+                            'profile_updated' => !$must_update_profile,
                         ]);
                     }
                     $log = Axenlog::create([
                         'email' => $sso_user->email,
                         'action_type' => Axenlog::LOGIN,
                         'action_time' => Carbon::now()->format('Y-m-d H:i:s'),
-                        'user_name' => $sso_user->  ofile->first_name,
+                        'user_name' => $sso_user->profile->first_name,
                         'user_lastname' => $sso_user->profile->last_name,
                         'sso_id' =>  $sso_user->id,
 
                     ]);
                     $cookie = Cookie::make('user_id',$dbUser->sso_id,4320);
                     Cookie::queue($cookie);
-                    if (!$hasConsent) {
-                        return Redirect::to('/consent');
+                    if ($must_update_profile == true) {
+                        return Redirect::to('/profile');
                     }
                     else {
-                        if ($backURL != null) {
-                            return Redirect::to($backURL);
+                        if (!$hasConsent) {
+                            return Redirect::to('/consent');
                         }
                         else {
-                            return Redirect::to('/');
+                            if ($backURL != null) {
+                                return Redirect::to($backURL);
+                            }
+                            else {
+                                return Redirect::to('/');
+                            }
                         }
                     }
+
                 }
                 else {
                     if ($response->getStatusCode() == 404) {

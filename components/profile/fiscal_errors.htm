@@ -1,0 +1,9 @@
+
+{%for message in errorMsgs%}
+<label id="fiscal_code-error" class="error" for="fiscal_code">
+    {{message | raw}} <br><label class="" style="line-height:21px ;">
+        <input  class="form-check-input" type="checkbox" id="formCheck-customfiscal" name="custom_fiscal" value="1" > {{ "Omocodia"|_ }}</label>
+</label>
+{%endfor%}
+
+

@@ -1,0 +1,42 @@
+<div class="row gy-4">
+
+    <div class="col-md-6">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ 'Privacy policy Xgate'|_ }}</span></div><a class="small" target="_blank" href="{{ __SELF__.xgateConfig['privacy_policy_page_url']['config_value'] }}">{{ "Leggi l'informativa"|_ }}</a>
+        </div>
+        <textarea class="form-control" disabled>{{ __SELF__.xgateConfig['privacy_policy_text']['config_value'] }}</textarea>
+    </div>
+    <div class="col-md-6">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <span>{{ 'Privacy policy Sito'|_ }}</span>
+            </div>
+            <a class="small" href="{{ __SELF__.sitePrivacyPolicyURL }}" target="_blank">{{ "Leggi l'informativa"|_ }}</a>
+        </div>
+        <textarea class="form-control" disabled>{{ __SELF__.sitePrivacyPolicyText }}</textarea>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-check">
+
+            <label class="form-check-label" for="formCheck-11">
+                {{ "ESPRIMO IL MIO CONSENSO ALL’INVIO DA PARTE DI AXENSO DI COMUNICAZIONI AVENTI CONTENUTO INFORMATIVO, MEDICO-SCIENTIFICO, O DIVULGATIVO UTILIZZANDO L’INDIRIZZO DI POSTA ELETTRONICA FORNITO"|_ }}</label>
+                <input class="form-check-input" {% if __SELF__.profile.data_marketing_consent == 1 %} checked {% endif %} type="checkbox" id="formCheck-11"  name="data_marketing_consent" >
+            </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-check">
+
+            <label class="form-check-label" for="formCheck-13"  >
+                {{ "ESPRIMO IL MIO CONSENSO ALLA RACCOLTA DI INFORMAZIONI RELATIVE ALL’ATTIVITÀ PROFESSIONALE E AI RELATIVI INTERESSI/AREE DI INTERESSE TESE ALLA CREAZIONE DI PROFILI DELL’INTERESSE MEDICO-SCIENTIFICO PER SVILUPPARE, FORNIRE E MIGLIORARE I SERVIZI INFORMATIVI E MEDICO-SCIENTIFICI OFFERTI DA AXENSO E RENDERLI PIÙ RISPONDENTI ALLE ESIGENZE E INTERESSI"|_ }}</label>
+
+                <input {% if __SELF__.profile.data_transfer_consent == 1 %} checked {% endif %} class="form-check-input" type="checkbox" name="data_transfer_consent" id="formCheck-13" >
+
+            </div>
+    </div>
+
+    <div class="col-md-12 d-flex justify-content-between">
+        <div class=""><a class="btn btn-secondary btnPrevious" >{{ "Indietro"|_ }}</a></div>
+        <div class=""><button class="btn btn-primary" type="submit" >{{ "Invia iscrizione"|_ }}</button></div>
+    </div>
+</div>

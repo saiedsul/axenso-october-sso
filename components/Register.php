@@ -53,8 +53,6 @@ class Register extends ComponentBase
       $this->logo = $settings->logo;
     }
     public function init(){
-
-
         if ($this->property('formtype') == null) {
             $this->formtype = 'full';
         }
@@ -82,7 +80,9 @@ class Register extends ComponentBase
         ];
     }
     public function onRegister() {
-            $req_user = [
+        $settings = Settings::instance();
+
+        $req_user = [
                     'profile' => [
                         'title' => input::get('title'),
                         'first_name' => input::get('first_name'),
@@ -147,7 +147,11 @@ class Register extends ComponentBase
                     'user_lastname' => $dbUser->profile['last_name'],
                     'sso_id' =>  $dbUser->sso_id,
                 ]);
-                return Redirect::to('/register/thank-you');
+                return ['#main'=> $this->renderPartial('Register::success',[
+                        'first_name' => Input::get('first_name'),
+                        'last_name' => Input::get('last_name'),
+                        'logo' => $settings->logo,
+                    ])];
                // return response()->json($dbUser);
             }
             else if ($responseStatusCode == 500) {

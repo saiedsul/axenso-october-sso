@@ -45,10 +45,10 @@ class AxenSso {
         return $response;
     }
 
-    public function consent($user_id) {
+    public function consent($email) {
         $payload = [
             'client_id' => $this->client_id,
-            'user_id' => $user_id
+            'email' => $email
         ];
         $response = Http::accept('application/json')
                         ->withToken($this->token->token)
@@ -120,7 +120,28 @@ class AxenSso {
                         ->post($this->sso_base_url.'/api/user/lookup-email',$payload);
         return $response;
     }
-
+    public function getProfile($user_id) {
+        $payload = [
+            'user_id' => $user_id,
+        ];
+        $response = Http::accept('application/json')
+                        ->withHeaders(['origin' => config('app.url')])
+                        ->withToken($this->token->token)
+                        ->get($this->sso_base_url.'/api/user/get-profile',$payload);
+        return $response;
+    }
+    public function updateProfile($user_id,$profile) {
+        $payload = [
+            'user_id' => $user_id,
+            'client_id' => $this->client_id,
+            'profile' => $profile,
+        ];
+        $response = Http::accept('application/json')
+                         ->withHeaders(['origin' => config('app.url')])
+                        ->withToken($this->token->token)
+                        ->post($this->sso_base_url.'/api/user/update-profile',$payload);
+        return $response;
+    }
 
     public function getProfessions() {
         $response = Http::accept('application/json')

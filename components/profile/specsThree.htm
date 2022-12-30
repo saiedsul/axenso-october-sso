@@ -1,0 +1,22 @@
+{% if specsThree is not empty %}
+<div class="d-flex justify-content-between align-items-center">
+    <div><span>{{ "Disciplina 3"|_ }}</span></div>
+    {% partial 'sso/general/tooltip' msg= 'Se ha ulteriori titoli, la invitiamo ad indicare qui la 3 disciplina' %}
+</div>
+<div class="dropdown " >
+    <select class="form-select btn dropdown-toggle text-start"
+    name="specialization_3"
+    id="specializations_3"
+    oninput="this.className = 'btn dropdown-toggle text-start'"
+    {% if specsThree is empty %} disabled required="false"  {%endif%}
+    >
+        <optgroup label="Discipline">
+            <option value=""></option>
+
+          {% for spec in specsThree %}
+          <option value="{{ spec['name'] }}">{{ spec['name'] }}</option>
+          {%endfor%}
+          </optgroup>
+      </select>
+</div>
+{%endif%}

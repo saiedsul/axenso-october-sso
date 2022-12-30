@@ -27,6 +27,12 @@ class Protect extends ComponentBase
                 if ($user->privacy_consent) {
                     $this->page['consested'] = 1;
                 }
+                if ($user->profile_udated) {
+                    $this->page['profile_udated'] = 1;
+                }
+                if ($user->profile_updated == 0) {
+                    return Redirect::to('/profile');
+                }
                 else if ($user->privacy_consent == 0) {
                     return Redirect::to('/consent');
                 }

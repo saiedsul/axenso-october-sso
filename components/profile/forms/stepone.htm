@@ -1,0 +1,256 @@
+<div class="row gy-3 gy-md-4 mb-4">
+
+    <div class="col-12">
+        <div class="d-flex justify-content-center align-items-center align-content-center">
+            <div class="d-flex flex-column align-items-center"><a href="/"><img src="{{ __SELF__.logo|media }}" width="90px"></a>
+                <p class="lead my-4 ">Conferma dati personali</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <span>{{ "Titolo"|_ }}</span>
+                <span class="asterisco">*</span>
+            </div>
+
+        </div>
+        <div class="dropdown">
+            <select name="title" class=" form-select btn dropdown-toggle text-start">
+                <option value=""></option>
+                <option value="Dott." {% if __SELF__.profile.title == 'Dott.' %} selected="selected" {% endif %}>{{ "Dott."|_ }}</option>
+                <option value="Dott.ssa" {% if __SELF__.profile.title == 'Dott.ssa' %} selected="selected" {% endif %}>{{ "Dott.ssa"|_ }}</option>
+                <option value="Sig." {% if __SELF__.profile.title == 'Sig.' %} selected="selected" {% endif %}>{{ "Sig."|_ }}</option>
+                <option value="Sig.ra" {% if __SELF__.profile.title == 'Sig.ra' %} selected="selected" {% endif %}>{{ "Sig.ra"|_ }}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Nome"|_ }}</span><span class="asterisco">*</span></div>
+            {% partial __SELF__ ~ '::tooltip' msg='Inserire il nome completo, come da codice fiscale' %}
+        </div>
+        <input class="form-control text-capitalize" type="text" placeholder="" value="{{ __SELF__.profile.first_name }}" required name="first_name">
+
+    </div>
+    <div class="col-md-5">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Cognome"|_ }}</span><span class="asterisco">*</span></div>
+            {% partial __SELF__ ~ '::tooltip' msg='Inserire il cognome completo, come da codice fiscale' %}
+        </div><input class="form-control text-capitalize" type="text" placeholder="" value="{{ __SELF__.profile.last_name }}"  required name="last_name">
+    </div>
+
+
+
+    <div class="col-md-8">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Professione"|_ }}</span><span class="asterisco">*</span></div>
+
+        </div>
+        <div class="dropdown" name="profession" required>
+
+            <select name="profession" class=" form-select btn dropdown-toggle text-start" data-request="{{__SELF__}}::onProfSelect">
+                <optgroup label="Ordine Professionale">
+                    <option value=""></option>
+                    {% for profession in __SELF__.profissions %}
+                    <option value="{{ profession['name'] }}"  {% if __SELF__.profile.profession == profession['name'] %} selected="selected" {% endif %}>{{ profession['name'] }}</option>
+                    {%endfor%}
+                </optgroup>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Ospedale/Territorio"|_ }}</span><span class="asterisco">*</span></div>
+        </div>
+        <div class="dropdown">
+            <select class="btn dropdown-toggle text-start form-select" name="territory" required>
+                <option value="Ospedale" {% if __SELF__.profile.territory == 'Ospedale' %} selected="selected" {% endif %}>{{ "Ospedale"|_ }}</option>
+                <option value="Territorio" {% if __SELF__.profile.territory == 'Territorio' %} selected="selected" {% endif %}>{{ "Territorio"|_ }}</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="col-md-6" id="spcsdiv_1">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div><span>{{ "Disciplina"|_ }}</span><span class="asterisco">*</span></div>
+                </div>
+                <div class="dropdown " >
+                    <select class="form-select btn dropdown-toggle text-start"  data-request="{{__SELF__}}::onSpecSelect" data-request-data="spec: 1" name="specialization" id="specializations" oninput="this.className = 'btn dropdown-toggle text-start'" required>
+                        <optgroup label="Discipline">
+                        {% for spec in __SELF__.initial_sepcs_1 %}
+                        <option value="{{ spec['name'] }}"  {% if __SELF__.profile.specialization == spec['name'] %} selected="selected" {% endif %}>{{ spec['name'] }}</option>
+                        {%endfor%}
+                        </optgroup>
+                    </select>
+                </div>
+    </div>
+
+
+    <div class="col-md-6" id="sub_spcsdiv">
+
+
+        {% if __SELF__.sub_spcs is not empty %}
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Specializzazione"|_ }}</span>
+                {% if __SELF__.sub_spcs is empty %}  {%else%} <span class="asterisco" >*</span> {%endif%}
+            </div>
+
+        </div>
+        <div class="dropdown ">
+            <select class="form-select btn dropdown-toggle text-start" name="sub_specialization" id="sub_specialization" {% if __SELF__.sub_spcs is empty %} disabled required="false" {%else%} required {%endif%}>
+                <optgroup label="{{ 'Specializzazione'|_ }}">
+                    {% for sub in __SELF__.sub_spcs %}
+                    <option value="{{ sub['name'] }}" {% if __SELF__.profile.sub_specialization == sub['name'] %} selected="selected" {% endif %}>{{ sub['name'] }}</option>
+                    {%endfor%}
+            </optgroup>
+            </select>
+        </div>
+        {%endif%}
+
+    </div>
+
+    <div class="col-md-6" id="spcsdiv_2">
+        {% if __SELF__.specsTwo is not empty %}
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Disciplina 2"|_ }}</span></div>
+            {% partial 'sso/general/tooltip' msg= 'Se ha ulteriori titoli, la invitiamo ad indicare qui la 2 disciplina' %}
+        </div>
+        <div class="dropdown " >
+            <select class="form-select btn dropdown-toggle text-start"
+            name="specialization_2"
+            id="specializations_2"
+            oninput="this.className = 'btn dropdown-toggle text-start'"
+            {% if __SELF__.specsTwo is empty %} disabled required="false" {%endif%}
+            >
+                <optgroup label="Discipline">
+                    <option value=""></option>
+                  {% for spec in __SELF__.specsTwo %}
+                  <option value="{{ spec['name'] }}" {% if __SELF__.profile.specialization_2 == spec['name'] %} selected="selected" {% endif %}>{{ spec['name'] }}</option>
+                  {%endfor%}
+                  </optgroup>
+              </select>
+        </div>
+        {%endif%}
+    </div>
+
+
+    <div class="col-md-6" id="spcsdiv_3">
+        {% if __SELF__.specsThree is not empty %}
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Disciplina 3"|_ }}</span></div>
+            {% partial 'sso/general/tooltip' msg= 'Se ha ulteriori titoli, la invitiamo ad indicare qui la 3 disciplina' %}
+        </div>
+        <div class="dropdown " >
+            <select class="form-select btn dropdown-toggle text-start"
+            name="specialization_3"
+            id="specializations_3"
+            oninput="this.className = 'btn dropdown-toggle text-start'"
+            {% if __SELF__.specsThree is empty %} disabled required="false"  {%endif%}
+            >
+                <optgroup label="Discipline">
+                    <option value=""></option>
+
+                  {% for spec in __SELF__.specsThree %}
+                  <option value="{{ spec['name'] }}" {% if __SELF__.profile.specialization_3 == spec['name'] %} selected="selected" {% endif %}>{{ spec['name'] }}</option>
+                  {%endfor%}
+                  </optgroup>
+              </select>
+        </div>
+        {%endif%}
+
+    </div>
+
+
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Operatività"|_ }}</span><span class="asterisco">*</span></div>
+
+        </div>
+        <div class="dropdown">
+            <select class="form-select btn dropdown-toggle text-start" name="employment" required>
+                <option value="" ></option>
+                <option value="Libero professionista" {% if __SELF__.profile.employment == 'Libero professionista' %} selected="selected" {% endif %}>{{ "Libero professionista"|_ }}</option>
+                <option value="Dipendente" {% if __SELF__.profile.employment == 'Dipendente' %} selected="selected" {% endif %}>{{ "Dipendente"|_ }}</option>
+                <option value="Convenzionato" {% if __SELF__.profile.employment == 'Convenzionato' %} selected="selected" {% endif %}>{{ "Convenzionato"|_ }}</option>
+                <option value="Privo di occupazione" {% if __SELF__.profile.employment == 'Privo di occupazione' %} selected="selected" {% endif %}>{{ "Privo di occupazione"|_ }}</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Provincia attività lavorativa"|_ }}</span><span class="asterisco">*</span></div>
+            {% partial __SELF__ ~ '::tooltip' msg="Se ha selezionato \"privo di occupazione\" indicare l'ultima provincia nella quale si è lavorato" %}
+        </div>
+        <div class="dropdown">
+            <select class="form-select btn dropdown-toggle text-start" name="province_enployment"  data-request="{{__SELF__}}::onCitySelect" required>
+                <option value=""></option>
+                {% for key,province in __SELF__.provinces %}
+                    <option value="{{  key }}"  {% if __SELF__.profile.province_enployment == key %} selected="selected" {% endif %}>{{ province }}</option>
+                {%endfor%}
+            </select>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Regione attività lavorativa"|_ }}</span><span class="asterisco">*</span></div>
+
+        </div>
+        <div class="" id="regionDiv">
+            <input class="form-control" name="regione_enployment" value="{{ __SELF__.profile.regione_enployment }}" type="text" placeholder="Regione" readonly="">
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Ordine professionale"|_ }}</span><span class="asterisco">*</span></div>
+
+        </div>
+        <div class="dropdown"  >
+            <select class="btn form-select dropdown-toggle text-start" name="board_member" required>
+                <option value=""></option>
+                <option value="FNOMCEO"  {% if __SELF__.profile.board_member == 'FNOMCEO' %} selected="selected" {% endif %}>{{ "FNOMCEO"|_ }}</option>
+                <option value="FNOPI"  {% if __SELF__.profile.board_member == 'FNOPI' %} selected="selected" {% endif %}>{{ "FNOPI"|_ }}</option>
+                <option value="FOFI"  {% if __SELF__.profile.board_member == 'FOFI' %} selected="selected" {% endif %}>{{ "FOFI"|_ }}</option>
+                <option value="Altro"  {% if __SELF__.profile.board_member == 'Altro' %} selected="selected" {% endif %}>{{ "Altro"|_ }}</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div><span>{{ "Provincia di iscrizione all ordine"|_ }}</span><span class="asterisco">*</span></div>
+        </div>
+        <div class="dropdown"  >
+            <select class="btn form-select dropdown-toggle text-start" name="province_board" required>
+                <option value=""></option>
+            {% for key,province in __SELF__.provinces %}
+                <option value="{{  key }}" {% if __SELF__.profile.province_board == key %} selected="selected" {% endif %}>{{ province }}</option>
+            {%endfor%}
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <span>Numero iscrizione Ordine</span>
+                <span class="asterisco">*</span>
+            </div>
+            {% partial __SELF__ ~ '::tooltip' msg="Indicare il numero d'iscrizione all'ordine professionale" %}
+        </div>
+        <input class="form-control" type="text" placeholder="Inserisci numero" value="{{ __SELF__.profile.board_number }}" required name="board_number">
+    </div>
+
+
+</div>
+
+

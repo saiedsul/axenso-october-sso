@@ -1,7 +1,0 @@
-<select required class=" form-control " name="specialization" id="specializations" oninput="this.className = 'form-control'">
-  <optgroup label="Specializzazione">
-    {% for spec in specs %}
-    <option value="{{ spec['name'] }}">{{ spec['name'] }}</option>
-    {%endfor%}
-    </optgroup>
-</select>

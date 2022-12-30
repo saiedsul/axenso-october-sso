@@ -1,2 +1,8 @@
-  
-    {% partial 'sso/errors/generic.htm' errorMsgs=errorMsgs %}
+
+{%for message in errorMsgs %}
+<label id="fiscal_code-error" class="error" for="fiscal_code">
+    {{message[0] | raw}}
+</label> <br>
+{%endfor%}
+
+

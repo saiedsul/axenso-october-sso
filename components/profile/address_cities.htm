@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-between align-items-center">
+    <div><span>{{ "Città"|_ }}</span><span class="asterisco">*</span></div>
+</div>
+<div class="dropdown">
+    <select  class="form-select btn dropdown-toggle text-start" name="address_city" required >
+        <option value=""></option>
+        {% for city in cities %}
+        <option value="{{  city['name'] }}">{{ city['name'] }}</option>
+        {%endfor%}
+    </select>
+</div>
