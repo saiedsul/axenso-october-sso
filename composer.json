@@ -1,8 +1,6 @@
 {
     "name": "axen/sso-plugin",
-    "type": "october-plugin",
     "description": "Add SSO to Octobercms",
-    "keywords": ["axen", "octobercms", "sso"],
     "license": "MIT",
     "authors": [
         {
@@ -13,8 +11,12 @@
     "require": {
         "php": "^7.0|^8.0",
         "composer/installers": "~1.0",
+        "rainlab/builder-plugin": "^1.2",
         "guzzlehttp/guzzle": "^7.5",
+        "rainlab/translate-plugin": "^1.9",
         "robertogallea/laravel-codicefiscale": "^1.12",
+        "prismify/bootstrap-starter-kit-theme": "^1.0",
+        "vojtasvoboda/oc-twigextensions-plugin": "^2.0",
         "aws/aws-sdk-php": "^3.247"
     },
     "require-dev": {
