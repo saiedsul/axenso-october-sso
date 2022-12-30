@@ -1,5 +1,5 @@
 {
-    "name": "axen/sso-plugin",
+    "name": "axenso/xgate-plugin",
     "type": "october-plugin",
     "description": "Add SSO to Octobercms",
     "keywords": ["axen", "octobercms", "sso"],
