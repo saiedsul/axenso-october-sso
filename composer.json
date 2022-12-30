@@ -2,7 +2,7 @@
     "name": "axen/xgate-plugin",
     "type": "october-plugin",
     "description": "Add SSO to Octobercms",
-    "keywords": ["axenso", "octobercms", "sso"],
+    "keywords": ["axen", "octobercms", "sso"],
     "license": "MIT",
     "authors": [
         {
