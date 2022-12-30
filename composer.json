@@ -1,6 +1,8 @@
 {
     "name": "axen/sso-plugin",
+    "type": "october-plugin",
     "description": "Add SSO to Octobercms",
+    "keywords": ["axen", "octobercms", "sso"],
     "license": "MIT",
     "authors": [
         {
