@@ -10,7 +10,6 @@ class BuilderTableUpdateAxenSsoUsers extends Migration
         Schema::table('axen_sso_users', function($table)
         {
             $table->jsonb('profile')->nullable();
-            $table->smallInteger('privacy_consent')->default(0);
         });
     }
 
