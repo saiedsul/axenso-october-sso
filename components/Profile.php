@@ -216,6 +216,9 @@ class Profile extends ComponentBase
     public function onRender() {
         $cookie = Cookie::get('user_id');
         $this->user = $user = User::where('sso_id',$cookie)->first();
+        if (!$user) {
+            return Redirect::to('/login');
+        }
         $sso = new AxenSso;
         $helper = new Helpers;
         $settings = Settings::instance();
@@ -225,7 +228,6 @@ class Profile extends ComponentBase
         if ($responseStatusCode == 200) {
 
             $this->profile = $profile = $responseObject;
-            //exit($profile->profession);
             $this->specsTwo = [];
             $this->specsThree = [];
             $this->initial_sepcs_1 = $initial_sepcs_1 = $this->getProfSpec($profile->profession);
@@ -241,7 +243,7 @@ class Profile extends ComponentBase
             }
         }
         else {
-            exit('ss');
+            return Redirect::to('/login');
         }
 
        $this->countries =  $countries = $helper->getCountries();
@@ -252,11 +254,6 @@ class Profile extends ComponentBase
                 break;
             }
         }
-        if (Input::get('dubug') == 1) {
-            dd($responseObject);
-        }
-
-
     }
     public function getProfileSubSpecs($item) {
         $helper = new Helpers;

@@ -1,7 +1,7 @@
 {% if specsTwo is not empty %}
 <div class="d-flex justify-content-between align-items-center">
     <div><span>{{ "Disciplina 2"|_ }}</span></div>
-    {% partial 'sso/general/tooltip' msg= 'Se ha ulteriori titoli, la invitiamo ad indicare qui la 2 disciplina' %}
+    {% partial __SELF__ ~ '::tooltip' msg= 'Se ha ulteriori titoli, la invitiamo ad indicare qui la 2 disciplina' %}
 </div>
 <div class="dropdown " >
     <select class="form-select btn dropdown-toggle text-start"

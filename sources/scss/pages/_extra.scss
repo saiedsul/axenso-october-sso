@@ -840,22 +840,8 @@ p{
 .home-catalogo-corsi .dropdown-toggle::after{
     display:none
 }
-.tooltip .tooltip-inner{
-    background-color:#496391!important;
-    border-radius:.15rem;
-    line-height:1;
-    padding:.5rem
-}
-.tooltip img{
-    color:#dee2e6;
-    width:16px
-}
-.tooltip .tooltip-arrow::before{
-    border-top-color:#496391!important
-}
-.tooltip .tooltip-arrow::before .tooltip-arrow{
-    z-index:-1
-}
+
+
 @media (max-width:575.98px){
     .box-primary{
         background-color:rgba(73,99,145,.1);

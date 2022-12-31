@@ -4,7 +4,7 @@
         <span class="asterisco">*</span>
      {%endif%}
     </div>
-    {% partial 'sso/general/tooltip' msg= 'Se non nati in italia, selezionare la nazione di nascita' %}
+    {% partial __SELF__ ~ '::tooltip' msg= 'Se non nati in italia, selezionare la nazione di nascita' %}
 </div>
 <div class="dropdown">
     <select class="form-select btn dropdown-toggle text-start" name="place_of_birth" {% if countries is not empty %} required {%else%} disabled {%endif%}>
