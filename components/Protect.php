@@ -18,6 +18,9 @@ class Protect extends ComponentBase
         $this->addJs('/plugins/axen/sso/assets/js/sso.js',[
             'type' => "text/javascript",
         ]);
+        $this->addJs('https://kit.fontawesome.com/6d76af8390.js',[
+            'type' => "text/javascript",
+        ]);
         $this->addCss('/plugins/axen/sso/assets/css/sso.css');
         $this->page['consested'] = 0;
         $cookie = Cookie::get('user_id');
