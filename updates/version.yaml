@@ -21,3 +21,5 @@
 1.1.2:
     - 'Updated table axen_sso_users'
     - builder_table_update_axen_sso_users_2.php
+1.1.3:
+    - 'Updated Assets'
