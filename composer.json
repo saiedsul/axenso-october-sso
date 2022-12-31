@@ -1,5 +1,6 @@
 {
     "name": "axen/sso-plugin",
+    "type": "october-plugin",
     "description": "Add SSO to Octobercms",
     "keywords": ["axen", "octobercms", "sso"],
     "license": "MIT",
@@ -22,6 +23,14 @@
     },
     "require-dev": {
       "phpunit/phpunit": "~4.0"
+    },
+    "scripts": {
+        "post-package-install": [
+            "cd plugins/axen/sso/ npm install && npm run mix:build"
+        ],
+        "post-package-update": [
+            "cd plugins/axen/sso/ npm install && npm run mix:build"
+        ]
     },
     "minimum-stability": "dev"
 }
