@@ -19,18 +19,18 @@
     <div class="col-md-6">
         <div class="form-check">
 
+            <input class="form-check-input" {% if __SELF__.profile.data_marketing_consent == 1 %} checked {% endif %} type="checkbox" id="formCheck-11"  name="data_marketing_consent" >
             <label class="form-check-label" for="formCheck-11">
                 {{ "ESPRIMO IL MIO CONSENSO ALL’INVIO DA PARTE DI AXENSO DI COMUNICAZIONI AVENTI CONTENUTO INFORMATIVO, MEDICO-SCIENTIFICO, O DIVULGATIVO UTILIZZANDO L’INDIRIZZO DI POSTA ELETTRONICA FORNITO"|_ }}</label>
-                <input class="form-check-input" {% if __SELF__.profile.data_marketing_consent == 1 %} checked {% endif %} type="checkbox" id="formCheck-11"  name="data_marketing_consent" >
             </div>
     </div>
     <div class="col-md-6">
         <div class="form-check">
+            <input {% if __SELF__.profile.data_transfer_consent == 1 %} checked {% endif %} class="form-check-input" type="checkbox" name="data_transfer_consent" id="formCheck-13" >
 
             <label class="form-check-label" for="formCheck-13"  >
                 {{ "ESPRIMO IL MIO CONSENSO ALLA RACCOLTA DI INFORMAZIONI RELATIVE ALL’ATTIVITÀ PROFESSIONALE E AI RELATIVI INTERESSI/AREE DI INTERESSE TESE ALLA CREAZIONE DI PROFILI DELL’INTERESSE MEDICO-SCIENTIFICO PER SVILUPPARE, FORNIRE E MIGLIORARE I SERVIZI INFORMATIVI E MEDICO-SCIENTIFICI OFFERTI DA AXENSO E RENDERLI PIÙ RISPONDENTI ALLE ESIGENZE E INTERESSI"|_ }}</label>
 
-                <input {% if __SELF__.profile.data_transfer_consent == 1 %} checked {% endif %} class="form-check-input" type="checkbox" name="data_transfer_consent" id="formCheck-13" >
 
             </div>
     </div>

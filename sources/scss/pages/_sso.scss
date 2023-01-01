@@ -1,599 +1,176 @@
+/**
+ * Bootstrap - Starter Kit
+ *
+ * @author Prismify
+ * @version 1.0.6
+ */
 
 
-p {
-    font-size: 1rem;
-    font-weight: 300;
+// Pages
+// -------------------------------------------------------------------------------- //
+@import "pages/+import.pages";
 
-    @media (min-width: 1200px) {
-        font-size: 1.2rem;
+.sso-logo {
+    width:100px;
+}
+.login-form{
+    position:relative;
+    width:100%;
+    height:100%;
+    padding:4rem
+}
+.login-form .overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    min-width:100%;
+    min-height:100%;
+    z-index:-1
+}
+.login-form{
+    position:relative;
+    width:100%;
+    height:100%;
+    padding:4rem
+}
+.login-form .overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    min-width:100%;
+    min-height:100%;
+    z-index:-1
+}
+@media (max-width:576px){
+    .squared{
+        position:relative
+    }
+    .login-form{
+        padding:1.5rem
+    }
+    .login-form .overlay{
+        display:none
+    }
+    .login-form .tab-login{
+        margin-top:0;
+        border:none;
+        box-shadow:none;
+        border-radius:0;
+        height:100%;
+        padding:1rem 0
     }
 }
-
-.lead {
-
-    font-size: calc(0.8rem + 1rem);
-		line-height: calc(1.2rem + 0.75rem);
-    font-weight: 500;
-
-}
-
-
-.display-1 {
-	font-size: calc(4rem + 0.5rem);
-	letter-spacing: calc(-6px + 6px);
-	font-weight: 800;
-}
-
-
-.text-primary {
-
-	color: $primary-color!important;
-}
-
-
-.bg-color-white {
-    background: rgb(240,240,240);
-    background: linear-gradient(135deg, rgba(240,240,240,1) 0%, rgba(240,240,240,0.025) 30%);
-}
-
-
-.btn {
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: $border-radius-small;
-		box-shadow: $box-shadow;
-
-
-    &.btn-primary {
-        background-color: $primary-color!important;
-
-        &:hover{
-            background-color: $secondary-color!important;
-        }
-    }
-
-    &.btn-light {
-        background-color: #fff;
-
-
-        &:hover{
-            background-color: $grey-light!important;
-        }
+@media (min-width:1112px){
+    .login-form .tab-login{
+        padding:2.5rem;
+        margin:2rem 0
     }
 }
-
-
-.btn-lg {
-    padding: 1.25rem 2.5rem;
-    border: none;
-    border-radius: 10px;
-		box-shadow: $box-shadow;
-
-
-    &.btn-primary {
-        background-color: $primary-color!important;
-
-        &:hover{
-            background-color: $secondary-color!important;
-        }
-    }
-
-    &.btn-light {
-        background-color: #fff;
-
-
-        &:hover{
-            background-color: $grey-light!important;
-        }
-    }
+.login-form .tab-login .nav-link{
+    margin:0 .5rem;
+    background-color:#a95260;
+    border-radius:.3rem;
+    border:1px solid rgba(187,187,187,.35);
+    color:#fff
 }
-
-.form-control {
-		border-radius: 10px;
-		padding: 0.75rem 2rem;
-		box-shadow: $box-shadow;
-
+.login-form .tab-login .nav-link.active{
+    background-color:#496391 !important
 }
-
-.form-control-lg {
-		border-radius: 10px;
-		padding: 1.5rem 2rem;
-		box-shadow: $box-shadow;
-
+.login-form .tab-login .logo,.tab-registration .logo{
+    width:150px;
+    margin-right:.75rem
 }
-
-.card-course {
-	background-color: #fff;
-	box-shadow: $box-shadow;
-	border-radius: $border-radius-small;
-	overflow: hidden;
-	position: relative;
-
-	.card-info {
-			margin-bottom: 1rem;
-
-		span {
-			font-size: 0.75rem!important;
-				}
-		}
-
-	.card-overlay {
-		position: absolute;
-		top: 1rem;
-		left: 1rem;
-	}
-
-	h4 {
-		font-size: 1.3rem;
-	}
-
-	p {
-		font-size: 1rem;
-		margin-bottom: 0px;
-	}
-
-	.card-image {
-
-	}
-
+.login-form .tab-login .nav-item i,.tab-registration .nav-item i{
+    margin:.5rem;
+    font-size:1.6rem;
+    opacity:.3;
+    color:#a95260
 }
-
-
-
-
-@media (min-width: 992px) {
-
-	.video-promo {
-		border-radius: 10px;
-		overflow: hidden;
-		box-shadow: $box-shadow;
-		border-radius: 20px;
-		position: relative;
-		top: -50px;
-		z-index: 10;
-
-
-	.ratio iframe {
-		border-radius: 20px;
-		overflow: hidden;
-	}
-			}
-
+.login-form .tab-login .nav-item .active i,.tab-registration .nav-item .active i{
+    opacity:1;
+    color:#496391
 }
-
-
-footer {
-    color: #666666;
-
-    p {
-        font-size: 1rem;
-        margin-bottom: 0;
-    }
-
-		a {
-				color: #666666;
-
-				&:hover {
-						color: $primary-color;
-				}
-		}
-
+.login-form .tab-login .btn-secondary,.tab-registration .btn-secondary{
+    box-shadow:0 0 .5rem rgba(0,0,0,.05)!important;
+    background-color:#a95260
 }
-
-
-.sidebar-menu {
-	.nav-item{
-		width: 100%;
-		font-size: 0.9rem;
-
-
-
-	a {
-		display: flex;
-		align-items: center!important;
-
-			i {
-				font-size: 1.6rem;
-				font-weight: 200;
-			}
-
-			span {
-				margin-left: 1rem;
-			}
-		}
+.login-form .tab-login .btn-secondary.btn-primary,.tab-registration .btn-secondary.btn-primary{
+    box-shadow:0 0 .5rem rgba(0,0,0,.05)!important;
+    border:1rem
 }
-
-
-	.nav-link.active {
-		background-color: #fff!important;
-		border-radius: 0px;
-		color: $primary-color;
-		border-bottom: 1px solid $border-color;
-		padding: 1.5rem 1rem;
-		vertical-align: middle!important;
-
-	}
-
-	.nav-link {
-		//background-color: #f8f8f8!important;
-		border-radius: 0px;
-		color: $primary-color;
-		border-bottom: 1px solid $border-color;
-		padding: 1.5rem 1rem;
-		vertical-align: middle!important;
-		width: 100%!important;
+.login-form .tab-login .dropdown,.tab-registration .dropdown{
+    margin-bottom:0
 }
-
+.login-form .tab-login .dropdown .dropdown-toggle,.tab-registration .dropdown .dropdown-toggle{
+    border-radius:.3rem;
+    padding:.75rem;
+    font-size:.9rem;
+    box-shadow:0 0 1rem rgba(0,0,0,.15)
 }
-
-
-
-
-//REGISTRATION FORM
-
-
-//$tooltip-font-size:                 $font-size-sm;
-//$tooltip-max-width:                 200px;
-//$tooltip-color:                     $white;
-//$tooltip-bg:                        $black;
-//$tooltip-border-radius:             $border-radius;
-//$tooltip-opacity:                   .9;
-//$tooltip-padding-y:                 $spacer * .25;
-//$tooltip-padding-x:                 $spacer * .5;
-//$tooltip-margin:                    0;
-
-//$tooltip-arrow-width:               .8rem;
-//$tooltip-arrow-height:              .4rem;
-//$tooltip-arrow-color:               $tooltip-bg;
-
-.registration-form {
-
-
-	.panel-left {
-	background-color: $primary-color;
-	padding: 3rem;
-
-	& img {
-		max-width: 80px;
-	}
-
-	@media (min-width: 992px) {
-	padding: 2rem;
-
-
-		& img {
-		max-width: 160px;
-		}
-	}
+.login-form .tab-login .dropdown .show,.tab-registration .dropdown .show{
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+    border:1px solid rgba(187,187,187,.35);
+    border-bottom:none
 }
-
-.panel-right {
-	padding: 0;
-
-	@media (min-width: 992px) {
-		padding: 2rem;
-	}
+.login-form .tab-login .dropdown .show .dropdown-item,.tab-registration .dropdown .show .dropdown-item{
+    padding:.75rem;
+    font-size:.9rem
 }
-
-.panel-right-content {
-	padding: 2rem;
-	//background-color: #f8f8f8;
-	width: 100%;
-	overflow: auto;
+.login-form .tab-login .dropdown .dropdown-menu{
+    width:100%;
+    top:-2px!important;
+    padding-top:0;
+    padding-bottom:0;
+    border-radius:0 0 .3rem .3rem;
+    border:1px solid rgba(187,187,187,.35);
+    border-top:none;
+    max-height:150px;
+    overflow:scroll
 }
-
-//.form-control::-webkit-input-placeholder {
-//  color: #ccc;
-//}
-.reg-tabs-guid {
-
+.login-form .tab-login .dropdown .btn,.tab-registration .dropdown .btn{
+    width:100%;
+    margin-top:.25rem;
+    padding:.75rem;
+    border:1px solid rgba(187,187,187,.35);
+    color:#dee2e6;
+    font-size:.9rem;
+    box-shadow:0 0 .5rem rgba(0,0,0,.05)
 }
-
-.tab-registration {
-
-	padding: 1rem;
-
-	@media (min-width: 1366px) {
-		padding: 2rem;
-	}
-
-
-	& .nav-tabs {
-		border-bottom: none;
-	}
-
-	& .nav-link {
-		margin: 0 0.5rem;
-		border-radius: $border-radius-small;
-		border: 1px solid $border-color;
-		color: $white-color;
-		&.active {
-			background-color: $primary-color;
-			color: $white-color;
-		}
-	}
-
-	& .logo {
-			width:150;
-			margin-right:  0.75rem;
-
-			@media (min-width: 1366px) {
-				width:150px;
-				margin: 0 0.75rem;
-			}
-
-		}
-
-	& .nav-item {
-		i {
-			margin: 0.5rem;
-			font-size: 1.6rem;
-			opacity: 0.3;
-			color: $secondary-color;
-		}
-
-		.active i {
-			opacity: 1;
-			color: $primary-color;
-		}
-	}
-
-	& .btn-secondary {
-		box-shadow: $box-shadow-small!important;
-		//border: $border-radius-small;
-		background-color: $secondary-color;
-
-		&:hover{
-					background-color: $primary-color!important;
-			}
-
-		&.btn-primary {
-			box-shadow: $box-shadow-small!important;
-			border: $border-radius;
-
-
-    }
-	}
-
-	.dropdown {
-
-		& .dropdown-toggle {
-			border-radius: $border-radius-small;
-			padding: 0.75rem;
-			font-size: 0.9rem;
-
-			@media (min-width: 1366px) {
-				font-size: 1rem;
-				padding: 0.75rem 1rem;
-			}
-		}
-
-		& .show {
-			border-bottom-left-radius: 0px;
-			border-bottom-right-radius: 0px;
-			border: 1px solid $border-color;
-			border-bottom: none;
-
-			& .dropdown-item {
-				padding: 0.75rem;
-				font-size: 0.9rem;
-
-				@media (min-width: 1366px) {
-					font-size: 1rem;
-					padding: 0.75rem 1rem;
-				}
-
-			}
-
-		}
-
-		margin-bottom: 0px;
-
-		& .dropdown-menu {
-			width: 100%;
-			top: -2px!important;
-			padding-top: 0px;
-			padding-bottom: 0px;
-			border-radius: $border-radius-small;
-			border-top-left-radius: 0px;
-			border-top-right-radius: 0px;
-			border: 1px solid $border-color;
-			border-top: none;
-			max-height: 150px;
-			overflow: scroll;
-		}
-
-		& .btn {
-			width: 100%;
-			margin-top: 0.25rem;
-			padding: 0.75rem;
-			border: 1px solid $border-color;
-			color:#000;
-			font-size: 0.9rem;
-			box-shadow: $box-shadow-small;
-
-
-			@media (min-width: 1366px) {
-				font-size: 1rem;
-				padding: 0.75rem 1rem;
-			}
-		}
-	}
-
-
-		& .asterisco {
-			color:$grey-medium;
-			margin-left: 0.25rem;
-            color:#d41e1d
-		}
-
-		& a.small {
-			font-size: 0.8rem;
-			color:$grey-medium;
-	}
-
-		& span {
-			color: $grey-medium;
-			font-size: 0.9rem;
-
-			@media (min-width: 1366px) {
-				font-size: 1rem;
-			}
-		}
-
-
-
-		.registration-alert {
-			padding: 0.75rem;
-			background-color: $background-error;
-			//box-shadow: $box-shadow-error-small;
-			border-radius: $border-radius-small;
-			& p {
-				font-size: 0.9rem;
-				line-height: 1.1;
-				margin-bottom: 0;
-
-				color: $white-color;
-				& span {
-					text-transform: none;
-					font-weight: normal;
-					color: $grey-dark;
-					padding-left: 0.5rem;
-				}
-
-			}
-		}
-
-
-		.form-control,.form-select {
-			margin-top: 0.25rem;
-			padding: 0.75rem;
-			box-shadow: $box-shadow-small;
-			border-radius: $border-radius-small;
-			border-color: $border-color;
-			font-size: 0.9rem;
-
-			@media (min-width: 1366px) {
-				font-size: 1rem;
-				padding: 0.75rem 1rem;
-			}
-
-			&:focus {
-				color: #212529;
-				background-color: #fff;
-				border-color: $border-color;
-			}
-
-			&input:autofill, input:-webkit-autofill-strong-password, input:-webkit-autofill-strong-password-viewable, input:-webkit-autofill-and-obscured {
-				background-image: none;
-				color: rgb(0, 0, 0);
+.login-form .tab-login .asterisco,.tab-registration .asterisco{
+    color:#999;
+    margin-left:.25rem
 }
-
-			&::-webkit-input-placeholder {
-				color: $grey-light;
-			}
-
-			&.error {
-				border: $message-error-border;
-				box-shadow: $box-shadow-error-small;
-
-			&:focus {
-				color: #212529;
-				background-color: #fff;
-				border-color: $border-color;
-			}
-		}
-
-		&.ok {
-				border: $message-ok-border;
-				box-shadow: $box-shadow-ok-small;
-
-				&:focus {
-				color: #212529;
-				background-color: #fff;
-				border-color: $border-color;
-			}
-
-
-		}
-
-	}
-
-	textarea.form-control {
-		color: $grey-dark;
-		margin-top: 0.5rem;
-		height: 105px;
-		font-size: 0.9rem;
-
-		@media (min-width: 1366px) {
-			font-size: 1rem;
-		}
-	}
-
-	input[type="date"] {
-     font-family: $font-stack;
-  }
-  & .tab-navigation {
-    & .nav-link {
-        margin: 0 0.5rem;
-        padding: 0px;
-        background-color: $secondary-color;
-        border-radius: $border-radius-small;
-        border: 1px solid $border-color;
-        color: $white-color;
-        background-color: unset !important;
-        border: 0px !important;
-        &.active {
-            background-color: $primary-color;
-            color: $white-color;
-        }
-    }
+.login-form .tab-login a.small,.tab-registration a.small{
+    font-size:.8rem;
+    color:#999
 }
+.login-form .tab-login .form-control{
+    margin-top:.25rem;
+    padding:.75rem;
+    box-shadow:0 0 .5rem rgba(0,0,0,.05);
+    border-radius:.3rem;
+    border-color:rgba(187,187,187,.35);
+    font-size:.9rem
 }
-
-
+.form-control.error.ok:focus,.form-control.error:focus,.form-control:focus,.login-form .tab-login .form-control.error:focus,.login-form .tab-login .form-control.ok:focus,.login-form .tab-login .form-control:focus{
+    color:#212529;
+    background-color:#fff;
+    border-color:rgba(187,187,187,.35)
 }
-
-.tooltip-main {
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  font-weight: 700;
-  background: $grey-lighter;
-  border: 1px solid $grey-dark;
-  color: $grey-dark;
-  margin: 4px;
-  float: right;
-  text-align: left !important;
+.login-form .tab-login .form-control input:-webkit-autofill-and-obscured,.login-form .tab-login .form-control input:-webkit-autofill-strong-password,.login-form .tab-login .form-control input:-webkit-autofill-strong-password-viewable,.login-form .tab-login .form-controlinput:autofill{
+    background-color:#dee2e6;
+    background-image:none;
+    color:#000
 }
-
-.btn-tooltip {
-			padding: 0;
-			box-shadow: none;
-			font-size: 0.9rem;
-			line-height: 0;
-			color: $grey-medium;
-			border-radius: 0px;
-			width: 16px;
-
-			@media (min-width: 1366px) {
-				font-size: 1rem;
-			}
-		}
-
-
-.tooltip-inner {
-  max-width: 236px !important;
-  font-size: 12px;
-  padding: 0.5rem;
-  background: $white-color;
-  color: $grey-dark;
-  border: 1px solid $grey-dark;
-  text-align: left;
+.login-form .tab-login .form-control::-webkit-input-placeholder{
+    color:#dee2e6
 }
-
-.tooltip.show {
-  opacity: 1;
+.form-control.error,.login-form .tab-login .form-control.error{
+    border:1px solid #f18535;
+    box-shadow:0 0 .5rem rgba(241,133,53,.5)
 }
-
-
+.form-control.error.ok,.login-form .tab-login .form-control.ok{
+    border:1px solid #70b966;
+    box-shadow:0 0 .5rem rgba(112,185,102,.5)
+}
