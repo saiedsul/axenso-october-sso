@@ -1,14 +1,15 @@
-<form id="prefform" data-request="{{__SELF__}}::onUpdatePref"
+<form id="prefform" data-request="{{__SELF__}}::onUpdatePref"  
 data-request-success="javascript:(window.location.href='/preferences');"  data-request-validate>
     {% for item in __SELF__.series %}
     <div class="form-check">
-        <input {% if item.selected == 1 %} checked="checked" {% endif %} name="userprefrences[]" id="userprefformCheck-{{ item.id }}" value="{{ item.id }}" class="form-check-input userprefformCheck" type="checkbox" />
+
+        <input {% if item.is_selected == 1 %} checked="checked" {% endif %} name="userprefrences[]" id="userprefformCheck-{{ item.id }}" value="{{ item.id }}" class="form-check-input userprefformCheck" type="checkbox" />
         <label class="form-check-label" for="userprefformCheck-{{ item.id }}">{{ item.title }}</label>
     </div>
     {% endfor %}
-
-    <button class="btn btn-primary w-100 mt-4 mb-3" type="submit">{{ "Salva le mie preferenze"|_ }}</button>
+   
+    <button class="btn btn-primary w-100 mt-4 mb-3" type="submit">Salva le mie preferenze</button>
 </form>
 <script>
-
+   
 </script>

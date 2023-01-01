@@ -310,7 +310,7 @@ p{
     border-radius:.3rem;
     box-shadow:0 0 1rem rgba(0,0,0,.15)
 }
-.btn-lg.btn-primary,.btn.btn-primary,.login-form .tab-login .btn-secondary:hover,.tab-registration .btn-secondary:hover{
+.btn-lg.btn-primary,.btn.btn-primary,.login-form .tab-login .btn-secondary:hover{
     background-color:#496391!important
 }
 .btn-lg.btn-primary:hover,.btn.btn-primary:hover{
@@ -683,75 +683,8 @@ p{
     border:1px solid #70b966;
     box-shadow:0 0 .5rem rgba(112,185,102,.5)
 }
-.tab-registration{
-    padding:2rem
-}
-.tab-registration .tab-content{
-    margin-bottom:15vh
-}
-.tab-registration .nav-link{
-    margin:0 .5rem;
-    border-radius:.3rem;
-    border:1px solid rgba(73,99,145,.05)
-}
-.tab-registration .nav-link.active{
-    background-color:#496391;
-    color:#fff!important;
-    border:1px solid #496391
-}
-.offerta .nav-link,.tab-registration .nav-link.active:hover>span{
-    color:#fff!important
-}
-.tab-registration input{
-    width:100%;
-    margin-top:.25rem;
-    padding:.75rem;
-    border:1px solid rgba(187,187,187,.35);
-    font-size:.9rem;
-    box-shadow:0 0 .5rem rgba(0,0,0,.05);
-    border-radius:.3rem
-}
-.tab-registration .dropdown .dropdown-menu{
-    width:100%;
-    top:-2px!important;
-    padding-top:0;
-    padding-bottom:0;
-    border-radius:0 0 .3rem .3rem;
-    border:1px solid rgba(187,187,187,.35);
-    border-top:none;
-    max-height:150px;
-    overflow:auto
-}
-.tab-registration span{
-    font-size:.8rem
-}
-.tab-registration .form-check{
-    display:flex
-}
-.form-check-input,.tab-registration .form-check input[type=checkbox]{
-    width:30px!important;
-    margin-right:1rem;
-    padding:.75rem;
-    border-radius:.3rem
-}
-.registration-alert,.tab-registration .registration-alert{
-    padding:.75rem;
-    background-color:#f18535;
-    border-radius:.3rem
-}
-.registration-alert p,.tab-registration .registration-alert p{
-    font-size:.9rem;
-    line-height:1.1;
-    margin-bottom:0;
-    color:#fff;
-    font-weight:700
-}
-.registration-alert p span,.tab-registration .registration-alert p span{
-    text-transform:none;
-    font-weight:400;
-    color:#333;
-    padding-left:.5rem
-}
+
+
 .form-control{
     margin-top:.25rem;
     box-shadow:0 0 .5rem rgba(0,0,0,.05);
@@ -781,34 +714,7 @@ p{
         padding:2rem
     }
 }
-@media (max-width:576px){
-    .tab-registration{
-        margin-top:0;
-        border:none;
-        box-shadow:none;
-        border-radius:0;
-        height:100%;
-        padding:2rem 0
-    }
-    .tab-registration .nav-link{
-        padding:0;
-        border:none;
-        color:#999!important
-    }
-    .tab-registration .nav-link.active{
-        padding:0;
-        background-color:transparent;
-        border:none;
-        color:#496391!important
-    }
-    .tab-registration .nav-link.active:hover>span{
-        color:#496391!important
-    }
-    .bottom-nav .btn{
-        padding:.5rem 1.5rem;
-        font-size:.9rem
-    }
-}
+
 .home-catalogo-corsi{
     background-color:#f18535
 }
@@ -884,9 +790,7 @@ textarea.form-control{
     .login-form .tab-login span,.tab-registration span,textarea,textarea.form-control{
         font-size:1rem
     }
-    .tab-registration{
-        padding:2.5rem
-    }
+   
 }
 .offerta .nav-link:hover{
     color:#edf1f4!important

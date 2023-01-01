@@ -83,8 +83,8 @@ class Prefrencelist extends ComponentBase
             $user->boarded = 1;
             $user->save();
         }
-        if ($user->sso_privacy_consent == 0) {
-            $user->sso_privacy_consent = 1;
+        if ($user->privacy_consent == 0) {
+            $user->privacy_consent = 1;
             $user->save();
         }
 
