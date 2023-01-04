@@ -161,7 +161,6 @@ class Profile extends ComponentBase
             $response = $sso->updateProfile($user->sso_id,$req_user['profile']);
             $responseStatusCode = $response->getStatusCode();
             $responseObject = $response->object();
-            return response()->json($responseObject);
             if ($responseStatusCode == 200) {
                 $user->profile = $req_user['profile'];
                 $user->profile_updated = 1;
