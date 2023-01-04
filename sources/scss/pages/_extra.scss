@@ -1,36 +1,4 @@
 
-.small{
-    font-size:.9rem;
-    line-height:1.2;
-    font-weight:400
-}
-:focus{
-    outline:0;
-    box-shadow:none
-}
-body:not(.focus-visible) :focus:not(.focus-visible){
-    outline:0!important
-}
-.offcanvas-header .btn-close{
-    box-shadow:none
-}
-.navbar .container{
-    padding:1rem;
-    border-radius:.3rem;
-    box-shadow:0 0 1rem rgba(0,0,0,.15);
-    margin-top:1.5rem
-}
-.navbar-toggler{
-    border:hidden!important
-}
-.navbar-toggler:focus{
-    text-decoration:none;
-    outline:0;
-    box-shadow:none
-}
-.nav-tabs{
-    border-bottom:none!important
-}
 .cnt{
     border-radius:.3rem;
     box-shadow:0 0 1rem rgba(0,0,0,.15);
