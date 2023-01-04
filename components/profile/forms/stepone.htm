@@ -190,7 +190,7 @@
             <select class="form-select btn dropdown-toggle text-start" name="province_enployment"  data-request="{{__SELF__}}::onCitySelect" required>
                 <option value=""></option>
                 {% for key,province in __SELF__.provinces %}
-                    <option value="{{  key }}"  {% if __SELF__.profile.province_enployment == key %} selected="selected" {% endif %}>{{ province }}</option>
+                    <option value="{{  key }}"  {% if __SELF__.profile.regione_enployment != "" and __SELF__.profile.province_enployment == key %} selected="selected" {% endif %}>{{ province }}</option>
                 {%endfor%}
             </select>
         </div>

@@ -14,27 +14,4 @@
 
 // Section: Intro
 // ------------------------------------------------------------------------ //
-.the-intro {
-    background-color: transparent;
-}
-.container {
-    max-width: 1400px;
-  }
-
-
-  @media (min-width: 992px) {
-    .skew-bottom {
-      -webkit-clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 100%);
-      clip-path: polygon(0 0, 100% 0%, 100% 95%, 0 100%);
-      overflow: hidden;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .skew-top {
-      -webkit-clip-path: polygon(0% 5%, 100% 0%, 100% 100%, 0 100%);
-      clip-path: polygon(0 5%, 100% 0%, 100% 100%, 0 100%);
-      overflow: hidden;
-    }
-  }
 

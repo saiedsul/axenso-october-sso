@@ -1,13 +1,5 @@
 
 
-p {
-    font-size: 1rem;
-    font-weight: 300;
-
-    @media (min-width: 1200px) {
-        font-size: 1.2rem;
-    }
-}
 
 .lead {
 
@@ -16,20 +8,6 @@ p {
     font-weight: 500;
 
 }
-
-
-.display-1 {
-	font-size: calc(4rem + 0.5rem);
-	letter-spacing: calc(-6px + 6px);
-	font-weight: 800;
-}
-
-
-.text-primary {
-
-	color: $primary-color!important;
-}
-
 
 .bg-color-white {
     background: rgb(240,240,240);
@@ -141,90 +119,6 @@ p {
 
 
 
-@media (min-width: 992px) {
-
-	.video-promo {
-		border-radius: 10px;
-		overflow: hidden;
-		box-shadow: $box-shadow;
-		border-radius: 20px;
-		position: relative;
-		top: -50px;
-		z-index: 10;
-
-
-	.ratio iframe {
-		border-radius: 20px;
-		overflow: hidden;
-	}
-			}
-
-}
-
-
-footer {
-    color: #666666;
-
-    p {
-        font-size: 1rem;
-        margin-bottom: 0;
-    }
-
-		a {
-				color: #666666;
-
-				&:hover {
-						color: $primary-color;
-				}
-		}
-
-}
-
-
-.sidebar-menu {
-	.nav-item{
-		width: 100%;
-		font-size: 0.9rem;
-
-
-
-	a {
-		display: flex;
-		align-items: center!important;
-
-			i {
-				font-size: 1.6rem;
-				font-weight: 200;
-			}
-
-			span {
-				margin-left: 1rem;
-			}
-		}
-}
-
-
-	.nav-link.active {
-		background-color: #fff!important;
-		border-radius: 0px;
-		color: $primary-color;
-		border-bottom: 1px solid $border-color;
-		padding: 1.5rem 1rem;
-		vertical-align: middle!important;
-
-	}
-
-	.nav-link {
-		//background-color: #f8f8f8!important;
-		border-radius: 0px;
-		color: $primary-color;
-		border-bottom: 1px solid $border-color;
-		padding: 1.5rem 1rem;
-		vertical-align: middle!important;
-		width: 100%!important;
-}
-
-}
 
 
 

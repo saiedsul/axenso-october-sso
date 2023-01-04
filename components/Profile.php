@@ -37,6 +37,7 @@ class Profile extends ComponentBase
     public $sub_spcs;
     public $cities;
     public $address_cities;
+    public $date_of_birth;
     public function componentDetails()
     {
         return [
@@ -56,7 +57,7 @@ class Profile extends ComponentBase
             'place_of_birth' => Input::get('place_of_birth'),
             'custom_fiscal' => Input::get('custom_fiscal'),
         ];
-        if ($req_user['custom_fiscal'] == null) {
+        if ($req_user['custom_fiscal'] == 1) {
             $rules = [];
         if (Input::get('birth_in_italy') == 'EE') {
             $rules['fiscal_code'] = 'codice_fiscale:first_name=first_name,last_name=last_name,birthdate=date_of_birth,place=place_of_birth,gender=gender';
@@ -97,7 +98,7 @@ class Profile extends ComponentBase
                 'place_of_birth' => Input::get('place_of_birth'),
                 'custom_fiscal' => Input::get('custom_fiscal'),
             ];
-            if ($req_user_initial['custom_fiscal'] == null) {
+            if ($req_user_initial['custom_fiscal'] == 0) {
                 $rules = [];
             if (Input::get('birth_in_italy') == 'EE') {
                 $rules['fiscal_code'] = 'codice_fiscale:first_name=first_name,last_name=last_name,birthdate=date_of_birth,place=place_of_birth,gender=gender';
@@ -114,7 +115,6 @@ class Profile extends ComponentBase
                         'errorMsgs' => $validator->customMessages,
                         'currentValue' => Input::get('fiscal_code')
                     ])];
-
                 }
             }
         }
@@ -161,6 +161,7 @@ class Profile extends ComponentBase
             $response = $sso->updateProfile($user->sso_id,$req_user['profile']);
             $responseStatusCode = $response->getStatusCode();
             $responseObject = $response->object();
+            return response()->json($responseObject);
             if ($responseStatusCode == 200) {
                 $user->profile = $req_user['profile'];
                 $user->profile_updated = 1;
@@ -225,6 +226,7 @@ class Profile extends ComponentBase
         $response = $sso->getProfile($user->sso_id);
         $responseStatusCode = $response->getStatusCode();
         $responseObject = $response->object();
+   
         if ($responseStatusCode == 200) {
 
             $this->profile = $profile = $responseObject;

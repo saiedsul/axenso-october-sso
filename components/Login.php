@@ -65,9 +65,7 @@ class Login extends ComponentBase
         ])];
     }
          else {
-             //   $dardy = new Sso();
                 $sso = new AxenSso();
-
                 $response = $sso->login($email,$password);
                 if ($response->getStatusCode() == 200) {
                     $sso_user = $response->object()->user;

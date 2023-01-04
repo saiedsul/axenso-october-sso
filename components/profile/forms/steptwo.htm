@@ -93,7 +93,7 @@
             </div>
             {% partial __SELF__ ~ '::tooltip' msg='Inserire la data di nascita con il formato gg/mm/aaaa, prestanto attenzione ad inserire l\'anno di nascita completo (es: 1980)' %}
         </div>
-        <input class="form-control" type="date" name="date_of_birth" value="{{ __SELF__.profile.date_of_birth|date('Y-m-d') }}" required>
+        <input class="form-control" type="date" name="date_of_birth" value="{{ __SELF__.profile.date_of_birth }}" required>
     </div>
 
     <div class="col-md-3">
@@ -116,6 +116,7 @@
             {% partial __SELF__ ~ '::tooltip' msg= 'Inserire il codice fiscale, prestando attenzione che sia formato da 16 caratteri (9 lettere e 7 numeri)' %}
         </div>
         <input class="form-control text-uppercase" type="text"  placeholder="Inserisci codice fiscale" value="{{ __SELF__.profile.fiscal_code }}" name="fiscal_code" required>
+        <input type="hidden" id="custom_fiscal" name="custom_fiscal" value="0">
         <div id="fiscal_errors">
 
         </div>

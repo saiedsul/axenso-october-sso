@@ -1,5 +1,14 @@
-$(document).ready(function() {
+window.customfiscal = function customfiscal(){
+    if ($('#formCheck-customfiscal').is(':checked')) {
+        $('#custom_fiscal').val(1)
+    } 
+    else {
+        $('#custom_fiscal').val(0)
 
+    }
+}
+$(document).ready(function() {
+  
     $("#loginForm").validate({
         rules: {
 
