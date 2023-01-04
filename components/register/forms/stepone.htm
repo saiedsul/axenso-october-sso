@@ -42,7 +42,8 @@
     </div>
     <div class="col-md-6">
         <div class="d-flex justify-content-between align-items-center">
-            <span>{{ "Email"|_ }}</span>{% partial __SELF__ ~ '::tooltip' msg="Inserire un indirizzo email, evitando l\'utilizzo di PEC o email aziendali. Preferire indirizzi personali" %}
+             <div> <span>{{ "Email"|_ }}</span><span class="asterisco">*</span></div>
+           {% partial __SELF__ ~ '::tooltip' msg="Inserire un indirizzo email, evitando l\'utilizzo di PEC o email aziendali. Preferire indirizzi personali" %}
         </div>
         <input class="form-control " type="email" placeholder="Indirizzo email"  required name="email">
         <div id="email_errors">
@@ -50,17 +51,20 @@
     </div>
     <div class="col-md-6">
         <div class="d-flex justify-content-between align-items-center">
-            <span>{{ "Ripetere email"|_ }}</span>{% partial __SELF__ ~ '::tooltip' msg="Inserire nuovamente l'indirizzo email scelto per convalida" %}
+                    <div> <span>{{ "Ripetere email"|_ }}</span><span class="asterisco">*</span></div>
+           {% partial __SELF__ ~ '::tooltip' msg="Inserire nuovamente l'indirizzo email scelto per convalida" %}
         </div><input class="form-control " type="email" placeholder="Ripetere indirizzo email"  required name="email_confirmation">
     </div>
     <div class="col-md-6">
         <div class="d-flex justify-content-between align-items-center">
-            <span>{{ "Password"|_ }}</span>{% partial __SELF__ ~ '::tooltip' msg='Si consiglia di scegliere una password sicura che contenga almeno una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale' %}
+                <div> <span>{{ "Password"|_ }}</span><span class="asterisco">*</span></div>
+         {% partial __SELF__ ~ '::tooltip' msg='Si consiglia di scegliere una password sicura che contenga almeno una lettera maiuscola, una lettera minuscola, un numero e un carattere speciale' %}
         </div><input class="form-control" type="password" placeholder="Password" required name="password">
     </div>
     <div class="col-md-6">
         <div class="d-flex justify-content-between align-items-center">
-            <span>{{ "Ripetere password"|_ }}</span>{% partial __SELF__ ~ '::tooltip' msg='Inserire nuovamente la password scelta' %}
+             <div> <span>{{ "Ripetere password"|_ }}</span><span class="asterisco">*</span></div>
+          {% partial __SELF__ ~ '::tooltip' msg='Inserire nuovamente la password scelta' %}
         </div><input class="form-control" type="password" placeholder="Ripetere password" required name="password_confirmation">
     </div>
 

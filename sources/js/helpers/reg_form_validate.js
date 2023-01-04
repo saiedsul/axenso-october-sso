@@ -43,6 +43,7 @@ $(document).ready(function() {
                 email : true,
                 equalTo : '[name="email"]'
             },
+
             password : {
                 required : true,
                 minlength: 8,
@@ -91,6 +92,9 @@ $(document).ready(function() {
             last_name : "Campo obbligatorio",
             title : "Campo obbligatorio",
             address_number : "Campo obbligatorio",
+            password : {
+                "minlength" : "La password deve contenere almeno 8 caratteri"
+            },
             board_number : {
                 "minlength" : "Inserire almeno 3 caratteri"
             },
