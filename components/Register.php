@@ -181,7 +181,7 @@ class Register extends ComponentBase
             'place_of_birth' => Input::get('place_of_birth'),
             'custom_fiscal' => Input::get('custom_fiscal'),
         ];
-        if ($req_user['custom_fiscal'] == null) {
+        if ($req_user['custom_fiscal'] == 0) {
             $rules = [];
         if (Input::get('birth_in_italy') == 'EE') {
             $rules['fiscal_code'] = 'codice_fiscale:first_name=first_name,last_name=last_name,birthdate=date_of_birth,place=place_of_birth,gender=gender';

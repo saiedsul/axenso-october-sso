@@ -90,16 +90,18 @@
         </div>
     </div>
 
+ 
     <div class="col-md-6">
         <div class="d-flex justify-content-between align-items-center">
             <div><span>{{ "Codice fiscale"|_ }}</span><span class="asterisco">*</span></div>
             {% partial __SELF__ ~ '::tooltip' msg= 'Inserire il codice fiscale, prestando attenzione che sia formato da 16 caratteri (9 lettere e 7 numeri)' %}
         </div>
-        <input class="form-control text-uppercase" type="text"  placeholder="Inserisci codice fiscale" name="fiscal_code" required>
+        <input class="form-control text-uppercase" type="text"  placeholder="Inserisci codice fiscale" value="{{ __SELF__.profile.fiscal_code }}" name="fiscal_code" required>
+        <input type="hidden" id="custom_fiscal" name="custom_fiscal" value="0">
         <div id="fiscal_errors">
+
         </div>
     </div>
-
 
 
 
