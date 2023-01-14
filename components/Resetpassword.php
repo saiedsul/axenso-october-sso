@@ -14,7 +14,7 @@ class Resetpassword extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'Passowrd Reset Component',
+            'name'        => 'Password Reset Component',
             'description' => 'Add form to request resetting password'
         ];
     }
