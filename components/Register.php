@@ -108,6 +108,7 @@ class Register extends ComponentBase
                         'birth_city' => Input::get('birth_city'), //
                         'date_of_birth' => Input::get('date_of_birth'),
                         'fiscal_code' => Input::get('fiscal_code'),
+                        'custom_fiscal' => Input::get('custom_fiscal'),
                         'address_type' => Input::get('address_type'), //
                         'address_line' => Input::get('address_line'), //
                         'address_number' => Input::get('address_number'), //
