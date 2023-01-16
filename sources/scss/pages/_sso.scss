@@ -1,7 +1,7 @@
 
 
 
-.lead {
+.sso_lead {
 
     font-size: calc(0.8rem + 1rem);
 		line-height: calc(1.2rem + 0.75rem);
@@ -9,24 +9,20 @@
 
 }
 
-.bg-color-white {
-    background: rgb(240,240,240);
-    background: linear-gradient(135deg, rgba(240,240,240,1) 0%, rgba(240,240,240,0.025) 30%);
-}
 
 
 .btn {
     padding: 1rem 2rem;
     border: none;
-    border-radius: $border-radius-small;
-		box-shadow: $box-shadow;
+    border-radius: $sso-border-radius-small;
+		box-shadow: $sso-box-shadow;
 
 
     &.btn-primary {
-        background-color: $primary-color!important;
+        background-color: $sso-primary-color!important;
 
         &:hover{
-            background-color: $secondary-color!important;
+            background-color: $sso-secondary-color!important;
         }
     }
 
@@ -35,7 +31,7 @@
 
 
         &:hover{
-            background-color: $grey-light!important;
+            background-color: $sso-grey-light!important;
         }
     }
 }
@@ -45,14 +41,14 @@
     padding: 1.25rem 2.5rem;
     border: none;
     border-radius: 10px;
-		box-shadow: $box-shadow;
+		box-shadow: $sso-box-shadow;
 
 
     &.btn-primary {
-        background-color: $primary-color!important;
+        background-color: $sso-primary-color!important;
 
         &:hover{
-            background-color: $secondary-color!important;
+            background-color: $sso-secondary-color!important;
         }
     }
 
@@ -61,7 +57,7 @@
 
 
         &:hover{
-            background-color: $grey-light!important;
+            background-color: $sso-grey-light!important;
         }
     }
 }
@@ -69,58 +65,16 @@
 .form-control {
 		border-radius: 10px;
 		padding: 0.75rem 2rem;
-		box-shadow: $box-shadow;
+		box-shadow: $sso-box-shadow;
 
 }
 
 .form-control-lg {
 		border-radius: 10px;
 		padding: 1.5rem 2rem;
-		box-shadow: $box-shadow;
+		box-shadow: $sso-box-shadow;
 
 }
-
-.card-course {
-	background-color: #fff;
-	box-shadow: $box-shadow;
-	border-radius: $border-radius-small;
-	overflow: hidden;
-	position: relative;
-
-	.card-info {
-			margin-bottom: 1rem;
-
-		span {
-			font-size: 0.75rem!important;
-				}
-		}
-
-	.card-overlay {
-		position: absolute;
-		top: 1rem;
-		left: 1rem;
-	}
-
-	h4 {
-		font-size: 1.3rem;
-	}
-
-	p {
-		font-size: 1rem;
-		margin-bottom: 0px;
-	}
-
-	.card-image {
-
-	}
-
-}
-
-
-
-
-
-
 
 
 //REGISTRATION FORM
@@ -130,7 +84,7 @@
 //$tooltip-max-width:                 200px;
 //$tooltip-color:                     $white;
 //$tooltip-bg:                        $black;
-//$tooltip-border-radius:             $border-radius;
+//$tooltip-border-radius:             $sso-border-radius;
 //$tooltip-opacity:                   .9;
 //$tooltip-padding-y:                 $spacer * .25;
 //$tooltip-padding-x:                 $spacer * .5;
@@ -144,7 +98,7 @@
 
 
 	.panel-left {
-	background-color: $primary-color;
+	background-color: $sso-primary-color;
 	padding: 3rem;
 
 	& img {
@@ -161,27 +115,7 @@
 	}
 }
 
-.panel-right {
-	padding: 0;
 
-	@media (min-width: 992px) {
-		padding: 2rem;
-	}
-}
-
-.panel-right-content {
-	padding: 2rem;
-	//background-color: #f8f8f8;
-	width: 100%;
-	overflow: auto;
-}
-
-//.form-control::-webkit-input-placeholder {
-//  color: #ccc;
-//}
-.reg-tabs-guid {
-
-}
 
 .tab-registration {
 
@@ -198,12 +132,12 @@
 
 	& .nav-link {
 		margin: 0 0.5rem;
-		border-radius: $border-radius-small;
-		border: 1px solid $border-color;
-		color: $white-color;
+		border-radius: $sso-border-radius-small;
+		border: 1px solid $sso-border-color;
+		color: $sso-white-color;
 		&.active {
-			background-color: $primary-color;
-			color: $white-color;
+			background-color: $sso-primary-color;
+			color: $sso-white-color;
 		}
 	}
 
@@ -223,27 +157,27 @@
 			margin: 0.5rem;
 			font-size: 1.6rem;
 			opacity: 0.3;
-			color: $secondary-color;
+			color: $sso-secondary-color;
 		}
 
 		.active i {
 			opacity: 1;
-			color: $primary-color;
+			color: $sso-primary-color;
 		}
 	}
 
 	& .btn-secondary {
-		box-shadow: $box-shadow-small!important;
-		//border: $border-radius-small;
-		background-color: $secondary-color;
+		box-shadow: $sso-box-shadow-small!important;
+		//border: $sso-border-radius-small;
+		background-color: $sso-secondary-color;
 
 		&:hover{
-					background-color: $primary-color!important;
+					background-color: $sso-primary-color!important;
 			}
 
 		&.btn-primary {
-			box-shadow: $box-shadow-small!important;
-			border: $border-radius;
+			box-shadow: $sso-box-shadow-small!important;
+			border: $sso-border-radius;
 
 
     }
@@ -252,7 +186,7 @@
 	.dropdown {
 
 		& .dropdown-toggle {
-			border-radius: $border-radius-small;
+			border-radius: $sso-border-radius-small;
 			padding: 0.75rem;
 			font-size: 0.9rem;
 
@@ -265,7 +199,7 @@
 		& .show {
 			border-bottom-left-radius: 0px;
 			border-bottom-right-radius: 0px;
-			border: 1px solid $border-color;
+			border: 1px solid $sso-border-color;
 			border-bottom: none;
 
 			& .dropdown-item {
@@ -288,10 +222,10 @@
 			top: -2px!important;
 			padding-top: 0px;
 			padding-bottom: 0px;
-			border-radius: $border-radius-small;
+			border-radius: $sso-border-radius-small;
 			border-top-left-radius: 0px;
 			border-top-right-radius: 0px;
-			border: 1px solid $border-color;
+			border: 1px solid $sso-border-color;
 			border-top: none;
 			max-height: 150px;
 			overflow: scroll;
@@ -301,10 +235,10 @@
 			width: 100%;
 			margin-top: 0.25rem;
 			padding: 0.75rem;
-			border: 1px solid $border-color;
+			border: 1px solid $sso-border-color;
 			color:#000;
 			font-size: 0.9rem;
-			box-shadow: $box-shadow-small;
+			box-shadow: $sso-box-shadow-small;
 
 
 			@media (min-width: 1366px) {
@@ -316,18 +250,18 @@
 
 
 		& .asterisco {
-			color:$grey-medium;
+			color:$sso-grey-medium;
 			margin-left: 0.25rem;
             color:#d41e1d
 		}
 
 		& a.small {
 			font-size: 0.8rem;
-			color:$grey-medium;
+			color:$sso-grey-medium;
 	}
 
 		& span {
-			color: $grey-medium;
+			color: $sso-grey-medium;
 			font-size: 0.9rem;
 
 			@media (min-width: 1366px) {
@@ -339,19 +273,19 @@
 
 		.registration-alert {
 			padding: 0.75rem;
-			background-color: $background-error;
-			//box-shadow: $box-shadow-error-small;
-			border-radius: $border-radius-small;
+			background-color: $sso-background-error;
+			//box-shadow: $sso-box-shadow-error-small;
+			border-radius: $sso-border-radius-small;
 			& p {
 				font-size: 0.9rem;
 				line-height: 1.1;
 				margin-bottom: 0;
 
-				color: $white-color;
+				color: $sso-white-color;
 				& span {
 					text-transform: none;
 					font-weight: normal;
-					color: $grey-dark;
+					color: $sso-grey-dark;
 					padding-left: 0.5rem;
 				}
 
@@ -362,9 +296,9 @@
 		.form-control,.form-select {
 			margin-top: 0.25rem;
 			padding: 0.75rem;
-			box-shadow: $box-shadow-small;
-			border-radius: $border-radius-small;
-			border-color: $border-color;
+			box-shadow: $sso-box-shadow-small;
+			border-radius: $sso-border-radius-small;
+			border-color: $sso-border-color;
 			font-size: 0.9rem;
 
 			@media (min-width: 1366px) {
@@ -375,7 +309,7 @@
 			&:focus {
 				color: #212529;
 				background-color: #fff;
-				border-color: $border-color;
+				border-color: $sso-border-color;
 			}
 
 			&input:autofill, input:-webkit-autofill-strong-password, input:-webkit-autofill-strong-password-viewable, input:-webkit-autofill-and-obscured {
@@ -384,28 +318,28 @@
 }
 
 			&::-webkit-input-placeholder {
-				color: $grey-light;
+				color: $sso-grey-light;
 			}
 
 			&.error {
-				border: $message-error-border;
-				box-shadow: $box-shadow-error-small;
+				border: $sso-message-error-border;
+				box-shadow: $sso-box-shadow-error-small;
 
 			&:focus {
 				color: #212529;
 				background-color: #fff;
-				border-color: $border-color;
+				border-color: $sso-border-color;
 			}
 		}
 
 		&.ok {
-				border: $message-ok-border;
-				box-shadow: $box-shadow-ok-small;
+				border: $sso-message-ok-border;
+				box-shadow: $sso-box-shadow-ok-small;
 
 				&:focus {
 				color: #212529;
 				background-color: #fff;
-				border-color: $border-color;
+				border-color: $sso-border-color;
 			}
 
 
@@ -414,7 +348,7 @@
 	}
 
 	textarea.form-control {
-		color: $grey-dark;
+		color: $sso-grey-dark;
 		margin-top: 0.5rem;
 		height: 105px;
 		font-size: 0.9rem;
@@ -424,23 +358,21 @@
 		}
 	}
 
-	input[type="date"] {
-     font-family: $font-stack;
-  }
+
   & .tab-navigation {
     & .nav-link {
         margin: 0 0.5rem;
 		font-size: 20px;
         padding: 0px;
-        background-color: $secondary-color;
-        border-radius: $border-radius-small;
-        border: 1px solid $border-color;
-        color: $white-color;
+        background-color: $sso-secondary-color;
+        border-radius: $sso-border-radius-small;
+        border: 1px solid $sso-border-color;
+        color: $sso-white-color;
         background-color: unset !important;
         border: 0px !important;
         &.active {
-            background-color: $primary-color;
-            color: $white-color;
+            background-color: $sso-primary-color;
+            color: $sso-white-color;
         }
     }
 }
@@ -454,20 +386,20 @@
   height: 15px;
   border-radius: 50%;
   font-weight: 700;
-  background: $grey-lighter;
-  border: 1px solid $grey-dark;
-  color: $grey-dark;
+  background: $sso-grey-lighter;
+  border: 1px solid $sso-grey-dark;
+  color: $sso-grey-dark;
   margin: 4px;
   float: right;
   text-align: left !important;
 }
 
-.btn-tooltip {
+.sso-btn-tooltip {
 			padding: 0;
 			box-shadow: none;
 			font-size: 0.9rem;
 			line-height: 0;
-			color: $grey-medium;
+			color: $sso-grey-medium;
 			border-radius: 0px;
 			width: 16px;
 
@@ -481,9 +413,9 @@
   max-width: 236px !important;
   font-size: 12px;
   padding: 0.5rem;
-  background: $white-color;
-  color: $grey-dark;
-  border: 1px solid $grey-dark;
+  background: $sso-white-color;
+  color: $sso-grey-dark;
+  border: 1px solid $sso-grey-dark;
   text-align: left;
 }
 

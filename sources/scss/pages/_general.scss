@@ -1,78 +1,68 @@
-$font-stack:  Nunito, sans-serif;
-$header-font:  Nunito, sans-serif;
-$primary-color: #496391;
-$secondary-color: #A95260;
-$success-color: #3C8287;
-$danger-color: #F18535;
-$warning-color: #A93A78;
-$info-color: #3A4B9A;
+$sso-primary-color: #496391;
+$sso-secondary-color: #A95260;
+$sso-success-color: #3C8287;
+$sso-danger-color: #F18535;
+$sso-warning-color: #A93A78;
+$sso-info-color: #3A4B9A;
 
-$grey-lighter: #f8f8f8;
-$grey-light: #b8b8b8;
-$grey-medium: #999999;
-$grey-dark: #333333;
-$white-color: #ffffff;
+$sso-grey-lighter: #f8f8f8;
+$sso-grey-light: #b8b8b8;
+$sso-grey-medium: #999999;
+$sso-grey-dark: #333333;
+$sso-white-color: #ffffff;
 
-$body-bg: #fff;
-$body-color: #111;
-$box-shadow: 0 0rem 1rem rgba(0,0,0,.15);
-$box-shadow-small: 0 0rem 0.5rem rgba(0,0,0, .05);
+$sso-body-bg: #fff;
+$sso-body-color: #111;
+$sso-box-shadow: 0 0rem 1rem rgba(0,0,0,.15);
+$sso-box-shadow-small: 0 0rem 0.5rem rgba(0,0,0, .05);
 
-$error-color: rgba(241, 133, 53, 1);
-$message-error-border: solid 1px rgba(241, 133, 53, 1);
-$box-shadow-error-small: 0 0rem 0.5rem rgba(241, 133, 53, 0.5);
-$background-error: rgba(241, 133, 53, 1);
+$sso-error-color: rgba(241, 133, 53, 1);
+$sso-message-error-border: solid 1px rgba(241, 133, 53, 1);
+$sso-box-shadow-error-small: 0 0rem 0.5rem rgba(241, 133, 53, 0.5);
+$sso-background-error: rgba(241, 133, 53, 1);
 
 
-$box-shadow-ok-small: 0 0rem 0.5rem rgba(112,185,102, 0.5);
-$message-ok-border: solid 1px rgba(112,185,102, 1);
+$sso-box-shadow-ok-small: 0 0rem 0.5rem rgba(112,185,102, 0.5);
+$sso-message-ok-border: solid 1px rgba(112,185,102, 1);
 
-$border-radius: 1rem;
-$border-radius-small: 0.3rem;
+$sso-border-radius: 1rem;
+$sso-border-radius-small: 0.3rem;
 
-$border-color: rgba(187,187,187,0.35);
+$sso-border-color: rgba(187,187,187,0.35);
 
 
 
 
 
   .bg-secondary, .btn-secondary {
-    background-color: $secondary-color!important;
+    background-color: $sso-secondary-color!important;
 }
 
 .bg-success, .btn-success {
-    background-color: $success-color!important;
+    background-color: $sso-success-color!important;
 }
 
 .bg-danger, .btn-danger {
-    background-color: $danger-color!important;
+    background-color: $sso-danger-color!important;
 }
 
 .bg-warning, .btn-warning {
-    background-color: $warning-color!important;
+    background-color: $sso-warning-color!important;
 }
 
 .bg-info, .btn-info {
-    background-color: $info-color!important;
+    background-color: $sso-info-color!important;
 }
 
-.bg-light {
-	background-color: #fff!important;
-
-}
-
-.text-primary {
-    color: $primary-color!important;
-}
 label.error {
     padding: 0.4rem;
-    background-color: $background-error;
-			//box-shadow: $box-shadow-error-small;
-    border-radius: $border-radius-small;
+    background-color: $sso-background-error;
+			//box-shadow: $sso-box-shadow-error-small;
+    border-radius: $sso-border-radius-small;
 	font-size: 0.9rem;
     line-height: 1.1;
     margin-bottom: 0;
-    color: $white-color;
+    color: $sso-white-color;
     width:100%;
     margin-top: 5px;
     & a {
@@ -85,13 +75,13 @@ label.error {
 }
 div.error {
     padding: 0.4rem;
-    background-color: $background-error;
-			//box-shadow: $box-shadow-error-small;
-    border-radius: $border-radius-small;
+    background-color: $sso-background-error;
+			//box-shadow: $sso-box-shadow-error-small;
+    border-radius: $sso-border-radius-small;
 	font-size: 0.9rem;
     line-height: 1.1;
     margin-bottom: 0;
-    color: $white-color;
+    color: $sso-white-color;
     width:100%;
     margin-top: 5px;
 
