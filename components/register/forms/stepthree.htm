@@ -8,13 +8,31 @@
 
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="d-flex justify-content-between align-items-center">
             <div><span>{{ 'Privacy policy Xgate'|_ }}</span></div><a class="small" target="_blank" href="{{ __SELF__.xgateConfig['privacy_policy_page_url']['config_value'] }}">{{ "Leggi l'informativa"|_ }}</a>
         </div>
         <textarea class="form-control" disabled>{{ __SELF__.xgateConfig['privacy_policy_text']['config_value'] }}</textarea>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="formCheck-11"  name="data_marketing_consent" >
+
+            <label class="form-check-label" for="formCheck-11">
+                {{ "Esprimo il mio consenso all'invio da parte di Axenso di comunicazioni aventi contenuto informativo, medico-scientifico, o divulgativo proprio o di altri clienti"|_ }}</label>
+            </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="data_transfer_consent" id="formCheck-13" >
+
+            <label class="form-check-label" for="formCheck-13"  >
+                {{ "Esprimo il mio consenso alla raccolta di informazioni relative all'attività professionale e ai relativi interessi per sviluppare, fornire e migliorare i servizi informativi e medico-scientifici offerti"|_ }}</label>
+
+
+            </div>
+    </div>
+    <div class="col-md-12">
         <div class="d-flex justify-content-between align-items-center">
             <div>
                 <span>{{ 'Privacy policy Sito'|_ }}</span>
@@ -23,33 +41,6 @@
         </div>
         <textarea class="form-control" disabled>{{ __SELF__.sitePrivacyPolicyText }}</textarea>
     </div>
-    <div class="col-md-12">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="formCheck-14" name="privacy_consent" required>
-
-            <label class="form-check-label"for="formCheck-14">
-                {{ "ESPRIMO IL MIO CONSENSO ALL' ATTIVITÀ DI AUTENTICAZIONE E REGISTRAZIONE CENTRALIZZATA PER ACCEDERE AI SERVIZI DIGITALI DI AXENSO *"|_ }}</label>
-            </div>
-    </div>
-    <div class="col-md-12">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="formCheck-11"  name="data_marketing_consent" >
-
-            <label class="form-check-label" for="formCheck-11">
-                {{ "ESPRIMO IL MIO CONSENSO ALL’INVIO DA PARTE DI AXENSO DI COMUNICAZIONI AVENTI CONTENUTO INFORMATIVO, MEDICO-SCIENTIFICO, O DIVULGATIVO UTILIZZANDO L’INDIRIZZO DI POSTA ELETTRONICA FORNITO"|_ }}</label>
-            </div>
-    </div>
-    <div class="col-md-12">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="data_transfer_consent" id="formCheck-13" >
-
-            <label class="form-check-label" for="formCheck-13"  >
-                {{ "ESPRIMO IL MIO CONSENSO ALLA RACCOLTA DI INFORMAZIONI RELATIVE ALL’ATTIVITÀ PROFESSIONALE E AI RELATIVI INTERESSI/AREE DI INTERESSE TESE ALLA CREAZIONE DI PROFILI DELL’INTERESSE MEDICO-SCIENTIFICO PER SVILUPPARE, FORNIRE E MIGLIORARE I SERVIZI INFORMATIVI E MEDICO-SCIENTIFICI OFFERTI DA AXENSO E RENDERLI PIÙ RISPONDENTI ALLE ESIGENZE E INTERESSI"|_ }}</label>
-
-
-            </div>
-    </div>
-
     <div class="col-md-12 d-flex justify-content-between">
         <div class=""><a class="btn btn-secondary btnPrevious" >{{ "Indietro"|_ }}</a></div>
         <div class=""><button class="btn btn-primary" type="submit" >{{ "Invia iscrizione"|_ }}</button></div>
