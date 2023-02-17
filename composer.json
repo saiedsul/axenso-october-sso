@@ -17,7 +17,6 @@
         "guzzlehttp/guzzle": "^7.5",
         "rainlab/translate-plugin": "^1.9",
         "robertogallea/laravel-codicefiscale": "^1.12",
-        "prismify/bootstrap-starter-kit-theme": "^2.0",
         "vojtasvoboda/oc-twigextensions-plugin": "^2.0",
         "aws/aws-sdk-php": "^3.247"
     },
