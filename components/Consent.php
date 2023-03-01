@@ -64,7 +64,7 @@ class Consent extends ComponentBase
         }
         $sso = new AxenSso();
         $response= $sso->consent($user->email);
-        if ($response->getStatusCode() == 200) {
+        if ($response->getStatusCode() == 200 || $response->getStatusCode() == 201) {
             $user->privacy_consent = 1;
             $user->save();
             return Redirect::to('/');
