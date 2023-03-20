@@ -10,8 +10,8 @@
         ],
         'login' => [
             'email-not-found' => 'Ops, l\'indirizzo indicato non è presente, ti invitiamo a <a href="/register">registrarti</a> come nuovo utente', //done
-            'incorrect-login' => 'Ops, le informazioni inserite non risultano corrette <br><br> La invitiamo a riprovare oppure a contattarci all\'indirizzo <a href="mailto:support@axenso.com">support@axenso.com</a> ', //done
-            'user-inactive' => 'Il suo account non risulta essere attivo <br><br> La preghiamo di verificare nella sua casella di posta e di cliccare sul link che trova nell\'email di conferma registrazione.<br><br/> Per eventuali chiarimenti non esiti a contattarci all\'indirizzo <a href="mailto:support@axenso.com">support@axenso.com</a>',//done
+            'incorrect-login' => 'Ops, le informazioni inserite non risultano corrette <br><br> La invitiamo a riprovare oppure a contattarci all\'indirizzo <a href="mailto:xgate@axenso.com">xgate@axenso.com</a> ', //done
+            'user-inactive' => 'Il suo account non risulta essere attivo <br><br> La preghiamo di verificare nella sua casella di posta e di cliccare sul link che trova nell\'email di conferma registrazione.<br><br/> Per eventuali chiarimenti non esiti a contattarci all\'indirizzo <a href="mailto:xgate@axenso.com">xgate@axenso.com</a>',//done
             'user-unverfied' => 'Account in fase di verifica',//dpne
         ],
         'register' => [
