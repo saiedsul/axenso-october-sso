@@ -36,10 +36,6 @@ class Login extends ComponentBase
         $this->addCss('/plugins/axen/sso/assets/css/sso.css');
         $settings = Settings::instance();
         $this->logo = $settings->logo;
-        $this->redirect = '/';
-        if (@$settings->redirect_after_login_consent != null) {
-            $this->redirect = $settings->redirect_after_login_consent;
-        }
       }
     public function defineProperties()
     {
@@ -49,6 +45,11 @@ class Login extends ComponentBase
         $email = Input::get('email');
         $password = Input::get('password');
         $backURL = Input::get('backURL');
+        $settings = Settings::instance();
+        $redirect = '/';
+        if (@$settings->redirect_after_login_consent != null) {
+            $redirect = $settings->redirect_after_login_consent;
+        }
          $messages = [
              'email.required' => trans('axen.sso::lang.messages.validation.required.email'),
              'password.required' => trans('axen.sso::lang.messages.validation.required.password'),
@@ -122,7 +123,7 @@ class Login extends ComponentBase
                                 return Redirect::to($backURL);
                             }
                             else {
-                                return Redirect::to($this->redirect);
+                                return Redirect::to($redirect);
                             }
                         }
                     }

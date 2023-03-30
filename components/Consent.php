@@ -37,10 +37,7 @@ class Consent extends ComponentBase
         $this->privacy_policy_url = $settings->privacy_policy_url;
         $this->privacy_text = $settings->privacy_text;
         $this->logo = $settings->logo;
-        $this->redirect = '/';
-        if (@$settings->redirect_after_login_consent != null) {
-            $this->redirect = $settings->redirect_after_login_consent;
-        }
+
         $cookie = Cookie::get('user_id');
         if ($cookie) {
             $user = User::where('sso_id',(int)$cookie)->first();
@@ -57,6 +54,11 @@ class Consent extends ComponentBase
 
     }
     public function onConsent() {
+        $settings = Settings::instance();
+        $redirect = '/';
+        if (@$settings->redirect_after_login_consent != null) {
+            $redirect = $settings->redirect_after_login_consent;
+        }
         $cookie = Cookie::get('user_id');
         if ($cookie) {
             $user = User::where('sso_id',(int)$cookie)->first();
@@ -72,7 +74,7 @@ class Consent extends ComponentBase
         if ($response->getStatusCode() == 200 || $response->getStatusCode() == 201) {
             $user->privacy_consent = 1;
             $user->save();
-            return Redirect::to($this->redirect);
+            return Redirect::to($redirect);
         }
         else {
             return ['#errors'=> $this->renderPartial('Consent::errors',[
