@@ -38,7 +38,7 @@ class Consent extends ComponentBase
         $this->privacy_text = $settings->privacy_text;
         $this->logo = $settings->logo;
         $this->redirect = '/';
-        if (isset($settings->redirect_after_login_consent) && $settings->redirect_after_login_consent != null) {
+        if (@$settings->redirect_after_login_consent != null) {
             $this->redirect = $settings->redirect_after_login_consent;
         }
         $cookie = Cookie::get('user_id');
