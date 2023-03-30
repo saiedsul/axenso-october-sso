@@ -29,6 +29,10 @@ fields:
         label: 'Privacy Policy Page URL'
         span: auto
         type: text
+    redirect_after_login_consent:
+        label: 'Redirect URL after Login/Consent'
+        span: auto
+        type: text
     logo:
         label: 'Site Logo'
         span: auto

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Validator;
 class Login extends ComponentBase
 {
     public $logo;
+    public $redirect;
     public function componentDetails()
     {
 
@@ -35,6 +36,10 @@ class Login extends ComponentBase
         $this->addCss('/plugins/axen/sso/assets/css/sso.css');
         $settings = Settings::instance();
         $this->logo = $settings->logo;
+        $this->redirect = '/';
+        if (isset($settings->redirect_after_login_consent) && $settings->redirect_after_login_consent != null) {
+            $this->redirect = $settings->redirect_after_login_consent;
+        }
       }
     public function defineProperties()
     {

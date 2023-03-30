@@ -16,6 +16,7 @@ class Consent extends ComponentBase
     public $logo;
     public $privacy_text;
     public $privacy_policy_url;
+    public $redirect;
     public function componentDetails()
     {
         return [
@@ -36,6 +37,10 @@ class Consent extends ComponentBase
         $this->privacy_policy_url = $settings->privacy_policy_url;
         $this->privacy_text = $settings->privacy_text;
         $this->logo = $settings->logo;
+        $this->redirect = '/';
+        if (isset($settings->redirect_after_login_consent) && $settings->redirect_after_login_consent != null) {
+            $this->redirect = $settings->redirect_after_login_consent;
+        }
         $cookie = Cookie::get('user_id');
         if ($cookie) {
             $user = User::where('sso_id',(int)$cookie)->first();
@@ -67,7 +72,7 @@ class Consent extends ComponentBase
         if ($response->getStatusCode() == 200 || $response->getStatusCode() == 201) {
             $user->privacy_consent = 1;
             $user->save();
-            return Redirect::to('/');
+            return Redirect::to($this->redirect);
         }
         else {
             return ['#errors'=> $this->renderPartial('Consent::errors',[
