@@ -122,7 +122,7 @@ class Login extends ComponentBase
                                 return Redirect::to($backURL);
                             }
                             else {
-                                return Redirect::to('/');
+                                return Redirect::to($this->redirect);
                             }
                         }
                     }
