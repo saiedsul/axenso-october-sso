@@ -6,6 +6,7 @@
 <div class="dropdown " >
     <select class="form-select btn dropdown-toggle text-start"  data-request="{{__SELF__}}::onSpecSelect" data-request-data="spec: 1" name="specialization" id="specializations" oninput="this.className = 'btn dropdown-toggle text-start'" required>
         <optgroup label="Discipline">
+            <option value=""></option>
           {% for spec in specsOne %}
           <option value="{{ spec['name'] }}">{{ spec['name'] }}</option>
           {%endfor%}

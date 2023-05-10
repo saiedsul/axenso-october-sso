@@ -79,6 +79,7 @@
                 <div class="dropdown " >
                     <select class="form-select btn dropdown-toggle text-start"  data-request="{{__SELF__}}::onSpecSelect" data-request-data="spec: 1" name="specialization" id="specializations" oninput="this.className = 'btn dropdown-toggle text-start'" required>
                         <optgroup label="Discipline">
+                            <option value=""></option>
                         {% for spec in __SELF__.initial_sepcs_1 %}
                         <option value="{{ spec['name'] }}"  {% if __SELF__.profile.specialization == spec['name'] %} selected="selected" {% endif %}>{{ spec['name'] }}</option>
                         {%endfor%}
