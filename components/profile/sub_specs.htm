@@ -10,6 +10,7 @@
     <div class="dropdown ">
         <select class="form-select btn dropdown-toggle text-start" name="sub_specialization" id="sub_specialization" {% if sub_spcs is empty %} disabled required="false" {%else%} required {%endif%}>
             <optgroup label="{{ 'Specializzazione'|_ }}">
+                <option value=""></option>
                 {% for sub in sub_spcs %}
                 <option value="{{ sub['name'] }}">{{ sub['name'] }}</option>
                 {%endfor%}
