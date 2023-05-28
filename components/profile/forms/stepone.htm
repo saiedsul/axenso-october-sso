@@ -102,6 +102,7 @@
         <div class="dropdown ">
             <select class="form-select btn dropdown-toggle text-start" name="sub_specialization" id="sub_specialization" {% if __SELF__.sub_spcs is empty %} disabled required="false" {%else%} required {%endif%}>
                 <optgroup label="{{ 'Specializzazione'|_ }}">
+                    <option value=""></option>
                     {% for sub in __SELF__.sub_spcs %}
                     <option value="{{ sub['name'] }}" {% if __SELF__.profile.sub_specialization == sub['name'] %} selected="selected" {% endif %}>{{ sub['name'] }}</option>
                     {%endfor%}
